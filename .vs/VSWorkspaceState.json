@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\image"
   ],
-  "SelectedNode": "\\D:\\Work\\Abdelmaboud",
+  "SelectedNode": "\\assets\\image",
   "PreviewInSolutionExplorer": false
 }
