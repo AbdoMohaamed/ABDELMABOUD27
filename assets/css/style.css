@@ -464,7 +464,7 @@ main {
 
     .navbar-link:hover,
     .navbar-link:focus {
-        color: var(--light-gray-70);
+        color: var(--orange-yellow-crayola);
     }
 
     .navbar-link.active {
@@ -1020,6 +1020,13 @@ main {
         padding: 5px 0 !important;
         font-weight: bold !important;
     }
+@media only screen and (max-width : 768px) {
+    .timeline-item::after {
+        left: -37px;
+    }
+
+}
+
 /*==========================================================================
   # skills 
 ============================================================================*/
@@ -2011,5 +2018,21 @@ textarea.form-input {
 @media only screen and (max-width : 768px) {
     .social-list {
         justify-content: space-between !important;
+    }
+    .navbar-list{
+        justify-content:space-between !important;
+    }
+    .navbar-link{
+        font-size:15px; 
+        font-weight:600;
+    }
+    .clients-list{
+        padding:10px 16px;
+    }
+    .testimonials-list{
+        padding-bottom:0 !important;
+    }
+    .clients-title{
+        padding-bottom:15px;
     }
 }
