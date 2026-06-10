@@ -94,18 +94,22 @@ html {
 body {
     background: var(--smoky-black);
 }
+
 /*==========================================================================
   # REUSED STYLE
 ============================================================================*/
 .sidebar,
 article {
     background: var(--eerie-black-2);
-    border: 1px solid var(--jet);
+    border: 1px solid rgba(255, 219, 108, 0.15);
     border-radius: 20px;
     padding: 15px;
-    box-shadow: var(--shadow-1);
     z-index: 1;
 }
+    article:hover {
+        border-color: #ffdb6c;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .35), 0 0 30px rgba(255, 219, 108, .12);
+    }
 
 .separator {
     width: 100%;
@@ -578,11 +582,13 @@ main {
     }
 
     .service-item:hover {
-        box-shadow: var(--shadow-4);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .35), 0 0 30px rgba(255, 219, 108, .12);
+        border: 1px solid #ffdb6c;
     }
 
         .service-item:hover::before {
             background: var(--bg-gradient-yellow-2);
+           
         }
 
 .service-icon-box {
