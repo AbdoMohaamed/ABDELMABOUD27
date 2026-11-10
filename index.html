@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,53 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Full Stack Developer | Abdelmaboud Mohamed </title>
+    <title>Abdelmaboud Mohamed | Senior Full Stack .NET Developer</title>
 
     <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/redesign.css" rel="stylesheet" media="screen" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Seo -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
     <meta name="author" content="Abdelmaboud Mohamed">
-    <meta name="description" content="Experienced Full Stack .NET Developer with expertise in ASP.NET MVC, web development, and Azure. Explore my projects and skills in software development.">
-    <meta name="keywords" content="Full Stack Developer, .NET Developer, ASP.NET MVC, C#, Web Development,  Front-end Developer  ,Azure, JavaScript, SQL, Portfolio">
+    <meta name="description" content="Portfolio and CV of Abdelmaboud Mohamed, Senior Full Stack .NET Developer in Riyadh, Saudi Arabia. Expertise in C#, ASP.NET Core, SQL Server, Clean Architecture, and Azure.">
+    <meta name="keywords" content="Abdelmaboud Mohamed, Senior .NET Developer, Full Stack Developer, ASP.NET Core, C#, Web APIs, SQL Server, Riyadh, Saudi Arabia, Portfolio, CV">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Full Stack .NET Developer | Abdelmaboud Mohamed">
-    <meta property="og:title" content="Full Stack .NET Developer | Abdelmaboud Mohamed">
-    <meta property="og:description" content="Explore the portfolio of Abdelmaboud Mohamed, a Full Stack .NET Developer with expertise in ASP.NET MVC, C#, and Azure.">
-    <meta property="og:images" content="https://abdomohaamed.github.io/ABDELMABOUD27/assets/images/Abdo.jpg">
+    <meta property="og:site_name" content="Abdelmaboud Mohamed | Senior Full Stack .NET Developer">
+    <meta property="og:title" content="Abdelmaboud Mohamed | Senior Full Stack .NET Developer">
+    <meta property="og:description" content="Explore the portfolio and resume of Abdelmaboud Mohamed - Senior Full Stack .NET Developer delivering scalable enterprise applications.">
+    <meta property="og:image" content="https://abdomohaamed.github.io/ABDELMABOUD27/assets/images/Abdo.jpg">
     <meta property="og:url" content="https://abdomohaamed.github.io/ABDELMABOUD27">
-    <!-- Twitter -->
-    <meta name="twitter:title" content="Full Stack .NET Developer  | Abdelmaboud Mohamed">
-    <meta name="twitter:description" content="Explore the portfolio of Abdelmaboud Mohamed, a Full Stack .NET Developer with expertise in ASP.NET MVC, C#, and Azure.">
-    <meta name="twitter:images" content="https://abdomohaamed.github.io/ABDELMABOUD27/assets/images/Abdo.jpg">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="images/x-icon">
-  
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abdelmaboud Mohamed | Senior Full Stack .NET Developer">
+    <meta name="twitter:description" content="Explore the portfolio and resume of Abdelmaboud Mohamed - Senior Full Stack .NET Developer.">
+    <meta name="twitter:image" content="https://abdomohaamed.github.io/ABDELMABOUD27/assets/images/Abdo.jpg">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <style media="print">.site-header, .skip-link, .conversation-banner, .site-footer, .reading-progress { display: none !important; }</style>
 </head>
 
 <body>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+    <!-- Toast Notification for Quick Copy -->
+    <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
+        <ion-icon name="checkmark-circle"></ion-icon>
+        <span class="toast-text">Copied to clipboard!</span>
+    </div>
+
+    <!-- Floating Quick Actions -->
+    <div class="floating-actions">
+        <button class="back-to-top-btn" id="backToTopBtn" title="Back to top">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </button>
+        <a href="https://wa.me/201013470551" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" title="Chat on WhatsApp">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            <span class="whatsapp-tooltip">Chat on WhatsApp</span>
+        </a>
+    </div>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <a class="wordmark" href="./" aria-label="Abdelmaboud home"><span class="brand-symbol">am<span>.</span></span><span class="brand-label">ABDELMABOUD<br><small>DEVELOPER PORTFOLIO</small></span></a>
+        <span class="header-location">Riyadh, Saudi Arabia <span class="location-dot"></span></span>
+        <a class="header-contact" href="mailto:abdomohamed2751@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    </header>
     <main>
+        <!-- ==================== SIDEBAR ==================== -->
         <aside class="sidebar" data-sidebar>
 
             <div class="sidebar-info">
 
-                <figure class="avatar-box">
-                    <img src="./assets/images/Abdo.jpg" style="border-radius: 30px;" alt="Alfaizkhan Pathan" width="80">
+                <figure class="avatar-box" data-tilt>
+                    <img src="./assets/images/Abdo.jpg" alt="Abdelmaboud Mohamed" width="80">
+                    <span class="avatar-status-dot" title="Available for opportunities"></span>
                 </figure>
+
                 <div class="info-content">
-                    <h1 class="name" title="Abdelmaboud Mohamed">Abdelmaboud <br /> Mohamed </h1>
-                    <p class="title">Full Stack .Net Developer </p>
+                    <h1 class="name" title="Abdelmaboud Mohamed">Abdelmaboud <br /> Mohamed</h1>
+                    <p class="title">Senior Full Stack .NET Developer</p>
                     <p class="experience-badge">
-                        4+ Years Experience
+                        5+ Years Experience
                     </p>
+                    <div class="availability-pill">
+                        <span class="dot"></span> Available for Hire
+                    </div>
                 </div>
 
                 <button class="info_more-btn" data-sidebar-btn>
                     <span>Show Contacts</span>
-
                     <ion-icon name="chevron-down"></ion-icon>
                 </button>
 
@@ -65,58 +98,45 @@
                 <ul class="contacts-list">
 
                     <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="icon-box">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Email</p>
+                                <a href="mailto:abdomohamed2751@gmail.com" class="contact-link">abdomohamed2751@gmail.com</a>
+                            </div>
                         </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Email</p>
-
-                            <a href="mailto:abdomohamed2751@gmail.com" class="contact-link">abdomohamed2751@gmail.com</a>
-                        </div>
-
+                        <button class="copy-btn" data-copy="abdomohamed2751@gmail.com" title="Copy Email">
+                            <ion-icon name="copy-outline"></ion-icon>
+                        </button>
                     </li>
 
                     <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="icon-box">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Phone</p>
+                                <a href="tel:+201013470551" class="contact-link">+20 1013470551</a>
+                            </div>
                         </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Phone</p>
-
-                            <a href="tel:+201013470551" class="contact-link">+20 1013470551</a>
-                        </div>
-
+                        <button class="copy-btn" data-copy="+201013470551" title="Copy Phone">
+                            <ion-icon name="copy-outline"></ion-icon>
+                        </button>
                     </li>
 
                     <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="calendar-outline"></ion-icon>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="icon-box">
+                                <ion-icon name="location-outline"></ion-icon>
+                            </div>
+                            <div class="contact-info">
+                                <p class="contact-title">Location</p>
+                                <address>Riyadh, Saudi Arabia</address>
+                            </div>
                         </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Birthday</p>
-
-                            <time datetime="1998-05-27">May 05, 1998</time>
-                        </div>
-
-                    </li>
-
-                    <li class="contact-item">
-
-                        <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Location</p>
-                            <address>Riyadh ,  Saudi Arabia</address>
-                        </div>
-
                     </li>
 
                 </ul>
@@ -126,616 +146,519 @@
                 <ul class="social-list">
 
                     <li class="social-item">
-                        <a href="https://github.com/AbdoMohaamed" target="_blank" class="social-link">
+                        <a href="https://github.com/AbdoMohaamed" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
                             <ion-icon name="logo-github"></ion-icon>
                         </a>
                     </li>
 
                     <li class="social-item">
-                        <a href="https://www.linkedin.com/in/abdo-mohamed-2277b1191/" target="_blank" class="social-link">
+                        <a href="https://www.linkedin.com/in/abdo-mohamed-2277b1191/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </a>
                     </li>
 
                     <li class="social-item">
-                        <a href="https://www.instagram.com/abdo_mohamed275/" target="_blank" class="social-link">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                    </li>
-                    <li class="social-item">
-                        <a href="https://wa.me/+201013470551" target="_blank" class="social-link">
+                        <a href="https://wa.me/201013470551" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">
                             <ion-icon name="logo-whatsapp"></ion-icon>
                         </a>
                     </li>
+
+                    <li class="social-item">
+                        <a href="https://www.instagram.com/abdo_mohamed275/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
                 </ul>
 
                 <a href="https://drive.google.com/file/d/1QOYCwKpqWnF85dwzb5TD34j0w3a305QF/view?usp=drive_link"
+                   target="_blank" rel="noopener noreferrer"
                    class="cv-btn">
-                  Resume
+                   <ion-icon name="document-text-outline" style="display:inline-block; vertical-align: middle; margin-right: 6px; font-size: 18px;"></ion-icon> Download Resume
                 </a>
 
             </div>
 
         </aside>
-        <!---------------------------------------------   main-content   -------------------------------------------->
-        <div class="main-content">
-            <nav class="navbar">
 
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <div class="main-content" id="main-content" tabindex="-1">
+
+            <!-- Navbar -->
+            <nav class="navbar" aria-label="Main navigation">
                 <ul class="navbar-list">
-
                     <li class="navbar-item">
-                        <button class="navbar-link  active" data-nav-link>About</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Resume</button>
-                    </li>
-
-                    <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Portfolio</button>
+                        <button class="navbar-link active" data-nav-link data-nav-link-target="about">About</button>
                     </li>
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Contact</button>
+                        <button class="navbar-link" data-nav-link data-nav-link-target="resume">Resume</button>
                     </li>
-
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link data-nav-link-target="portfolio">Portfolio</button>
+                    </li>
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link data-nav-link-target="contact">Contact</button>
+                    </li>
                 </ul>
-
             </nav>
-            <!---------------------------------------------   ABOUT   -------------------------------------------->
-            <article class="about  active" data-page="about">
+
+            <!-- ==================== ABOUT ARTICLE ==================== -->
+            <article class="about active" data-page="about">
 
                 <header>
-                    <h3 class="h3 article-title">About me</h3>
+                    <p class="eyebrow"><span></span> ENGINEERING IDEAS INTO REALITY</p>
+                    <h2 class="hero-heading">Thoughtful code.<br><em>Meaningful impact.</em></h2>
+                    <p class="hero-description">I’m Abdelmaboud, a Senior Full Stack .NET Developer building reliable digital experiences for ambitious teams.</p>
+                    <div class="hero-actions">
+                        <button class="primary-action" data-page-action="portfolio">Explore my work <span aria-hidden="true">↗</span></button>
+                        <button class="secondary-action" data-page-action="contact">Get in touch <span aria-hidden="true">→</span></button>
+                    </div>
+                    <div class="hero-stack"><span>MY TOOLKIT</span><span>C# / .NET</span><span>Angular</span><span>SQL Server</span><span>Azure</span></div>
                 </header>
-                <section class="about-text">
+
+                <!-- High-Impact Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card" data-tilt>
+                        <div class="stat-number">5+</div>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-card" data-tilt>
+                        <div class="stat-number">19+</div>
+                        <p class="stat-label">Enterprise & Web Apps</p>
+                    </div>
+                    <div class="stat-card" data-tilt>
+                        <div class="stat-number">3</div>
+                        <p class="stat-label">Regional Markets (KSA, EG, KW)</p>
+                    </div>
+                    <div class="stat-card" data-tilt>
+                        <div class="stat-number">.NET</div>
+                        <p class="stat-label">Enterprise Development</p>
+                    </div>
+                </div>
+
+                <section class="selected-work" aria-labelledby="selected-heading">
+  <h3 class="h3 section-heading" id="selected-heading">A few things I’ve built<span>01 / SELECTED WORK</span></h3>
+  <p class="section-intro">Explore the product, my role, and the technology behind it.</p>
+  <div class="featured-grid" id="featuredProjects"></div>
+  <button class="text-action" data-page-action="portfolio">Explore all projects <span aria-hidden="true">↗</span></button>
+</section>
+<section class="about-text">
+                    <h3 class="h3 section-heading">A little about me<span>02 / INTRODUCTION</span></h3>
                     <p>
-                        Hi there! I'm Abdelmaboud, a passionate Full Stack .NET Developer with a strong foundation in both front-end and back-end development. I hold a Bachelor's degree in Computer Science from Modern Academy, and I bring 4+ years of hands-on experience delivering robust and scalable web applications.
+                        Hello! I'm <strong>Abdelmaboud Mohamed</strong>, a Senior Full Stack .NET Developer with <strong>5+ years of hands-on experience</strong> architecting, developing, and delivering robust, secure, and scalable enterprise applications. Currently based in <strong>Riyadh, Saudi Arabia</strong>, working with <strong>Perfect Presentation (2P)</strong> on high-impact digital transformation systems.
+                    </p>
+                    <p>
+                        I hold a Bachelor's degree in Computer Science from Modern Academy, and have a proven track record delivering digital solutions for prominent organizations including <strong>King Saud University</strong>, <strong>Dar Al Ifta Egypt</strong>, and leading enterprise corporations.
                     </p>
 
                     <ul class="about-list">
-                        <li>Strong experience in .NET Framework, ASP.NET MVC, and C#.</li>
-                        <li>Experience with third-party libraries, Stripe Payment Gateway, and APIs.</li>
-                        <li>Proficient in building RESTful APIs and integrating with third-party services (like Stripe).</li>
-                        <li>Strong understanding of the full web application development lifecycle.</li>
-                        <li>Skilled in HTML, CSS, JavaScript, jQuery, and responsive UI design.</li>
-                        <li>Familiar with Git (GitHub, GitLab, Bitbucket), JIRA, and agile workflows.</li>
-                        <li>Solid understanding of the full software development lifecycle, from concept to deployment.</li>
-                        <li>Collaborate effectively with UI/UX designers and QA testers to ensure pixel-perfect and bug-free applications.</li>
-                        <li>Debugging expert – always chasing bugs.</li>
+                        <li><strong>Enterprise .NET Core & Framework:</strong> Deep expertise in C#, ASP.NET Core, ASP.NET MVC, Entity Framework Core, and LINQ.</li>
+                        <li><strong>Architectural Patterns:</strong> Solid practical application of Clean Architecture, Repository Pattern, CQRS, and Dependency Injection.</li>
+                        <li><strong>Secure RESTful APIs:</strong> Designing high-throughput, secure APIs and integrating payment gateways (Stripe, Mada), SMS providers (Nexmo, Cequens, SMSMisr), and email services.</li>
+                        <li><strong>Database Engineering:</strong> Advanced schema design, stored procedures, indexing, and performance tuning on Microsoft SQL Server and MySQL.</li>
+                        <li><strong>Modern Frontend:</strong> Skilled in JavaScript (ES6+), TypeScript, Angular, HTML5, CSS3, Bootstrap, and responsive UI design.</li>
+                        <li><strong>AI & Cloud Integration:</strong> Trained in Microsoft Azure and Azure OpenAI service integration for intelligent workflows.</li>
+                        <li><strong>Agile & DevOps:</strong> Proficient with Git (GitHub, GitLab), CI/CD workflows, Postman, and JIRA.</li>
                     </ul>
                 </section>
-                <!---------------------------------------------   service   -------------------------------------------->
-                <section class="service">
 
-                    <h3 class="h3 article-title">What i'm doing</h3>
+                <!-- Services -->
+                <section class="service">
+                    <h3 class="h3 article-title">What I Do</h3>
 
                     <ul class="service-list">
-                        <li class="service-item">
 
+                        <li class="service-item" data-tilt>
                             <div class="service-icon-box">
-                                <img src="./assets/images/icon-dev.svg" alt="mobile app icon" width="40">
+                                <img src="./assets/images/icon-dev.svg" alt="Development Icon" width="40" loading="lazy" decoding="async">
                             </div>
-
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">
-                                    Web Application Development
-                                </h4>
-
+                                <h4 class="h4 service-item-title">Full Stack Web Development</h4>
                                 <p class="service-item-text">
-                                    Professional development of full-stack web applications using .NET, ASP.NET, and modern web technologies. I build scalable, secure, and high-performance applications tailored to your business needs.
+                                    End-to-end development of enterprise web applications using .NET 8/9, ASP.NET Core, and modern web technologies. Focused on scalability, clean code, and high reliability.
                                 </p>
                             </div>
-
                         </li>
 
-                        <li class="service-item">
-
+                        <li class="service-item" data-tilt>
                             <div class="service-icon-box">
-                                <img src="./assets/images/icon-design.svg" alt="camera icon" width="40">
+                                <img src="./assets/images/icons-database.png" alt="Database Icon" width="40" loading="lazy" decoding="async">
                             </div>
-
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">
-                                    Web Design & UI Development
-                                </h4>
-
+                                <h4 class="h4 service-item-title">Database Design & Query Tuning</h4>
                                 <p class="service-item-text">
-                                    I create responsive, modern, and user-focused web interfaces using HTML, CSS, and JavaScript. Designs are optimized for all devices and built with performance in mind.
+                                    Architecting normalized, high-performance database schemas with SQL Server. Designing complex queries, indexing strategies, and stored procedures for mission-critical data.
                                 </p>
                             </div>
-
                         </li>
-                        <li class="service-item">
 
+                        <li class="service-item" data-tilt>
                             <div class="service-icon-box">
-                                <img src="./assets/images/icons-database.png" alt="camera icon" width="40">
+                                <img src="./assets/images/icon-design.svg" alt="UI Design Icon" width="40" loading="lazy" decoding="async">
                             </div>
-
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Database Design & SQL Server</h4>
-
+                                <h4 class="h4 service-item-title">API Design & Systems Integration</h4>
                                 <p class="service-item-text">
-                                    Expert database design and optimization using SQL Server. I create efficient data structures, complex queries, and ensure database performance and security for enterprise applications.
+                                    Crafting secure RESTful APIs, microservices, and integrating external gateways (payments, e-invoicing, SMS, and cloud notifications) with seamless documentation.
                                 </p>
                             </div>
-
                         </li>
-                        <li class="service-item">
 
+                        <li class="service-item" data-tilt>
                             <div class="service-icon-box">
-                                <img src="./assets/images/icon-app.svg" alt="camera icon" width="40">
+                                <img src="./assets/images/icon-app.svg" alt="Mobile APIs Icon" width="40" loading="lazy" decoding="async">
                             </div>
-
                             <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Mobile Applications</h4>
-
+                                <h4 class="h4 service-item-title">Mobile Backend & Cloud Services</h4>
                                 <p class="service-item-text">
-                                    Development of high-quality mobile applications for Android and iOS platforms. I create user-friendly, performant mobile solutions that integrate seamlessly with backend systems.
+                                    Developing high-performance backends and real-time APIs for iOS and Android mobile applications, backed by Azure cloud infrastructure and automated caching.
                                 </p>
                             </div>
-
                         </li>
+
                     </ul>
-
                 </section>
-                <!---------------------------------------------   testimonials   -------------------------------------------->
-                <section class="testimonials">
 
-                    <h3 class="h3 article-title">
-                        What Clients Say About Me
-                    </h3>
+                <!-- Testimonials -->
+                <section class="testimonials">
+                    <h3 class="h3 article-title">What Clients Say</h3>
 
                     <ul class="testimonials-list">
-
-                        <li class="testimonials-item">
-                            <div class="content-card-clients">
-
+                        <li class="testimonials-item" data-testimonials-item>
+                            <div class="content-card-clients" data-tilt>
                                 <figure class="testimonials-avatar-box">
-                                    <img src="./assets/images/avatar-1.png"
-                                         alt="Client From Kuwait">
+                                    <img src="./assets/images/avatar-1.png" alt="Client From Kuwait" data-testimonials-avatar loading="lazy" decoding="async">
                                 </figure>
-
-                                <h4 class="h4 testimonials-item-title">
-                                    Client From Kuwait
-                                </h4>
-
-                                <div class="testimonials-rating">
-                                    ★★★★★
-                                </div>
-
-                                <div class="testimonials-text">
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>Client From Kuwait</h4>
+                                <div class="testimonials-rating">★★★★★</div>
+                                <div class="testimonials-text" data-testimonials-text>
                                     <p>
-                                        عبدو شخص رائع ومحترف، قام بإكمال العمل في الوقت المحدد،
-                                        وقام بالإبداع ونفّذ كافة التعديلات على أكمل وجه دون ملل أو كلل.
-                                        أشكرك جزيل الشكر وأنصح الجميع بالتعامل معه لأنه يستحق عن جدارة.
+                                        عبدو شخص رائع ومحترف، قام بإكمال العمل في الوقت المحدد، وقام بالإبداع ونفّذ كافة التعديلات على أكمل وجه دون ملل أو كلل. أشكرك جزيل الشكر وأنصح الجميع بالتعامل معه لأنه يستحق عن جدارة.
                                     </p>
                                 </div>
-
                             </div>
                         </li>
-
                     </ul>
-
                 </section>
-                <!---------------------------------------------   clients   -------------------------------------------->
+
+                <!-- Infinite Clients Marquee -->
                 <section class="clients">
+                    <h3 class="h3 article-title">Trusted By & Collaborations</h3>
 
-                    <h3 class="h3 article-title">Clients</h3>
-
-                    <ul class="clients-list">
-
-                        <li class="clients-item">
-                            <a href="#" target="_blank">
-                                <img src="assets/images/daralifta.png" alt="Dar Al Ifta Egypt">
+                    <div class="clients-marquee-container">
+                        <div class="clients-marquee-track">
+                            <!-- Set 1 -->
+                            <a href="https://www.dar-alifta.org" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/daralifta.png" alt="Dar Al Ifta Egypt" loading="lazy" decoding="async">
                                 <span>Dar Al Ifta Egypt</span>
                             </a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#" target="_blank">
-                                <img src="assets/images/ksu.svg" alt="King Saud University">
+                            <a href="https://ksu.edu.sa" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/ksu.svg" alt="King Saud University" loading="lazy" decoding="async">
                                 <span>King Saud University</span>
                             </a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#" target="_blank">
-                                <img src="assets/images/restful.png" alt="Restful">
-                                <span>Restful</span>
+                            <a href="https://restfuleg.com" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/restful.png" alt="Restful ERP" loading="lazy" decoding="async">
+                                <span>Restful ERP</span>
                             </a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#" target="_blank">
-                                <img src="assets/images/voipegypt.png" alt="VOIP Egypt">
+                            <a href="https://voipegypt.net" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/voipegypt.png" alt="VOIP Egypt" loading="lazy" decoding="async">
                                 <span>VOIP Egypt</span>
                             </a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="#" target="_blank">
-                                <img src="assets/images/buccino.png" alt="Buccino Kuwait">
+                            <a href="https://buccinokw.com" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/buccino.png" alt="Buccino Kuwait" loading="lazy" decoding="async">
                                 <span>Buccino Kuwait</span>
                             </a>
-                        </li>
 
-                    </ul>
-
+                            <!-- Set 2 (for continuous seamless looping) -->
+                            <a href="https://www.dar-alifta.org" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/daralifta.png" alt="Dar Al Ifta Egypt" loading="lazy" decoding="async">
+                                <span>Dar Al Ifta Egypt</span>
+                            </a>
+                            <a href="https://ksu.edu.sa" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/ksu.svg" alt="King Saud University" loading="lazy" decoding="async">
+                                <span>King Saud University</span>
+                            </a>
+                            <a href="https://restfuleg.com" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/restful.png" alt="Restful ERP" loading="lazy" decoding="async">
+                                <span>Restful ERP</span>
+                            </a>
+                            <a href="https://voipegypt.net" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/voipegypt.png" alt="VOIP Egypt" loading="lazy" decoding="async">
+                                <span>VOIP Egypt</span>
+                            </a>
+                            <a href="https://buccinokw.com" target="_blank" rel="noopener noreferrer" class="client-logo-card">
+                                <img src="assets/images/buccino.png" alt="Buccino Kuwait" loading="lazy" decoding="async">
+                                <span>Buccino Kuwait</span>
+                            </a>
+                        </div>
+                    </div>
                 </section>
-                <!---------------------------------------------   testimonials   -------------------------------------------->
-                <div class="modal-container" data-modal-container>
 
-                    <div class="overlay" data-overlay></div>
 
-                    <section class="testimonials-modal">
 
-                        <button class="modal-close-btn" data-modal-close-btn>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
+            <section class="working-together" aria-labelledby="working-heading">
+  <h3 class="h3 section-heading" id="working-heading">Start with a conversation<span>03 / NEXT STEPS</span></h3>
+  <div class="process-grid">
+    <div><span class="step-number">01</span><h4>Tell me what you need</h4><p>A product idea, a technical challenge, or a role on your team. A short introduction is enough.</p></div>
+    <div><span class="step-number">02</span><h4>Let’s explore the fit</h4><p>We can discuss your goals, existing systems, and the expertise your project needs.</p></div>
+    <div><span class="step-number">03</span><h4>Define the next step</h4><p>Align on scope, priorities, and expectations before moving forward.</p></div>
+  </div>
+  <div class="quick-faq">
+    <details><summary>What should I include in my first message?</summary><p>Your goal, the help you need, and any timeline you have in mind. You don’t need a finished specification to start.</p></details>
+    <details><summary>Can I get in touch about a full-time role?</summary><p>Yes. Choose “Hiring / team opportunity” in the contact form and share the role, team, and location or remote setup.</p></details>
+    <details><summary>Can we discuss an existing application?</summary><p>Yes. Tell me about your current stack and the feature, integration, or performance challenge you want to discuss.</p></details>
+  </div>
+</section></article>
 
-                        <div class="modal-img-wrapper">
-                            <figure class="modal-avatar-box">
-                                <img src="./assets/images/avatar-1.png" alt="Client From Kuwait" width="80" data-modal-img>
-                            </figure>
-
-                            <img src="./assets/images/icon-quote.svg" alt="quote icon">
-                        </div>
-
-                        <div class="modal-content">
-
-                            <h4 class="h3 modal-title" data-modal-title>Client From Kuwait</h4>
-
-                            <time datetime="2022-10-30">30 Oct, 2022</time>
-
-                            <div data-modal-text>
-                                <p>
-                                    عبدو شخص رائع ومحترف، قام بإكمال العمل في الوقت المحدد، وقام بالإبداع ونفّذ كافة التعديلات على أكمل وجه دون ملل أو كلل، أشكرك جزيل الشكر وأنصح الجميع بالتعامل معه لأنه يستحق عن جدارة
-
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </section>
-
-                </div>
-
-            </article>
-            <!--
-          - #RESUME
-        -->
+            <!-- ==================== RESUME ARTICLE ==================== -->
             <article class="resume" data-page="resume">
 
-                <header>
-                    <h2 class="h2 article-title">Resume</h2>
+                <!-- Header with Print ATS CV action -->
+                <header class="resume-header">
+                    <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
+                    <button class="print-cv-btn" id="printCvBtn" title="Print or save as clean ATS-ready PDF">
+                        <ion-icon name="print-outline"></ion-icon>
+                        <span>Print ATS CV</span>
+                    </button>
                 </header>
-                <section class="timeline">
 
+                <!-- Print-Only Header (visible only on paper / PDF export) -->
+                <div class="print-header">
+                    <h1>Abdelmaboud Mohamed</h1>
+                    <p><strong>Senior Full Stack .NET Developer</strong> · Riyadh, Saudi Arabia</p>
+                    <div class="print-header-contacts">
+                        <span>Email: abdomohamed2751@gmail.com</span>
+                        <span>Phone: +20 1013470551</span>
+                        <span>LinkedIn: linkedin.com/in/abdo-mohamed-2277b1191</span>
+                        <span>GitHub: github.com/AbdoMohaamed</span>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <section class="timeline">
                     <div class="title-wrapper">
                         <div class="icon-box">
-                            <ion-icon name="book-outline"></ion-icon>
+                            <ion-icon name="briefcase-outline"></ion-icon>
                         </div>
-
                         <h3 class="h3">Work Experience</h3>
                     </div>
 
                     <ol class="timeline-list">
-                        
+
                         <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title"> Perfect Presentation (2P) </h4>
-                            <span>
-                                SR. FULL-STACK .NET DEVELOPER
-                            </span>
-                            <span>10/2025 — Present (Full-Time on-site)</span>
-
+                            <h4 class="h4 timeline-item-title">Perfect Presentation (2P)</h4>
+                            <span>SR. FULL-STACK .NET DEVELOPER</span>
+                            <span>10/2025 — Present (Full-Time on-site · Riyadh, Saudi Arabia)</span>
                             <p class="timeline-text">
-                                Working on enterprise-scale digital solutions at Perfect Presentation (2P), delivering secure and scalable web applications using ASP.NET MVC, .NET Framework, SQL Server, JavaScript, and RESTful APIs.
-                                <span class="highlight"> Highlights:</span>
-                                 Built and maintained business-critical web applications.
-                                <br>Integrated payment gateways, SMS providers, and email services.
-                                <br>Developed secure authentication and user management systems.
-                                <br>Designed and consumed RESTful APIs for cross-platform integrations.
-                                <br>Improved application performance and database efficiency.
-                                <br>Collaborated with cross-functional teams to deliver high-quality software solutions.
-
+                                Contributing to large-scale enterprise digital solutions at Perfect Presentation (2P), delivering secure and scalable web platforms using ASP.NET Core, .NET Framework, SQL Server, and RESTful APIs.
+                                <br><span class="highlight">Key Contributions:</span>
+                                <br>• Built and maintained business-critical web applications serving thousands of enterprise and government users.
+                                <br>• Integrated payment gateways, SMS notification providers, and automated email services.
+                                <br>• Developed secure authentication, session management, and role-based access control (RBAC).
+                                <br>• Designed and consumed high-performance RESTful APIs for cross-platform web and mobile integrations.
+                                <br>• Optimized SQL Server queries and database indexing, enhancing application performance and responsiveness.
+                                <br>• Collaborated closely in agile cross-functional teams to deliver enterprise-grade software solutions.
                             </p>
-
                         </li>
 
                         <li class="timeline-item">
-
                             <h4 class="h4 timeline-item-title">Sig Smart Technology</h4>
-                            <span>
-                                SR. FULL-STACK .NET DEVELOPER
-                            </span>
-                            <span>05/2022 — 10/2025 </span>
-
+                            <span>SR. FULL-STACK .NET DEVELOPER</span>
+                            <span>05/2022 — 10/2025 (Full-Time)</span>
                             <p class="timeline-text">
-                                A results-driven and detail-oriented .NET Developer with a strong foundation in ASP.NET MVC, Entity Framework, and SQL Server, combined with hands-on experience in modern front-end frameworks. Passionate about building scalable, secure, and user-friendly web applications.
-                                <br>At SIG Smart Technology, I contributed to designing and implementing full-stack solutions, integrating third-party APIs (e.g., SMS, email, payment), and optimizing
-                                <br>Implementing secure authentication flows (login, registration, OTP, forgot password).
-                                <br>Integrating SMS gateways (Nexmo, Cequens, SMSMisr) and email services using SMTP and OAuth.
-                                <br>Applying clean architecture with Repository & Dependency Injection patterns.
+                                Spearheaded the design and implementation of full-stack .NET web applications with ASP.NET MVC, Entity Framework, and SQL Server.
+                                <br><span class="highlight">Key Contributions:</span>
+                                <br>• Applied Clean Architecture with Repository and Dependency Injection patterns for modular, maintainable code.
+                                <br>• Engineered secure authentication workflows including multi-factor authentication, OTP verification, and password resets.
+                                <br>• Integrated third-party SMS gateways (Nexmo, Cequens, SMSMisr) and automated email dispatchers via OAuth and SMTP.
+                                <br>• Optimized relational databases and query execution plans for high-traffic environments.
                             </p>
-
                         </li>
 
                         <li class="timeline-item">
                             <h4 class="h4 timeline-item-title">Arabian</h4>
-                            <span>
-                                JR. FULL-STACK .NET DEVELOPER
-                            </span>
-                            <span>12/2020 - 04/2022 (Full-Time on-site)</span>
+                            <span>FULL-STACK .NET DEVELOPER</span>
+                            <span>12/2020 — 04/2022 (Full-Time on-site)</span>
                             <p class="timeline-text">
-                                My responsibility was to create and design websites and create Apis for mobile applications. The company was basically creating and developing Erp systems and we were creating programs that integrated with the invoice and electronic receipt systems.
-                                <br>
-                                Skills: APIs · Integration · ASP.NET · C# · MVC · HTML · CSS · JavaScript · jQuery
+                                Responsible for developing and enhancing web portals and building RESTful APIs consumed by mobile applications.
+                                <br><span class="highlight">Key Contributions:</span>
+                                <br>• Developed modules for ERP systems and integrated software with electronic invoicing and e-receipt government portals.
+                                <br>• Designed dynamic and responsive web interfaces using ASP.NET, C#, JavaScript, jQuery, and Bootstrap.
                             </p>
-
                         </li>
 
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Albait design</h4>
-                            <span>
-                                JR. FULL-STACK .NET DEVELOPER
-                            </span>
-                            <span>01/2020 - 11/2020 (Part-Time Remote)</span>
-
+                            <h4 class="h4 timeline-item-title">Albait Design</h4>
+                            <span>JUNIOR FULL-STACK .NET DEVELOPER</span>
+                            <span>01/2020 — 11/2020 (Part-Time Remote)</span>
                             <p class="timeline-text">
-                                Work in Server Side (DataTable ) Create Report and make buttons to esay print and search about thing in page by use Crud operation with , Ajax , Javascript , jquery method in asp.net
-                                <br>
-                                Skills: APIs · Integration · ASP.NET · C# · MVC · HTML · CSS · JavaScript · jQuery
+                                Developed server-side DataTables, real-time search filters, and automated reporting modules with streamlined export and printing. Implemented full CRUD operations and asynchronous communication using ASP.NET MVC, Ajax, and jQuery.
                             </p>
-
                         </li>
 
                     </ol>
-
-                </section>
-                <section class="timeline">
-
-                    <div class="title-wrapper">
-                        <div class="icon-box">
-                            <ion-icon name="book-outline"></ion-icon>
-                        </div>
-
-                        <h3 class="h3">Training and Workshops Experience</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Azure Open Ai</h4>
-                            <span>Microsoft</span>
-
-                            <span>2024</span>
-
-                            <p class="timeline-text">
-                                Completed a specialized training in Azure OpenAI, gaining practical experience in deploying and managing AI models using Microsoft Azure's cloud platform. Acquired skills in integrating OpenAI services for natural language processing, machine learning, and advanced data analysis.
-                            </p>
-
-                        </li>
-
-
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">
-                                Web Designer Trainee
-                            </h4>
-                            <span>National Telecommunication Institute</span>
-
-                            <span>11/2020 - 01/2021</span>
-
-                            <p class="timeline-text">
-                                The training provided by the National Telecommunications Institute (INEC) focused on web design using design languages HTML, CSS, JS, and BootStrap.
-                            </p>
-
-                        </li>
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Full Stack Developer Trainee</h4>
-
-                            <span>  Russian Cultural Center</span>
-
-                            <span>04/2020 – 10/2020</span>
-
-                            <p class="timeline-text">
-                                The training provided by the Russian Cultural Center focused on web design using
-                                design languages HTML, CSS, JS , BootStrap , C# , .Net Framework and Object
-                                Oriented Analysis and Design .
-                            </p>
-
-                        </li>
-                        <li class="timeline-item">
-
-                            <h4 class="h4 timeline-item-title">Full Stack Developer Trainee</h4>
-                            <span>Elaraby Group</span>
-                            <span>06/2019 — 01/2020</span>
-                            <p class="timeline-text">
-                                Participated in a hands-on training program focused on developing full-stack web
-                                applications using Microsoft technologies. The training covered both frontend and
-                                backend development along with database design and integration.
-                            </p>
-
-                        </li>
-                    </ol>
-
                 </section>
 
+                <!-- Education -->
                 <section class="timeline">
-
                     <div class="title-wrapper">
                         <div class="icon-box">
-                            <ion-icon name="book-outline"></ion-icon>
+                            <ion-icon name="school-outline"></ion-icon>
                         </div>
-
                         <h3 class="h3">Education</h3>
                     </div>
 
                     <ol class="timeline-list">
-
                         <li class="timeline-item">
-
                             <h4 class="h4 timeline-item-title">Modern Academy</h4>
-
+                            <span>Bachelor of Science in Computer Science</span>
                             <span>2016 — 2020</span>
-
                             <p class="timeline-text">
-                                Bachelor of Computer Scince, Modern Academy
-                                <br>
-                                Overall Grade : (Good)
-                                <br>
-                                Graduation Project Grade : A +
-
+                                Comprehensive study in computer science fundamentals, data structures, algorithms, and software engineering.
+                                <br>• <strong>Overall Grade:</strong> Good
+                                <br>• <strong>Graduation Project:</strong> Excellent (Grade: A+)
                             </p>
-
                         </li>
                     </ol>
-
                 </section>
 
+                <!-- Training & Certifications -->
+                <section class="timeline">
+                    <div class="title-wrapper">
+                        <div class="icon-box">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3">Training & Certifications</h3>
+                    </div>
+
+                    <ol class="timeline-list">
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Azure OpenAI Service</h4>
+                            <span>Microsoft · 2024</span>
+                            <p class="timeline-text">
+                                Practical training in deploying and managing AI models using Microsoft Azure cloud platform, integrating OpenAI models for NLP, automated processing, and generative AI solutions.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Web Design & Frontend Development</h4>
+                            <span>National Telecommunication Institute (NTI) · 11/2020 — 01/2021</span>
+                            <p class="timeline-text">
+                                Specialized intensive training focusing on modern web design, responsive layouts, semantic HTML5, CSS3, JavaScript, and Bootstrap.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Full Stack Developer Trainee</h4>
+                            <span>Russian Cultural Center · 04/2020 — 10/2020</span>
+                            <p class="timeline-text">
+                                Advanced training covering C#, .NET Framework, Object-Oriented Analysis and Design (OOAD), SQL Server, and web application architecture.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title">Full Stack Developer Trainee</h4>
+                            <span>Elaraby Group · 06/2019 — 01/2020</span>
+                            <p class="timeline-text">
+                                Hands-on training developing enterprise web applications with Microsoft technologies, database modeling, and team collaboration.
+                            </p>
+                        </li>
+
+                    </ol>
+                </section>
+
+                <!-- Modern Categorized Skills -->
                 <section class="skill">
+                    <h3 class="h3 skills-title">Technical Skills & Expertise</h3>
 
-                    <h3 class="h3 skills-title">My skills</h3>
+                    <div class="skills-container">
 
-                    <ul class="skills-list content-card">
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">HTML</h5>
-                                <data value="100">100%</data>
+                        <!-- Backend & Architecture -->
+                        <div class="skills-category" data-tilt>
+                            <div class="skills-category-header">
+                                <div class="skills-category-icon">
+                                    <ion-icon name="code-slash-outline"></ion-icon>
+                                </div>
+                                <h4 class="skills-category-title">Backend & Architecture</h4>
                             </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 100%;"></div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">.NET 8 / 9</span>
+                                <span class="skill-tag">ASP.NET Core</span>
+                                <span class="skill-tag">ASP.NET MVC</span>
+                                <span class="skill-tag">Entity Framework Core</span>
+                                <span class="skill-tag">LINQ</span>
+                                <span class="skill-tag">RESTful APIs</span>
+                                <span class="skill-tag">Clean Architecture</span>
+                                <span class="skill-tag">Repository Pattern</span>
+                                <span class="skill-tag">Dependency Injection</span>
                             </div>
+                        </div>
 
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">CSS</h5>
-                                <data value="100">100%</data>
+                        <!-- Databases & Caching -->
+                        <div class="skills-category" data-tilt>
+                            <div class="skills-category-header">
+                                <div class="skills-category-icon">
+                                    <ion-icon name="server-outline"></ion-icon>
+                                </div>
+                                <h4 class="skills-category-title">Databases & Storage</h4>
                             </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 100%;"></div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">SQL Server (T-SQL)</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Stored Procedures</span>
+                                <span class="skill-tag">Database Indexing</span>
+                                <span class="skill-tag">Query Optimization</span>
+                                <span class="skill-tag">Database Modeling</span>
                             </div>
+                        </div>
 
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Java Script</h5>
-                                <data value="100">100%</data>
+                        <!-- Cloud, AI & Tools -->
+                        <div class="skills-category" data-tilt>
+                            <div class="skills-category-header">
+                                <div class="skills-category-icon">
+                                    <ion-icon name="cloud-outline"></ion-icon>
+                                </div>
+                                <h4 class="skills-category-title">Cloud, AI & Integrations</h4>
                             </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 100%;"></div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Microsoft Azure</span>
+                                <span class="skill-tag">Azure OpenAI</span>
+                                <span class="skill-tag">Payment Gateways (Stripe)</span>
+                                <span class="skill-tag">SMS Providers (Nexmo, SMSMisr)</span>
+                                <span class="skill-tag">E-Invoicing Systems</span>
+                                <span class="skill-tag">Git / GitHub / GitLab</span>
+                                <span class="skill-tag">Postman</span>
+                                <span class="skill-tag">JIRA</span>
                             </div>
+                        </div>
 
-                        </li>
-
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">C#</h5>
-                                <data value="95">95%</data>
+                        <!-- Frontend & UI -->
+                        <div class="skills-category" data-tilt>
+                            <div class="skills-category-header">
+                                <div class="skills-category-icon">
+                                    <ion-icon name="desktop-outline"></ion-icon>
+                                </div>
+                                <h4 class="skills-category-title">Frontend & UI Development</h4>
                             </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 95%;"></div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">JavaScript (ES6+)</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">Angular</span>
+                                <span class="skill-tag">HTML5 & CSS3</span>
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">jQuery / Ajax</span>
+                                <span class="skill-tag">Responsive UI/UX</span>
                             </div>
+                        </div>
 
-                        </li>
-
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">.Net Framework</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 90%;"></div>
-                            </div>
-
-                        </li>
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">.Net Core</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 90%;"></div>
-                            </div>
-
-                        </li>
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">SQL Server</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 90%;"></div>
-                            </div>
-
-                        </li>
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">MySQL</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 90%;"></div>
-                            </div>
-
-                        </li>
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">Angular</h5>
-                                <data value="50">50%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 50%;"></div>
-                            </div>
-
-                        </li>
-                        <li class="skills-item">
-
-                            <div class="title-wrapper">
-                                <h5 class="h5">PHP</h5>
-                                <data value="50">50%</data>
-                            </div>
-
-                            <div class="skill-progress-bg">
-                                <div class="skill-progress-fill" style="width: 50%;"></div>
-                            </div>
-
-                        </li>
-                    </ul>
-
+                    </div>
                 </section>
 
             </article>
-            <!--
-          - #PORTFOLIO
-        -->
 
+            <!-- ==================== PORTFOLIO ARTICLE ==================== -->
             <article class="portfolio" data-page="portfolio">
 
                 <header>
@@ -744,375 +667,611 @@
 
                 <section class="projects">
 
-                    <ul class="filter-list">
+                    <!-- Modern Portfolio Controls (Search & Filters) -->
+                    <div class="portfolio-controls">
 
-                        <li class="filter-item">
-                            <button class="active" data-filter-btn>All</button>
-                        </li>
+                        <div class="portfolio-search-box">
+                            <ion-icon name="search-outline"></ion-icon>
+                            <input type="text" id="projectSearch" aria-label="Search projects by name or technology" class="portfolio-search-input" placeholder="Search by project name or technology (e.g. Stripe, ERP, Azure, SQL)...">
+                            <button class="search-clear-btn" id="searchClearBtn" title="Clear search">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </button>
+                        </div>
 
-                        <li class="filter-item">
-                            <button data-filter-btn>web development</button>
-                        </li>
-
-                        <li class="filter-item">
-                            <button data-filter-btn>Mobile Development</button>
-                        </li>
-
-                    </ul>
-
-                    <div class="filter-select-box">
-
-                        <button class="filter-select" data-select>
-
-                            <div class="select-value" data-selecct-value>Select category</div>
-
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-
-                        </button>
-
-                        <ul class="select-list">
-
-                            <li class="select-item">
-                                <button data-select-item>All</button>
+                        <!-- Filter buttons (Desktop) -->
+                        <ul class="filter-list">
+                            <li class="filter-item">
+                                <button class="active" data-filter-btn data-category-target="all">All</button>
                             </li>
-
-                            <li class="select-item">
-                                <button data-select-item>web development</button>
+                            <li class="filter-item">
+                                <button data-filter-btn data-category-target="web development">Web Development</button>
                             </li>
-
-                            <li class="select-item">
-                                <button data-select-item>Mobile Development</button>
+                            <li class="filter-item">
+                                <button data-filter-btn data-category-target="mobile development">Mobile Development</button>
                             </li>
-
                         </ul>
+
+                        <!-- Filter dropdown (Mobile) -->
+                        <div class="filter-select-box">
+                            <button class="filter-select" data-select>
+                                <div class="select-value" data-select-value>Select category</div>
+                                <div class="select-icon">
+                                    <ion-icon name="chevron-down"></ion-icon>
+                                </div>
+                            </button>
+
+                            <ul class="select-list">
+                                <li class="select-item">
+                                    <button data-select-item data-category-target="all">All</button>
+                                </li>
+                                <li class="select-item">
+                                    <button data-select-item data-category-target="web development">Web Development</button>
+                                </li>
+                                <li class="select-item">
+                                    <button data-select-item data-category-target="mobile development">Mobile Development</button>
+                                </li>
+                            </ul>
+                        </div>
 
                     </div>
 
+                    <!-- No projects found state -->
+                    <div class="no-projects-found" id="noProjectsFound" style="display: none;">
+                        <ion-icon name="folder-open-outline"></ion-icon>
+                        <p>No projects match your search criteria.</p>
+                        <button class="reset-filter-btn" id="resetFilterBtn">Reset Filters</button>
+                    </div>
+
+                    <p id="projectResultCount" class="section-intro" role="status" aria-live="polite"></p>
+                    <!-- Projects Grid -->
                     <ul class="project-list">
 
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="http://dar-alifta.org">
-
+                        <!-- 1. Dar-Alifta Arabic -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Dar-Alifta Arabic Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/daralifta.jpg"
+                            data-project-role="Lead Full-Stack .NET Developer"
+                            data-project-desc="High-availability official portal serving millions of monthly visitors across the Arab and Islamic world. Engineered the dynamic CMS, high-concurrency fatwa searching, automated archiving, and SQL Server indexing with high uptime and strict data integrity."
+                            data-project-tech="ASP.NET MVC, C#, SQL Server, REST API, jQuery, Bootstrap, Performance Tuning"
+                            data-project-url="https://www.dar-alifta.org"
+                            data-project-type="live"
+                            data-tilt>
+                            <a href="https://www.dar-alifta.org">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/daralifta.jpg" alt="دار الافتاء" loading="lazy">
+                                    <img src="./assets/images/daralifta.jpg" alt="Dar-Alifta Arabic" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Dar-Alifta Arabic</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Dar-Alifta Arabic Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>C#</span>
+                                    <span>SQL Server</span>
+                                    <span>REST API</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 2. Mefan -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Mefan Creative Agency"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/mefan.jpg"
+                            data-project-role="Full Stack .NET Developer"
+                            data-project-desc="High-end creative agency portfolio and client management platform based in Saudi Arabia. Implemented custom fluid animations, dynamic portfolio administration, and responsive client lead capture."
+                            data-project-tech="ASP.NET, C#, JavaScript, Bootstrap, UI/UX Design, REST APIs"
+                            data-project-url="https://www.mefan.sa/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://www.mefan.sa/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/mefan.jpg" alt="Mefan Creative Agency" loading="lazy">
+                                    <img src="./assets/images/mefan.jpg" alt="Mefan Creative Agency" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title"> Mefan </h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Mefan Agency</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET</span>
+                                    <span>JavaScript</span>
+                                    <span>Bootstrap</span>
+                                    <span>UI/UX</span>
+                                </p>
                             </a>
                         </li>
 
-                        <li class="project-item  active" data-filter-item data-category="web development">
+                        <!-- 3. Restful -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Restful ERP Solutions"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/restful.jpg"
+                            data-project-role="Senior .NET / ERP Architect"
+                            data-project-desc="Comprehensive ERP software featuring multi-branch warehouse inventory, electronic invoicing integration compliant with tax authorities, POS endpoints, and automated financial reporting modules."
+                            data-project-tech=".NET Core, ERP Architecture, SQL Server, Web APIs, Tax Authority E-Invoicing"
+                            data-project-url="https://restfuleg.com/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://restfuleg.com/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/restful.jpg" alt="رستفول | حلول ERP وأنظمة ذكية متكاملة لتشغيل وتطوير الشركات باحترافية" loading="lazy">
+                                    <img src="./assets/images/restful.jpg" alt="Restful ERP Solutions" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title"> Restful </h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Restful ERP Solutions</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>.NET Core</span>
+                                    <span>ERP Architecture</span>
+                                    <span>SQL Server</span>
+                                    <span>Web APIs</span>
+                                </p>
                             </a>
                         </li>
 
-                        <li class="project-item  active" data-filter-item data-category="web development">
+                        <!-- 4. VOIP Egypt -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="VOIP Egypt Telecommunication"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/voipegypt.jpg"
+                            data-project-role="Backend & Integration Engineer"
+                            data-project-desc="Telecommunication enterprise portal integrating PBX call logs, customer balance and billing calculations, multi-tier user dashboards, and real-time VoIP connection management."
+                            data-project-tech="ASP.NET MVC, C#, VoIP PBX Integration, SQL Server, REST APIs"
+                            data-project-url="https://voipegypt.net/en"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://voipegypt.net/en">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/voipegypt.jpg" alt="voipegypt" loading="lazy">
+                                    <img src="./assets/images/voipegypt.jpg" alt="VOIP Egypt" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">VOIPEGYPT</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">VOIP Egypt</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>C#</span>
+                                    <span>VoIP Integration</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 5. Dar-Alifta English -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Dar-Alifta English Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/Project_4.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="International fatwa and Islamic research portal localized in English with custom taxonomy, global content distribution, and search optimization."
+                            data-project-tech="ASP.NET MVC, Localization, RESTful APIs, SQL Server, Bootstrap"
+                            data-project-url="https://www.dar-alifta.org/en"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://www.dar-alifta.org/en">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/Project_4.jpg" alt="دار الافتاء" loading="lazy">
+                                    <img src="./assets/images/Project_4.jpg" alt="Dar-Alifta English" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Dar-Alifta English </h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Dar-Alifta English Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>Localization</span>
+                                    <span>RESTful APIs</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 6. Family -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Family Guidance Platform"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/family.jpg"
+                            data-project-role="Full-Stack .NET Developer"
+                            data-project-desc="Community initiative portal providing family counseling scheduling, educational webinars, articles, and interactive consultations."
+                            data-project-tech="ASP.NET MVC, Entity Framework, SQL Server, Responsive UI"
+                            data-project-url="http://family.dar-alifta.org/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="http://family.dar-alifta.org/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/family.jpg" alt="تنمية الاسرة" loading="lazy">
+                                    <img src="./assets/images/family.jpg" alt="Family Development Platform" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Family</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Family Guidance Platform</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>Entity Framework</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 7. Buccino -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="BUCCINO MARBLE Kuwait"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/buccino.jpg"
+                            data-project-role="E-Commerce & .NET Developer"
+                            data-project-desc="Commercial stone and marble catalog with price estimation, online quotation requests, and payment gateway integration."
+                            data-project-tech="ASP.NET, E-Commerce, Payment Gateway, SQL Server, JavaScript"
+                            data-project-url="https://buccinokw.com/ar/home"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://buccinokw.com/ar/home">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/buccino.jpg" alt="بوتشينو ماربل BUCCINO MARBLE" loading="lazy">
+                                    <img src="./assets/images/buccino.jpg" alt="BUCCINO MARBLE" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">BUCCINO MARBLE</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">BUCCINO MARBLE Kuwait</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET</span>
+                                    <span>E-Commerce</span>
+                                    <span>Payment Integration</span>
+                                    <span>SQL</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 8. Ramadan -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Ramadan Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/ramdan.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="Seasonal high-traffic platform delivering daily Ramadan timings, daily prayers, fatwa live streams, and multimedia Islamic content."
+                            data-project-tech="ASP.NET MVC, C#, Dynamic CMS, Responsive UI, SQL Server"
+                            data-project-url="https://ramadan.dar-alifta.org/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://ramadan.dar-alifta.org/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/ramdan.jpg" alt="رمضان" loading="lazy">
+                                    <img src="./assets/images/ramdan.jpg" alt="Ramadan Portal" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Ramdan </h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Ramadan Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>C#</span>
+                                    <span>Dynamic CMS</span>
+                                    <span>Responsive UI</span>
+                                </p>
                             </a>
                         </li>
 
-                        <li class="project-item  active" data-filter-item data-category="mobile development">
+                        <!-- 9. Fatwa Conference App -->
+                        <li class="project-item active" data-filter-item data-category="mobile development"
+                            data-project-title="Fatwa Conference Mobile Application"
+                            data-project-category="Mobile Development"
+                            data-project-img="./assets/images/Project_9.jpg"
+                            data-project-role="Mobile API & Backend Architect"
+                            data-project-desc="Official international conference application powering schedule management, live speaker sessions, push notifications, and attendee registrations."
+                            data-project-tech="Backend REST APIs, ASP.NET Core, Push Notifications, JSON, Cloud Storage"
+                            data-project-url="https://play.google.com/store/apps/details?id=com.dareleftaa.Events&hl=en_US"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://play.google.com/store/apps/details?id=com.dareleftaa.Events&hl=en_US">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/Project_9.jpg" alt="orizon" loading="lazy">
+                                    <img src="./assets/images/Project_9.jpg" alt="Fatwa Conference App" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Fatwa Conference</h3>
-
+                                <h3 class="project-title">Fatwa Conference App</h3>
                                 <p class="project-category">Mobile Development</p>
-
+                                <p class="project-tech">
+                                    <span>Backend APIs</span>
+                                    <span>ASP.NET Core</span>
+                                    <span>Push Notifications</span>
+                                    <span>JSON</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="mobile development">
+
+                        <!-- 10. Misr Quran Kareem -->
+                        <li class="project-item active" data-filter-item data-category="mobile development"
+                            data-project-title="مصر قرآن كريم Mobile Platform"
+                            data-project-category="Mobile Development"
+                            data-project-img="./assets/images/united.jpg"
+                            data-project-role="Mobile Backend API Developer"
+                            data-project-desc="Highly popular religious audio application featuring high-quality audio recitation streaming, downloads, bookmarking, and offline playback sync."
+                            data-project-tech="RESTful APIs, Audio Streaming, ASP.NET, SQL Server, High Concurrency"
+                            data-project-url="https://play.google.com/store/apps/details?id=com.clicksegypt.qurankareem&hl=ar&pli=1"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://play.google.com/store/apps/details?id=com.clicksegypt.qurankareem&hl=ar&pli=1">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/united.jpg" alt="orizon" loading="lazy">
+                                    <img src="./assets/images/united.jpg" alt="Misr Quran Kareem" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">مصر قرأن كريم</h3>
-
+                                <h3 class="project-title">مصر قرآن كريم Mobile</h3>
                                 <p class="project-category">Mobile Development</p>
-
+                                <p class="project-tech">
+                                    <span>RESTful APIs</span>
+                                    <span>Audio Streaming</span>
+                                    <span>ASP.NET</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 11. Conference Admin -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Conference Admin Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/Project_1.jpg"
+                            data-project-role="Senior Backend Engineer"
+                            data-project-desc="Administrative dashboard managing conference guests, invitations, paper submissions, VIP seating, and analytics reporting."
+                            data-project-tech="ASP.NET MVC, Admin Dashboard, RBAC Authentication, Automated Reports"
+                            data-project-url="http://conferenceapi.fatwaacademy.org/Admin/Account/login"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="http://conferenceapi.fatwaacademy.org/Admin/Account/login">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/Project_1.jpg" alt="orizon" loading="lazy">
+                                    <img src="./assets/images/Project_1.jpg" alt="Fatwa Conference Admin" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Fatwa Conference</h3>
-
+                                <h3 class="project-title">Conference Admin Portal</h3>
                                 <p class="project-category">Web Development</p>
-
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>Admin Dashboard</span>
+                                    <span>Authentication</span>
+                                    <span>Reports</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 12. Shawky Allam -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Prof. Shawky Allam Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/Project_8.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="Official digital archive and media center showcasing scientific publications, international visits, lectures, and press releases."
+                            data-project-tech="ASP.NET MVC, Media Management, SQL Server, Responsive UI"
+                            data-project-url="http://shawkyallam.com/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="http://shawkyallam.com/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-
-                                    <img src="./assets/images/Project_8.jpg" alt="orizon" loading="lazy">
+                                    <img src="./assets/images/Project_8.jpg" alt="Shawky Allam Official Portal" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Shawky Allam </h3>
-
+                                <h3 class="project-title">Prof. Shawky Allam Portal</h3>
                                 <p class="project-category">Web Development</p>
-
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>Media Management</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
 
-                        <li class="project-item  active" data-filter-item data-category="web development">
+                        <!-- 13. Impact -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Impact Agency"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/Impact.jpg"
+                            data-project-role="Frontend & Web Developer"
+                            data-project-desc="Modern digital marketing agency website featuring clean animations, service showcases, and interactive lead capture."
+                            data-project-tech="JavaScript, HTML5 / CSS3, Bootstrap, Responsive UI"
+                            data-project-url="https://abdomohaamed.github.io/Impact/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://abdomohaamed.github.io/Impact/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/Impact.jpg" alt="Impact" loading="lazy">
+                                    <img src="./assets/images/Impact.jpg" alt="Impact Platform" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Impact</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Impact Agency</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>JavaScript</span>
+                                    <span>HTML5 / CSS3</span>
+                                    <span>Bootstrap</span>
+                                    <span>Responsive</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 14. Freelancer -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Freelancer Hub"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/freelancer.jpg"
+                            data-project-role="Cloud .NET Engineer"
+                            data-project-desc="Micro-freelancing platform deployed on Microsoft Azure App Service with project bidding, client messaging, and escrow payment workflows."
+                            data-project-tech="Azure App Service, ASP.NET Core, EF Core, SQL Server"
+                            data-project-url="https://freelancer-hjfdcuhahrhhdnad.canadacentral-01.azurewebsites.net/projects"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://freelancer-hjfdcuhahrhhdnad.canadacentral-01.azurewebsites.net/projects">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/freelancer.jpg" alt="freelancer" loading="lazy">
+                                    <img src="./assets/images/freelancer.jpg" alt="Freelancer Azure Platform" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">freelancer</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Freelancer Hub</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>Azure App Service</span>
+                                    <span>ASP.NET Core</span>
+                                    <span>EF Core</span>
+                                    <span>SQL</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 15. Palestine -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Palestine Information Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/Palestine.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="Comprehensive historical and documentary media portal featuring interactive maps, timelines, and scholarly articles."
+                            data-project-tech="ASP.NET MVC, C#, SQL Server, Media Portal"
+                            data-project-url="http://palestine.dar-alifta.org/"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="http://palestine.dar-alifta.org/">
-
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/Palestine.jpg" alt="Palestine" loading="lazy">
+                                    <img src="./assets/images/Palestine.jpg" alt="Palestine Portal" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Palestine</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Palestine Information Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>C#</span>
+                                    <span>SQL Server</span>
+                                    <span>Media Portal</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="javascript:;">
 
+                        <!-- 16. VerifyFatwa -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="VerifyFatwa Engine"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/verifyfatwa.jpg"
+                            data-project-role="Lead System Architect"
+                            data-project-desc="Internal verification and anti-counterfeiting engine scanning and verifying the authenticity of published religious decrees and certificates."
+                            data-project-tech="ASP.NET Core, Verification Engine, Search Algorithm, SQL Server"
+                            data-project-url="#portfolio"
+                            data-project-type="internal"
+                            data-tilt>
+                            <a href="#portfolio">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/verifyfatwa.jpg" alt="verifyfatwa" loading="lazy">
+                                    <img src="./assets/images/verifyfatwa.jpg" alt="VerifyFatwa Engine" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">VerifyFatwa</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">VerifyFatwa Engine</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET Core</span>
+                                    <span>Verification Engine</span>
+                                    <span>Search Algorithm</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="javascript:;">
 
+                        <!-- 17. Dashboard -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Events Analytics Dashboard"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/dashboard.png"
+                            data-project-role="Senior .NET Dashboard Developer"
+                            data-project-desc="Real-time event analytics dashboard tracking attendee engagement, session attendance, real-time survey results, and graphical charts."
+                            data-project-tech="ASP.NET MVC, DataTables, Chart.js, SQL Server"
+                            data-project-url="#portfolio"
+                            data-project-type="internal"
+                            data-tilt>
+                            <a href="#portfolio">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/dashboard.png" alt="dashboard" loading="lazy">
+                                    <img src="./assets/images/dashboard.png" alt="Events Analytics Dashboard" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">DashBoard - Events</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Events Analytics Dashboard</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>DataTables</span>
+                                    <span>Chart.js</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
+
+                        <!-- 18. Staff HR -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Staff Enterprise HR Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/HR.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="Internal institutional HR management system handling employee attendance, leaves, payroll generation, and role-based permissions (RBAC)."
+                            data-project-tech="ASP.NET MVC, RBAC Security, Payroll & Attendance, SQL Server"
+                            data-project-url="https://hr.dar-alifta.org/Account/Login"
+                            data-project-type="live"
+                            data-tilt>
                             <a href="https://hr.dar-alifta.org/Account/Login">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/HR.jpg" alt="dashboard" loading="lazy">
+                                    <img src="./assets/images/HR.jpg" alt="Dar Alifta Staff HR System" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">Dar Alifta Staff </h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Staff Enterprise HR Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>RBAC Security</span>
+                                    <span>Payroll & Attendance</span>
+                                    <span>SQL</span>
+                                </p>
                             </a>
                         </li>
-                        <li class="project-item  active" data-filter-item data-category="web development">
-                            <a href="http://nazirayad.com/">
 
+                        <!-- 19. Nazir Ayyad -->
+                        <li class="project-item active" data-filter-item data-category="web development"
+                            data-project-title="Prof. Nazir Ayyad Portal"
+                            data-project-category="Web Development"
+                            data-project-img="./assets/images/nazirayad.jpg"
+                            data-project-role="Full-Stack Developer"
+                            data-project-desc="Official scholarly portal for the Grand Mufti of Egypt, featuring articles, press updates, and multimedia content."
+                            data-project-tech="ASP.NET MVC, CMS Architecture, SQL Server"
+                            data-project-url="http://nazirayad.com/"
+                            data-project-type="live"
+                            data-tilt>
+                            <a href="http://nazirayad.com/">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/nazirayad.jpg" alt="nazirayad" loading="lazy">
+                                    <img src="./assets/images/nazirayad.jpg" alt="Prof. Nazir Ayyad Portal" loading="lazy" decoding="async">
                                 </figure>
-
-                                <h3 class="project-title">nazirayad</h3>
-
-                                <p class="project-category">Web development</p>
-
+                                <h3 class="project-title">Prof. Nazir Ayyad Portal</h3>
+                                <p class="project-category">Web Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET MVC</span>
+                                    <span>CMS Architecture</span>
+                                    <span>SQL Server</span>
+                                </p>
                             </a>
                         </li>
-
-
 
                     </ul>
 
@@ -1120,43 +1279,101 @@
 
             </article>
 
-            <!--*---------------------  #CONTACT   --------------------------------------*--->
 
+            <!-- ==================== CONTACT ARTICLE ==================== -->
             <article class="contact" data-page="contact">
 
                 <header>
                     <h2 class="h2 article-title">Contact</h2>
                 </header>
-                <section class="contact-form">
 
-                    <h3 class="h3 form-title">Contact Form</h3>
-
-                    <form action="#" class="form" data-form>
-
-                        <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-                            <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-                        </div>
-
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-                        <button class="form-btn" type="submit">
-                            <ion-icon name="paper-plane"></ion-icon>
-                            <span>Send Message</span>
-                        </button>
-
-                    </form>
-
-                </section>
+<section class="contact-form">
+  <p class="eyebrow">LET’S BUILD SOMETHING USEFUL</p>
+  <h3 class="h3 form-title">What do you have in mind?</h3>
+  <p class="section-intro">A new project, an existing app, or a place on your team. Start with a few details — we’ll take it from there.</p>
+  <div class="contact-options">
+    <a href="https://wa.me/201013470551" target="_blank" rel="noopener noreferrer"><span>↗</span><strong>Chat on WhatsApp</strong><small>Start a conversation directly</small></a>
+    <a href="mailto:abdomohamed2751@gmail.com"><span>↗</span><strong>Prefer email?</strong><small>abdomohamed2751@gmail.com</small></a>
+  </div>
+  <form action="#" class="form" data-form>
+    <label class="field-label" for="contact-interest">I’d like to talk about</label>
+    <select id="contact-interest" name="interest" class="form-input"><option>A new project</option><option>Improving an existing app</option><option>Hiring / team opportunity</option><option>Something else</option></select>
+    <div class="input-wrapper">
+      <div><label class="field-label" for="contact-name">Your name</label><input id="contact-name" type="text" name="fullname" autocomplete="name" maxlength="100" class="form-input" placeholder="How should I address you?" required data-form-input></div>
+      <div><label class="field-label" for="contact-email">Email <span>(optional)</span></label><input id="contact-email" type="email" name="email" autocomplete="email" maxlength="200" class="form-input" placeholder="you@company.com" data-form-input></div>
+    </div>
+    <label class="field-label" for="contact-message">A little about what you need</label>
+    <textarea id="contact-message" name="message" class="form-input" placeholder="What are you building or looking for? Share your goals and any timeline you have in mind." rows="5" maxlength="2000" required data-form-input></textarea>
+    <fieldset class="delivery-options"><legend>Continue the conversation on</legend><label><input type="radio" name="channel" value="whatsapp" checked> WhatsApp</label><label><input type="radio" name="channel" value="email"> Email</label></fieldset>
+    <p class="delivery-note" id="delivery-note">This prepares a draft. Review and send it yourself in WhatsApp or your email app. Nothing is sent from this page.</p>
+    <button class="primary-action" type="submit" data-form-btn aria-describedby="delivery-note">Continue to WhatsApp <span aria-hidden="true">↗</span></button>
+    <div class="form-feedback" role="status" aria-live="polite"></div>
+    <button type="button" class="text-action" id="copyDraft">Copy message instead</button>
+  </form>
+</section>
 
             </article>
+<section class="conversation-banner" aria-label="Start a conversation"><div><p class="eyebrow">HAVE SOMETHING IN MIND?</p><h3>Let’s turn your next idea into something real.</h3><p>Tell me a little about your project or opportunity.</p></div><button class="primary-action" data-page-action="contact">Let’s talk <span aria-hidden="true">↗</span></button></section>
 
         </div>
 
+
+    <!-- ==================== TOP-LEVEL TESTIMONIALS MODAL ==================== -->
+    <div class="modal-container" data-modal-container>
+        <div class="overlay" data-overlay></div>
+        <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn title="Close modal">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                    <img src="./assets/images/avatar-1.png" alt="Client Avatar" width="80" data-modal-img loading="lazy" decoding="async">
+                </figure>
+                <img src="./assets/images/icon-quote.svg" alt="Quote Icon" loading="lazy" decoding="async">
+            </div>
+            <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Verified Client</h4>
+                <time datetime="2024-05-15" data-modal-time>Verified Review</time>
+                <div data-modal-text>
+                    <p>Testimonial text</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== TOP-LEVEL PROJECT DETAILS MODAL ==================== -->
+    <div class="project-modal-container" id="projectModalContainer">
+        <div class="project-modal-overlay" id="projectModalOverlay"></div>
+        <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="pModalTitle">
+            <button class="project-modal-close-btn" id="projectModalCloseBtn" title="Close modal (Esc)">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="project-modal-img-wrap">
+                <img src="" alt="" class="project-modal-img" id="pModalImg">
+                <a href="" target="_blank" rel="noopener noreferrer" class="project-modal-zoom-btn" id="pModalZoomBtn" title="Open full resolution image in new tab">
+                    <ion-icon name="open-outline"></ion-icon>
+                    <span>Full Screenshot</span>
+                </a>
+            </div>
+            <div class="project-modal-meta">
+                <span class="project-modal-badge" id="pModalCategory">Web Development</span>
+                <span class="project-modal-role" id="pModalRole">Senior Full Stack Developer</span>
+            </div>
+            <h3 class="project-modal-title" id="pModalTitle">Project Title</h3>
+            <p class="project-modal-desc" id="pModalDesc">Project Description</p>
+            <div id="projectStory" class="project-story"></div>
+            <h4 class="project-modal-tech-title">Technologies & Architecture</h4>
+            <div class="project-modal-tech-list" id="pModalTechList"></div>
+            <div class="project-modal-actions" id="pModalAction"></div>
+        </div>
+    </div>
+
     </main>
 
+    <footer class="site-footer"><span>Abdelmaboud Mohamed · Built with care.</span><a href="mailto:abdomohamed2751@gmail.com">Let’s make something useful ↗</a></footer>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/experience.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
