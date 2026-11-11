@@ -407,3 +407,594 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
   .work-picker span { min-height: 44px; text-align: center; padding-inline: 8px; }
   .intro-preview { aspect-ratio: 1.8; }
 }
+
+
+/* ==========================================================================
+   # HARMONIZED DESIGN SYSTEM: RESUME, TIMELINE, SKILLS, PORTFOLIO & MODALS
+   ========================================================================== */
+
+/* 1. Resume Header & Action Buttons */
+.print-cv-btn {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  padding: 8px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.print-cv-btn:hover {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+  border-color: #b9ed84 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 18px rgba(185, 237, 132, 0.25) !important;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 32px;
+}
+
+/* 2. Timeline Experience & Education */
+.timeline {
+  margin-bottom: 40px;
+}
+
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.timeline .title-wrapper .icon-box {
+  background: #202b1c;
+  border: 1px solid #364831;
+  color: #b9ed84;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 34px;
+  height: 34px;
+}
+
+.timeline-list {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 28px;
+  border-left: 2px solid var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  border-left: 3px solid #b9ed84 !important;
+  border-radius: 12px !important;
+  padding: 22px !important;
+  margin-bottom: 24px !important;
+  box-shadow: none !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.timeline-item:hover {
+  border-color: #3d5037 !important;
+  border-left-color: #b9ed84 !important;
+  transform: translateX(4px) !important;
+  background: #1a221b !important;
+}
+
+.timeline-item:not(:last-child)::before {
+  display: none !important;
+}
+
+.timeline-item::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -35px !important;
+  top: 24px !important;
+  width: 12px !important;
+  height: 12px !important;
+  background: #b9ed84 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 4px #101511, 0 0 16px rgba(185, 237, 132, 0.5) !important;
+}
+
+.timeline-item-title {
+  color: #edf2e9 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 8px !important;
+}
+
+.timeline-item time,
+.timeline-list span {
+  display: inline-block !important;
+  color: #b9ed84 !important;
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  padding: 3px 12px !important;
+  border-radius: 20px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  margin-bottom: 12px !important;
+}
+
+.timeline-text {
+  color: #a3afa1 !important;
+  font-size: 13px !important;
+  line-height: 1.85 !important;
+  font-weight: 400 !important;
+}
+
+.timeline-text .highlight {
+  color: #d8e5d0 !important;
+  font-weight: 600 !important;
+}
+
+/* 3. Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.skills-category {
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  padding: 22px !important;
+  transition: all 0.3s ease !important;
+}
+
+.skills-category:hover {
+  border-color: #3d5037 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+.skills-category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.skills-category-icon {
+  width: 34px !important;
+  height: 34px !important;
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+}
+
+.skills-category-title {
+  color: #edf2e9 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #c4d7bc !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+}
+
+.skill-tag:hover {
+  background: #2b3d25 !important;
+  border-color: #b9ed84 !important;
+  color: #b9ed84 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 4. Portfolio Search Bar & Filter Controls */
+.portfolio-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.portfolio-search-box {
+  position: relative;
+  width: 100%;
+}
+
+.portfolio-search-box ion-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8c9c87 !important;
+  font-size: 19px !important;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.portfolio-search-input {
+  width: 100% !important;
+  padding: 14px 44px 14px 48px !important;
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 10px !important;
+  color: #eaf0e7 !important;
+  font-size: 13px !important;
+  transition: all 0.25s ease !important;
+}
+
+.portfolio-search-input:focus {
+  border-color: #b9ed84 !important;
+  background: #1c241d !important;
+  box-shadow: 0 0 0 3px rgba(185, 237, 132, 0.12) !important;
+  outline: none !important;
+}
+
+.portfolio-search-input:focus + ion-icon {
+  color: #b9ed84 !important;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #8c9c87 !important;
+  font-size: 19px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.search-clear-btn:hover {
+  color: #b9ed84 !important;
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px !important;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-item button {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #cad6c4 !important;
+  padding: 9px 20px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: all 0.2s ease !important;
+}
+
+.filter-item button:hover {
+  border-color: #b9ed84 !important;
+  color: #edf2e9 !important;
+}
+
+.filter-item button.active {
+  background: #b9ed84 !important;
+  border-color: #b9ed84 !important;
+  color: #15200f !important;
+  font-weight: 600 !important;
+}
+
+.filter-select {
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  color: #cad6c4 !important;
+  border-radius: 10px !important;
+  padding: 12px 18px !important;
+  width: 100%;
+}
+
+.select-list {
+  background: #171e18 !important;
+  border: 1px solid #364831 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+}
+
+.select-item button {
+  color: #cad6c4 !important;
+  transition: all 0.2s ease;
+}
+
+.select-item button:hover {
+  color: #b9ed84 !important;
+  background: #202b1c !important;
+}
+
+.no-projects-found {
+  text-align: center;
+  padding: 40px 20px !important;
+  background: #171e18 !important;
+  border: 1px dashed #3a4933 !important;
+  border-radius: 14px !important;
+  margin: 24px 0 !important;
+}
+
+.no-projects-found ion-icon {
+  font-size: 44px !important;
+  color: #b9ed84 !important;
+  margin: 0 auto 12px !important;
+}
+
+.no-projects-found p {
+  color: #a3afa1 !important;
+  font-size: 14px !important;
+  margin-bottom: 16px !important;
+}
+
+.reset-filter-btn {
+  background: #b9ed84 !important;
+  border: 1px solid #b9ed84 !important;
+  color: #15200f !important;
+  padding: 9px 22px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: background 0.2s ease !important;
+}
+
+.reset-filter-btn:hover {
+  background: #d0ffa1 !important;
+}
+
+/* 5. Testimonials & Client Polish */
+.testimonials-item {
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  transition: all 0.3s ease !important;
+}
+
+.testimonials-item:hover {
+  border-color: #3d5037 !important;
+  transform: translateY(-3px) !important;
+}
+
+.testimonials-avatar-box {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  border-radius: 12px !important;
+}
+
+.modal-container {
+  background: rgba(10, 14, 11, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.testimonials-modal {
+  background: #171e18 !important;
+  border: 1px solid #364831 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(185, 237, 132, 0.08) !important;
+}
+
+.modal-close-btn {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.modal-close-btn:hover {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+}
+
+.modal-title {
+  color: #edf2e9 !important;
+}
+
+.modal-content time {
+  color: #b9ed84 !important;
+}
+
+/* 6. Project Modal Harmonization */
+.project-modal {
+  background: #171e18 !important;
+  border: 1px solid #364831 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(185, 237, 132, 0.08) !important;
+}
+
+.project-modal-close-btn {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.project-modal-close-btn:hover {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+}
+
+.project-modal-badge {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+.project-modal-role {
+  color: #cad6c4 !important;
+  font-size: 13px !important;
+}
+
+.project-modal-title {
+  color: #edf2e9 !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+}
+
+.project-modal-desc {
+  color: #b5c4af !important;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+.project-modal-tech-title {
+  color: #edf2e9 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin: 20px 0 10px !important;
+}
+
+.project-modal-tech-item {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #c4d7bc !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.project-modal-btn-primary {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 12px 22px !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.project-modal-btn-primary:hover {
+  background: #d0ffa1 !important;
+  transform: translateY(-2px) !important;
+}
+
+.project-modal-btn-disabled {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #94a38e !important;
+  border-radius: 8px !important;
+  padding: 12px 22px !important;
+  font-size: 13px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.project-modal-zoom-btn {
+  background: rgba(23, 30, 24, 0.92) !important;
+  border: 1px solid rgba(185, 237, 132, 0.35) !important;
+  color: #b9ed84 !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.project-modal-zoom-btn:hover {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+}
+
+/* 7. Client Logos Marquee */
+.client-logo-card {
+  background: #171e18 !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.client-logo-card:hover {
+  border-color: #3d5037 !important;
+  background: #1c251c !important;
+  transform: translateY(-2px) !important;
+}
+
+.client-logo-card:hover span {
+  color: #b9ed84 !important;
+}
+
+/* 8. Toast Notification System */
+.toast-notification {
+  background: #172115 !important;
+  border: 1px solid #b9ed84 !important;
+  color: #eaf0e7 !important;
+  border-radius: 30px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(185, 237, 132, 0.2) !important;
+}
+
+.toast-notification ion-icon {
+  color: #b9ed84 !important;
+}
+
+/* 9. Floating Action Buttons */
+.back-to-top-btn {
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 50% !important;
+  transition: all 0.25s ease !important;
+}
+
+.back-to-top-btn:hover {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+  transform: translateY(-3px) !important;
+}
+
+.floating-whatsapp-btn {
+  background: #b9ed84 !important;
+  color: #15200f !important;
+  box-shadow: 0 6px 20px rgba(185, 237, 132, 0.35) !important;
+  transition: all 0.25s ease !important;
+}
+
+.floating-whatsapp-btn:hover {
+  background: #d0ffa1 !important;
+  transform: translateY(-3px) !important;
+}
