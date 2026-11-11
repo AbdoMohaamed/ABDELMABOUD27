@@ -13,18 +13,6 @@ const elementToggleFunc = function (elem) {
 };
 
 // ---------------------------------------------------------------------------
-// 2. SIDEBAR TOGGLE (Mobile & Desktop Responsive)
-// ---------------------------------------------------------------------------
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-if (sidebarBtn && sidebar) {
-  sidebarBtn.addEventListener("click", function () {
-    elementToggleFunc(sidebar);
-  });
-}
-
-// ---------------------------------------------------------------------------
 // 3. COPY TO CLIPBOARD WITH TOAST NOTIFICATION
 // ---------------------------------------------------------------------------
 // Contact clipboard handling is implemented in contact.js.
@@ -414,10 +402,8 @@ const syncNavigationState = () => {
     if (link.classList.contains('active')) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
-  if (sidebarBtn) sidebarBtn.setAttribute('aria-expanded', String(sidebar.classList.contains('active')));
 };
 navigationLinks.forEach(link => link.addEventListener('click', syncNavigationState));
-sidebarBtn?.addEventListener('click', syncNavigationState);
 window.addEventListener('DOMContentLoaded', syncNavigationState);
 syncNavigationState();
 

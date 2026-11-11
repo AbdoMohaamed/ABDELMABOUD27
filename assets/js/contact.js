@@ -83,10 +83,11 @@ document.querySelectorAll('[data-copy]').forEach(button => {
 
 // Reuse existing project content; keep the homepage and portfolio in sync.
 const featuredHost = document.getElementById('featuredProjects');
-[filterItems[0], filterItems[3], filterItems[13]].filter(Boolean).forEach(item => {
+document.querySelectorAll('[data-highlight]').forEach(item => {
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'featured-card';
+  button.dataset.highlightCard = item.dataset.highlight;
   const img = document.createElement('img');
   img.src = item.dataset.projectImg;
   img.alt = item.dataset.projectTitle;
@@ -107,6 +108,18 @@ const featuredHost = document.getElementById('featuredProjects');
   button.addEventListener('click', () => openProjectModal(item));
   featuredHost.appendChild(button);
 });
+
+const workPicker = document.querySelector('.work-picker');
+function showSelectedWork() {
+  const selected = workPicker.querySelector(':checked').value;
+  for (const card of featuredHost.children) {
+    card.hidden = selected !== 'all' && card.dataset.highlightCard !== selected;
+  }
+  featuredHost.classList.toggle('single-highlight', selected !== 'all');
+}
+workPicker.addEventListener('change', showSelectedWork);
+window.addEventListener('pageshow', showSelectedWork);
+showSelectedWork();
 
 const projectConversation = document.createElement('button');
 projectConversation.type = 'button';
@@ -150,3 +163,8 @@ window.addEventListener('DOMContentLoaded', syncConversationBanner);
 syncConversationBanner();
 
 window.addEventListener('portfolio:pagechange', syncConversationBanner);
+
+const introProject = document.getElementById('introProject');
+introProject.addEventListener('click', () => {
+  openProjectModal(document.querySelector('[data-highlight="content"]'));
+});
