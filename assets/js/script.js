@@ -88,13 +88,16 @@ const applyFilters = function () {
   filterItems.forEach(item => {
     const itemCat = (item.dataset.category || "").toLowerCase().trim();
     const itemTitle = (item.dataset.projectTitle || item.querySelector(".project-title")?.innerText || "").toLowerCase();
+    const itemEnTitle = (item.dataset.enTitle || "").toLowerCase();
     const itemTech = (item.dataset.projectTech || item.querySelector(".project-tech")?.innerText || "").toLowerCase();
+    const itemDesc = (item.dataset.projectDesc || "").toLowerCase();
 
     const matchesCategory = (currentCategory === "all" || currentCategory === itemCat);
-    const matchesSearch = !q || itemTitle.includes(q) || itemTech.includes(q) || itemCat.includes(q);
+    const matchesSearch = !q || itemTitle.includes(q) || itemEnTitle.includes(q) || itemTech.includes(q) || itemDesc.includes(q) || itemCat.includes(q);
 
     if (matchesCategory && matchesSearch) {
       item.classList.add("active");
+      item.style.setProperty("--item-idx", visibleCount);
       visibleCount++;
     } else {
       item.classList.remove("active");
@@ -102,7 +105,12 @@ const applyFilters = function () {
   });
 
   const resultCount = document.getElementById('projectResultCount');
-  if (resultCount) resultCount.textContent = visibleCount + ' of ' + filterItems.length + ' projects';
+  if (resultCount) {
+    const isAr = document.documentElement.getAttribute('dir') === 'rtl';
+    resultCount.textContent = isAr
+      ? `عرض ${visibleCount} من أصل ${filterItems.length} مشروع`
+      : `${visibleCount} of ${filterItems.length} projects`;
+  }
   filterBtn.forEach(button => {
     const active = button.dataset.categoryTarget === currentCategory;
     button.classList.toggle('active', active);
@@ -208,14 +216,26 @@ const closeProjectModal = function () {
 const openProjectModal = function (item) {
   if (!projectModalContainer) return;
 
+  const isAr = document.documentElement.getAttribute("dir") === "rtl";
   const title = item.getAttribute("data-project-title") || item.querySelector(".project-title")?.innerText || "";
-  const category = item.getAttribute("data-project-category") || item.querySelector(".project-category")?.innerText || "";
+  let category = item.getAttribute("data-project-category") || item.querySelector(".project-category")?.innerText || "";
   const img = item.getAttribute("data-project-img") || item.querySelector("img")?.src || "";
-  const role = item.getAttribute("data-project-role") || "Senior Full-Stack .NET Developer";
-  const desc = item.getAttribute("data-project-desc") || "Enterprise digital solution engineered with high security, optimized performance, and modern scalable architecture.";
+  let role = item.getAttribute("data-project-role") || "Senior Full-Stack .NET Developer";
+  let desc = item.getAttribute("data-project-desc") || "Enterprise digital solution engineered with high security, optimized performance, and modern scalable architecture.";
   const tech = item.getAttribute("data-project-tech") || "";
   const url = item.getAttribute("data-project-url") || "";
   const isInternal = item.getAttribute("data-project-type") === "internal" || url.includes("javascript") || url === "#portfolio" || !url;
+
+  if (isAr) {
+    if (category.toLowerCase().includes("mobile")) {
+      category = "تطبيقات الموبايل";
+    } else {
+      category = "تطبيقات الويب";
+    }
+    if (role.toLowerCase().includes("senior") || role.toLowerCase().includes("lead") || role.toLowerCase().includes("sr")) {
+      role = "مهندس برمجيات أول Full-Stack .NET";
+    }
+  }
 
   if (pModalImg) {
     pModalImg.src = img;
@@ -224,11 +244,18 @@ const openProjectModal = function (item) {
   }
   if (pModalZoomBtn) {
     pModalZoomBtn.href = img;
+    const zoomSpan = pModalZoomBtn.querySelector("span");
+    if (zoomSpan) zoomSpan.textContent = isAr ? "عرض لقطة الشاشة بالكامل" : "Full Screenshot";
   }
   if (pModalTitle) pModalTitle.textContent = title;
   if (pModalCategory) pModalCategory.textContent = category;
   if (pModalRole) pModalRole.textContent = role;
   if (pModalDesc) pModalDesc.innerHTML = desc;
+
+  const techTitle = document.querySelector(".project-modal-tech-title");
+  if (techTitle) {
+    techTitle.textContent = isAr ? "التقنيات والمعمارية البرمجية" : "Technologies & Architecture";
+  }
 
   if (pModalTechList) {
     pModalTechList.innerHTML = "";
@@ -246,14 +273,16 @@ const openProjectModal = function (item) {
       pModalAction.innerHTML = `
         <span class="project-modal-btn-disabled">
           <ion-icon name="lock-closed-outline"></ion-icon>
-          <span>Internal Enterprise Platform</span>
+          <span>${isAr ? "نظام مؤسسي داخلي (مقيد الصلاحيات)" : "Internal Enterprise Platform"}</span>
         </span>
       `;
     } else {
+      const isLogin = /\/(?:Admin|Account|login)(?:\/|$)/i.test(url);
+      const btnText = isAr ? (isLogin ? "فتح النظام · يتطلب تسجيل دخول" : "زيارة النظام الحي ↗") : (isLogin ? "Open application · sign-in required" : "Visit Live Application");
       pModalAction.innerHTML = `
         <a href="${url}" target="_blank" rel="noopener noreferrer" class="project-modal-btn-primary">
           <ion-icon name="globe-outline"></ion-icon>
-          <span>Visit Live Application</span>
+          <span>${btnText}</span>
         </a>
       `;
     }
@@ -262,15 +291,70 @@ const openProjectModal = function (item) {
   const story = document.getElementById('projectStory');
   if (story) {
     story.replaceChildren();
-    [['My role', role], ['Built with', tech], ['Access', isInternal ? 'Internal platform — explore the screenshots and project details.' : /\/(?:Admin|Account|login)(?:\/|$)/i.test(url) ? 'This application requires an account. Screenshots provide a preview.' : 'Public project link — availability is managed by the project owner.']].forEach(([label, value]) => {
+
+    // Tailored architecture highlights based on project scope
+    let architectureHighlight = isAr
+      ? "معمارية برمجية متعددة الطبقات (Multi-tier) مع مراعاة أعلى معايير الأمان، واستعلامات SQL Server مفهرسة، وتصميم متجاوب وسريع للواجهات."
+      : "Multi-tier layered architecture engineered with high security, optimized SQL Server queries, and responsive front-end.";
+    
+    const lowerTitle = title.toLowerCase();
+
+    if (lowerTitle.includes("zad") || lowerTitle.includes("زاد")) {
+      architectureHighlight = isAr
+        ? "بوابات APIs موزعة ومعمارية مايكروسيرفيسز مصممة لتحمل ضغط استثنائي وتزامن عالٍ (أكثر من 10 ملايين مستخدم). تم تطبيق Redis للتخزين المؤقت الموزع لمواقيت الصلاة، وبث تلاوات القرآن عبر CDN، وإرسال إشعارات جماعية لحظية عبر Firebase FCM."
+        : "Multi-region distributed API gateways and microservices engineered for extreme concurrency (10M+ users). Implemented Redis distributed caching for geo-calculated prayer times, Quran audio CDN streaming, and Firebase FCM bulk push notification dispatchers.";
+    } else if (lowerTitle.includes("dar-alifta") || lowerTitle.includes("portal")) {
+      architectureHighlight = isAr
+        ? "بنية N-tier عالية التوافر ومحسنة بواسطة Redis Output Caching، وتقسيم جداول SQL، وفهرسة بحث الفتاوى عالية التزامن لتخدم ملايين الزوار شهرياً."
+        : "High-availability N-tier architecture optimized with Redis output caching, SQL table partitioning, and high-concurrency search indexing serving millions of monthly visitors.";
+    } else if (lowerTitle.includes("erp") || lowerTitle.includes("restful")) {
+      architectureHighlight = isAr
+        ? "معمارية برمجية نظيفة (Clean Architecture) بتصميم موجه للمجال (DDD)، و CQRS عبر MediatR، وعزل قواعد البيانات للمستأجرين، وموازنة القيود المحاسبية التلقائية وتكامل الفوترة الإلكترونية."
+        : "Clean Architecture with Domain-Driven Design (DDD), CQRS with MediatR, multi-tenant database isolation, and automated financial journal balancing.";
+    } else if (lowerTitle.includes("mobile") || lowerTitle.includes("conference") || lowerTitle.includes("app")) {
+      architectureHighlight = isAr
+        ? "واجهات برمجية RESTful Web APIs عالية التدفق، مصادقة عديمة الحالة عبر JWT، مزامنة غير متصلة للبيانات، وخدمات إشعارات لحظية متكاملة."
+        : "High-throughput RESTful Web APIs, JWT stateless authentication, offline database sync, and real-time push notification microservices.";
+    } else if (lowerTitle.includes("dashboard") || lowerTitle.includes("analytics")) {
+      architectureHighlight = isAr
+        ? "محرك تحليلات فورية، واستعلامات SQL مجمعة ومحسنة، ورسوم بيانية تنفيذية، وأمان بيانات قائم على الصلاحيات والأدوار (RBAC)."
+        : "Real-time analytics engine, optimized aggregated SQL queries, executive BI charts, and role-based data security.";
+    } else if (lowerTitle.includes("hr") || lowerTitle.includes("staff")) {
+      architectureHighlight = isAr
+        ? "محرك مسارات العمل المؤسسية لإدارة الموارد البشرية، وحسابات الرواتب التلقائية، وتشفير المستندات الحساسة، وسجلات تدقيق كاملة."
+        : "Enterprise HR workflow engine, automated payroll calculations, secure document encryption, and complete audit logging.";
+    } else if (lowerTitle.includes("buccino") || lowerTitle.includes("marble")) {
+      architectureHighlight = isAr
+        ? "كتالوج منتجات مؤسسي فائق السرعة، ومحول عملات ديناميكي، وتتبع دولي للمخزون، وعرض محسن لمحركات البحث (SEO)."
+        : "High-performance enterprise catalog, dynamic multi-currency converter, international inventory tracking, and SEO-optimized server rendering.";
+    }
+
+    const systemAccessText = isInternal
+      ? (isAr ? "منصة مؤسسية داخلية — استعرض لقطات الشاشة والتفاصيل الفنية المرفقة." : "Internal enterprise platform — examine screenshots and details.")
+      : /\/(?:Admin|Account|login)(?:\/|$)/i.test(url)
+        ? (isAr ? "يتطلب بيانات اعتماد مصرح بها. توفر لقطات الشاشة استعراضاً شاملاً للنظام." : "Requires authorized credentials. Screenshots provide a full walkthrough.")
+        : (isAr ? "منصة عامة ومباشرة — تخضع الصلاحيات لإدارة مالك النظام." : "Public live platform — availability managed by owner.");
+
+    const storyItems = [
+      [isAr ? 'الدور والمسؤولية' : 'Role & Scope', role],
+      [isAr ? 'أبرز ملامح المعمارية البرمجية' : 'Architecture Highlights', architectureHighlight],
+      [isAr ? 'التقنيات الأساسية' : 'Core Tech Stack', tech],
+      [isAr ? 'طريقة الوصول للنظام' : 'System Access', systemAccessText]
+    ];
+
+    storyItems.forEach(([label, value]) => {
       const cell = document.createElement('div');
       const heading = document.createElement('h4'); heading.textContent = label;
       const text = document.createElement('p'); text.textContent = value;
       cell.append(heading, text); story.append(cell);
     });
   }
-  const liveLabel = pModalAction?.querySelector('a span');
-  if (liveLabel && /\/(?:Admin|Account|login)(?:\/|$)/i.test(url)) liveLabel.textContent = 'Open application · sign-in required';
+
+  const projConv = document.querySelector(".project-conversation");
+  if (projConv) {
+    projConv.textContent = isAr ? "هل لديك مشروع مماثل؟ تواصل معي ↗" : "Have a similar project? Let’s talk ↗";
+  }
+
   projectModalContainer.classList.add("active");
   document.body.style.overflow = "hidden";
 };

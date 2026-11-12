@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelmaboud Mohamed | Senior Full Stack .NET Developer</title>
 
+    <link href="./assets/css/fonts.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
     <link href="./assets/css/redesign.css" rel="stylesheet" media="screen" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./assets/css/international.css" rel="stylesheet" />
 
     <!-- SEO Meta Tags -->
     <meta name="author" content="Abdelmaboud Mohamed">
@@ -35,10 +34,48 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23102c28'/%3E%3Ctext x='50' y='64' font-family='sans-serif' font-size='44' font-weight='700' fill='%23edf2e9' text-anchor='middle'%3Eam%3Ctspan fill='%23b9ed84'%3E.%3C/tspan%3E%3C/text%3E%3C/svg%3E">
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <style media="print">.site-header, .skip-link, .conversation-banner, .site-footer, .reading-progress, .resume-file { display: none !important; }</style>
+    <style media="print">.site-header, .cmd-palette-container, .skip-link, .conversation-banner, .site-footer, .reading-progress, .resume-file, .floating-actions { display: none !important; }</style>
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdelmaboud Mohamed",
+      "jobTitle": "Senior Full Stack .NET Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Perfect Presentation (2P)"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "Saudi Arabia"
+      },
+      "url": "https://abdomohaamed.github.io/ABDELMABOUD27",
+      "sameAs": [
+        "https://www.linkedin.com/in/abdo-mohamed-2277b1191/",
+        "https://github.com/AbdoMohaamed",
+        "https://www.instagram.com/abdo_mohamed275/"
+      ],
+      "knowsAbout": [
+        "C#",
+        "ASP.NET Core",
+        ".NET 8 / 9",
+        "SQL Server",
+        "Clean Architecture",
+        "CQRS",
+        "Redis Caching",
+        "Web APIs",
+        "Enterprise Digital Transformation"
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
     <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
     <!-- Toast Notification for Quick Copy -->
     <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
@@ -76,7 +113,18 @@
                     </li>
                 </ul>
             </nav>
-        <a class="header-contact" href="mailto:abdomohamed2751@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+        <div class="header-actions">
+            <button class="lang-toggle-btn" id="langToggleBtn" title="Switch language (العربية / English)" aria-label="Switch Language">
+                <ion-icon name="globe-outline"></ion-icon>
+                <span id="langLabel">عربي</span>
+            </button>
+            <button class="cmd-palette-btn" id="cmdPaletteBtn" title="Press Ctrl + K to open Command Palette" aria-label="Open Command Palette (Ctrl+K)">
+                <ion-icon name="search-outline"></ion-icon>
+                <span class="cmd-palette-label">Quick Actions</span>
+                <kbd class="cmd-kbd">Ctrl K</kbd>
+            </button>
+            <a class="header-contact" href="mailto:abdomohamed2751@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+        </div>
     </header>
     <main>
         <!-- ==================== MAIN CONTENT ==================== -->
@@ -87,14 +135,17 @@
                 <header class="intro-layout">
                     <div class="intro-copy">
                         <div class="intro-identity">
-                            <img src="./assets/images/Abdo.jpg" width="64" height="64" alt="">
+                            <img src="./assets/images/Abdo.jpg" width="64" height="64" alt="Abdelmaboud Mohamed" fetchpriority="high" decoding="sync">
                             <div>
                                 <h1 class="intro-name">Abdelmaboud Mohamed</h1>
-                                <p>Riyadh · Available for hire</p>
+                                <div class="availability-badge">
+                                    <span class="status-indicator"></span>
+                                    <span>Riyadh, KSA · Transferable Iqama · Open for Roles</span>
+                                </div>
                             </div>
                         </div>
-                        <h2 class="hero-heading">Senior full stack<br><em>.NET developer.</em></h2>
-                        <p class="hero-description">From warehouse inventory to searchable archives, I build software that helps teams get their work done.</p>
+                        <h2 class="hero-heading">Senior full stack<br><em id="morphingText" class="morphing-text">.NET developer.</em></h2>
+                        <p class="hero-description">From high-traffic digital platforms serving millions of users (such as <strong>Zad Al-Muslim</strong> &amp; <strong>Dar-Alifta</strong>) to mission-critical enterprise ERPs, I build resilient, high-concurrency systems engineered for scale.</p>
                         <div class="hero-actions">
                             <button class="primary-action" data-page-action="portfolio">Explore my work <span aria-hidden="true">↗</span></button>
                             <button class="secondary-action" data-page-action="contact">Get in touch <span aria-hidden="true">→</span></button>
@@ -107,17 +158,17 @@
                 </header>
 
                 <!-- High-Impact Stats Grid -->
-                <div class="stats-grid">
+                <div class="stats-grid" id="statsGrid">
                     <div class="stat-card" data-tilt>
-                        <div class="stat-number">5+</div>
+                        <div class="stat-number" data-count="5" data-suffix="+">5+</div>
                         <p class="stat-label">Years Experience</p>
                     </div>
                     <div class="stat-card" data-tilt>
-                        <div class="stat-number">19+</div>
-                        <p class="stat-label">Enterprise & Web Apps</p>
+                        <div class="stat-number" data-count="20" data-suffix="+">20+</div>
+                        <p class="stat-label">Enterprise & High-Traffic Apps</p>
                     </div>
                     <div class="stat-card" data-tilt>
-                        <div class="stat-number">3</div>
+                        <div class="stat-number" data-count="3" data-suffix="">3</div>
                         <p class="stat-label">Markets · Saudi Arabia, Egypt &amp; Kuwait</p>
                     </div>
                 </div>
@@ -311,6 +362,10 @@
                 <!-- Header with Print ATS CV action -->
                 <header class="resume-header">
                     <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
+                    <button class="blueprint-btn" id="openBlueprintBtn" title="View Enterprise Clean Architecture Blueprint">
+                        <ion-icon name="git-network-outline"></ion-icon>
+                        <span>Architecture Blueprint 📐</span>
+                    </button>
                     <a class="resume-file" href="https://drive.google.com/file/d/1QOYCwKpqWnF85dwzb5TD34j0w3a305QF/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
                     <button class="print-cv-btn" id="printCvBtn" title="Print or save as clean ATS-ready PDF">
                         <ion-icon name="print-outline"></ion-icon>
@@ -324,7 +379,7 @@
                     <p><strong>Senior Full Stack .NET Developer</strong> · Riyadh, Saudi Arabia</p>
                     <div class="print-header-contacts">
                         <span>Email: abdomohamed2751@gmail.com</span>
-                        <span>Phone: +20 1013470551</span>
+                        <span>KSA: +966 59 722 8231 · WhatsApp: +20 1013470551</span>
                         <span>LinkedIn: linkedin.com/in/abdo-mohamed-2277b1191</span>
                         <span>GitHub: github.com/AbdoMohaamed</span>
                     </div>
@@ -364,6 +419,7 @@
                             <p class="timeline-text">
                                 Spearheaded the design and implementation of full-stack .NET web applications with ASP.NET MVC, Entity Framework, and SQL Server.
                                 <br><span class="highlight">Key Contributions:</span>
+                                <br>• Architected and scaled high-concurrency RESTful Web APIs for the iconic <strong>Zad Al-Muslim (زاد المسلم)</strong> mobile ecosystem (10M+ active users), integrating Redis caching, FCM notification dispatchers, and location-based prayer timing services.
                                 <br>• Applied Clean Architecture with Repository and Dependency Injection patterns for modular, maintainable code.
                                 <br>• Engineered secure authentication workflows including multi-factor authentication, OTP verification, and password resets.
                                 <br>• Integrated third-party SMS gateways (Nexmo, Cequens, SMSMisr) and automated email dispatchers via OAuth and SMTP.
@@ -622,6 +678,37 @@
                     <!-- Projects Grid -->
                     <ul class="project-list">
 
+                        <!-- 0. Zad Al-Muslim (Flagship Mobile Platform) -->
+                        <li class="project-item active" data-filter-item data-category="mobile development"
+                            data-highlight="mobile" data-project-title="Zad Al-Muslim Mobile Platform (زاد المسلم)"
+                            data-project-category="Mobile Development"
+                            data-project-img="./assets/images/zad_almuslim.png"
+                            data-project-role="Lead Backend & High-Scale API Architect"
+                            data-project-desc="High-concurrency backend architecture and distributed micro-APIs powering the iconic Zad Al-Muslim Islamic application (10M+ downloads). Engineered high-availability RESTful APIs, high-precision location-based prayer timing algorithms, audio CDN streaming for Quran recitations, and push notification dispatchers serving millions of active users worldwide."
+                            data-project-tech="ASP.NET Core, C#, Web API, SQL Server, Redis Caching, Firebase FCM, Push Notifications, Clean Architecture, High Concurrency"
+                            data-project-url="https://play.google.com/store/apps/details?id=com.zad.muslim"
+                            data-project-type="live"
+                            data-tilt>
+                            <a href="https://play.google.com/store/apps/details?id=com.zad.muslim">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </div>
+                                    <img src="./assets/images/zad_almuslim.png" alt="Zad Al-Muslim Platform">
+                                </figure>
+                                <h3 class="project-title">Zad Al-Muslim Platform (زاد المسلم)</h3>
+                                <p class="project-category">Mobile Development</p>
+                                <p class="project-tech">
+                                    <span>ASP.NET Core</span>
+                                    <span>C#</span>
+                                    <span>Web API</span>
+                                    <span>Redis</span>
+                                    <span>Firebase</span>
+                                </p>
+                            </a>
+                        </li>
+
+
                         <!-- 1. Dar-Alifta Arabic -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-highlight="content" data-project-title="Dar-Alifta Arabic Portal"
@@ -855,7 +942,7 @@
 
                         <!-- 9. Fatwa Conference App -->
                         <li class="project-item active" data-filter-item data-category="mobile development"
-                            data-highlight="mobile" data-project-title="Fatwa Conference Mobile Application"
+                            data-project-title="Fatwa Conference Mobile Application"
                             data-project-category="Mobile Development"
                             data-project-img="./assets/images/Project_9.jpg"
                             data-project-role="Mobile API & Backend Architect"
@@ -1193,8 +1280,14 @@
   </div>
   <div class="contact-direct">
     <button type="button" data-copy="abdomohamed2751@gmail.com">Copy email</button>
+    <a href="tel:+966597228231">Call KSA +966 59 722 8231</a>
+    <button type="button" data-copy="+966597228231">Copy KSA number</button>
     <a href="tel:+201013470551">Call +20 1013470551</a>
-    <button type="button" data-copy="+201013470551">Copy number</button>
+    <button type="button" data-copy="+201013470551">Copy WhatsApp number</button>
+    <button type="button" class="vcard-btn" id="downloadVCardBtn" title="Download vCard (.vcf) directly to phone contacts">
+        <ion-icon name="person-add-outline"></ion-icon>
+        <span>Save Contact (.vcf)</span>
+    </button>
   </div>
   <form action="#" class="form" data-form>
     <label class="field-label" for="contact-interest">I’d like to talk about</label>
@@ -1269,6 +1362,149 @@
         </div>
     </div>
 
+    
+    <!-- ==================== COMMAND PALETTE MODAL (CTRL + K) ==================== -->
+    <div class="cmd-palette-container" id="cmdPaletteContainer" role="dialog" aria-modal="true" aria-label="Command Palette">
+        <div class="cmd-palette-overlay" id="cmdPaletteOverlay"></div>
+        <div class="cmd-palette-modal">
+            <div class="cmd-palette-header">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" class="cmd-palette-input" id="cmdPaletteInput" placeholder="Type a command, project, or tech stack..." autocomplete="off" spellcheck="false">
+                <kbd class="cmd-palette-esc">ESC</kbd>
+            </div>
+            <div class="cmd-palette-results" id="cmdPaletteResults">
+                <!-- Dynamically populated commands and search results -->
+            </div>
+            <div class="cmd-palette-footer">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span>
+                <span><kbd>↵</kbd> select</span>
+                <span><kbd>ESC</kbd> close</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- ==================== CLEAN ARCHITECTURE BLUEPRINT MODAL ==================== -->
+    <div class="arch-modal-container" id="architectureModalContainer" role="dialog" aria-modal="true" aria-label="Clean Architecture Blueprint">
+        <div class="arch-modal-overlay" id="archModalOverlay"></div>
+        <div class="arch-modal">
+            <button class="arch-modal-close-btn" id="archModalCloseBtn" title="Close blueprint (Esc)">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="arch-modal-header">
+                <div class="arch-modal-icon">
+                    <ion-icon name="git-network-outline"></ion-icon>
+                </div>
+                <div>
+                    <h3 class="arch-modal-title">Enterprise .NET Clean Architecture &amp; CQRS</h3>
+                    <p class="arch-modal-subtitle">Production-proven architecture engineered for scalability, maintainability, and high concurrency.</p>
+                </div>
+            </div>
+
+            <div class="arch-diagram">
+                <!-- Layer 1: Presentation & API Gateway -->
+                <div class="arch-layer presentation-layer">
+                    <div class="arch-layer-badge">1. PRESENTATION &amp; API LAYER</div>
+                    <div class="arch-nodes">
+                        <div class="arch-node">
+                            <strong>ASP.NET Core Web APIs</strong>
+                            <span>Minimal APIs &amp; Controllers</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Security &amp; Auth</strong>
+                            <span>JWT Tokens &amp; RBAC Policies</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Rate Limiting &amp; Caching</strong>
+                            <span>IP Rate Limiting &amp; OutputCache</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Middleware Pipeline</strong>
+                            <span>Global Error &amp; Audit Logging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 2: Application Core (CQRS) -->
+                <div class="arch-layer application-layer">
+                    <div class="arch-layer-badge">2. APPLICATION LAYER (CQRS &amp; MEDIATR)</div>
+                    <div class="arch-nodes">
+                        <div class="arch-node highlight-node">
+                            <strong>Commands &amp; Handlers</strong>
+                            <span>Write Operations (MediatR)</span>
+                        </div>
+                        <div class="arch-node highlight-node">
+                            <strong>Queries &amp; Handlers</strong>
+                            <span>Read Operations (Optimized Dapper)</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>FluentValidation</strong>
+                            <span>Request Validation Pipeline</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Behaviors</strong>
+                            <span>Logging, Metrics &amp; UnitOfWork</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 3: Domain Core (DDD) -->
+                <div class="arch-layer domain-layer">
+                    <div class="arch-layer-badge">3. DOMAIN LAYER (ENTERPRISE LOGIC)</div>
+                    <div class="arch-nodes">
+                        <div class="arch-node">
+                            <strong>Entities &amp; Aggregates</strong>
+                            <span>Rich Domain Models &amp; Invariants</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Value Objects</strong>
+                            <span>Immutable Business Value Types</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Domain Events</strong>
+                            <span>Asynchronous In-Memory Events</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Specifications</strong>
+                            <span>Encapsulated Business Query Rules</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Layer 4: Infrastructure & Persistence -->
+                <div class="arch-layer infrastructure-layer">
+                    <div class="arch-layer-badge">4. INFRASTRUCTURE &amp; PERSISTENCE</div>
+                    <div class="arch-nodes">
+                        <div class="arch-node">
+                            <strong>EF Core 8 / 9</strong>
+                            <span>Write Model &amp; Change Tracking</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Dapper Micro-ORM</strong>
+                            <span>High-Speed Query Execution</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>SQL Server</strong>
+                            <span>Indexed &amp; Partitioned Tables</span>
+                        </div>
+                        <div class="arch-node">
+                            <strong>Redis Cache</strong>
+                            <span>Distributed Cache &amp; Sessions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arch-modal-footer">
+                <div class="arch-specs">
+                    <span>⚡ <strong>Performance:</strong> Sub-50ms API Responses</span>
+                    <span>🔒 <strong>Security:</strong> OWASP Compliant &amp; Encrypted</span>
+                    <span>📈 <strong>Scalability:</strong> Multi-Tenant &amp; Distributed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </main>
 
     <footer class="site-footer">
@@ -1280,6 +1516,7 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/contact.js"></script>
     <script src="./assets/js/experience.js"></script>
+    <script src="./assets/js/i18n-fix.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

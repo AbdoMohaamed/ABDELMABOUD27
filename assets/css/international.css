@@ -1,0 +1,241 @@
+/* ==========================================================================
+   international.css  —  loaded LAST. Arabic (RTL) correctness + global polish.
+   Does not replace style.css / redesign.css; it only overrides what is broken.
+   ========================================================================== */
+
+:root {
+  --ar-font: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --focus-ring: #b9ed84;
+}
+
+/* ---------- Global quality floor (EN + AR) ---------- */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .cursor-glow { display: none !important; }
+}
+
+/* ---------- Bidi isolation helpers (added by i18n-fix.js) ---------- */
+bdi.ltr, [data-bidi-auto] {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.dir-arrow { display: inline-block; }
+[dir="rtl"] .dir-arrow { transform: scaleX(-1); }
+
+/* ---------- Arabic typography ---------- */
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea,
+html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4,
+html[dir="rtl"] .article-title, html[dir="rtl"] .section-heading, html[dir="rtl"] .skills-title,
+html[dir="rtl"] .form-title, html[dir="rtl"] .h2, html[dir="rtl"] .h3, html[dir="rtl"] .h4,
+html[dir="rtl"] .project-title, html[dir="rtl"] .arch-modal-title, html[dir="rtl"] .project-modal-title {
+  font-family: var(--ar-font);
+}
+
+/* Arabic joins letters: tracking and caps break the script. */
+html[dir="rtl"] *,
+html[dir="rtl"] *::before,
+html[dir="rtl"] *::after {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+html[dir="rtl"] em,
+html[dir="rtl"] i,
+html[dir="rtl"] cite { font-style: normal; }
+
+html[dir="rtl"] body { line-height: 1.8; }
+html[dir="rtl"] p,
+html[dir="rtl"] li,
+html[dir="rtl"] .timeline-text,
+html[dir="rtl"] .service-item-text,
+html[dir="rtl"] .process-grid p,
+html[dir="rtl"] .quick-faq p { line-height: 2; }
+
+/* Arabic needs a larger optical size than Latin at the same px. */
+html[dir="rtl"] .featured-card p,
+html[dir="rtl"] .service-item-text,
+html[dir="rtl"] .process-grid p,
+html[dir="rtl"] .quick-faq p,
+html[dir="rtl"] .timeline-text,
+html[dir="rtl"] .project-description { font-size: 14.5px; }
+html[dir="rtl"] .featured-card h4,
+html[dir="rtl"] .service-item-title,
+html[dir="rtl"] .process-grid h4 { font-size: 16px; line-height: 1.6; }
+html[dir="rtl"] .featured-role,
+html[dir="rtl"] .featured-action,
+html[dir="rtl"] .stat-label,
+html[dir="rtl"] .project-category,
+html[dir="rtl"] .navbar-link { font-size: 13.5px; }
+
+/* Hero */
+html[dir="rtl"] .hero-heading {
+  font-family: var(--ar-font);
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+  text-wrap: balance;
+}
+html[dir="rtl"] .hero-heading em,
+html[dir="rtl"] .morphing-text {
+  font-family: var(--ar-font);
+  font-style: normal;
+  font-weight: 600;
+  unicode-bidi: plaintext; /* ".NET Full-Stack." keeps its dot on the right side */
+}
+html[dir="rtl"] .hero-description { font-size: 1.05rem; line-height: 2; }
+
+/* "20+" must not become "+20" */
+html[dir="rtl"] .stat-number {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: right;
+}
+
+/* ---------- Arrows & mirrored text (the garbled "استكشف المشروع" bug) ---------- */
+/* The old rule mirrored the WHOLE element, so the Arabic text itself was flipped. */
+html[dir="rtl"] .featured-action {
+  transform: none;
+  display: block;
+}
+
+/* ---------- Resume details ---------- */
+/* "أبرز المساهمات:" was rendered as a pill because it inherits the date-chip style. */
+html[dir="rtl"] .timeline-text .highlight,
+.timeline-text .highlight {
+  display: inline;
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 0;
+  border-radius: 0;
+}
+html[dir="rtl"] .timeline-item > span { font-size: 12.5px; }
+
+/* Technical tags are always LTR islands (fixes "#C" and ".NET Core." ordering) */
+html[dir="rtl"] .skill-tag,
+html[dir="rtl"] .project-tags span,
+html[dir="rtl"] .tech-tag,
+html[dir="rtl"] kbd {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ---------- Forms in RTL ---------- */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select { text-align: right; }
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="url"] { direction: ltr; text-align: right; }
+html[dir="rtl"] ::placeholder { opacity: .7; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  html[dir="rtl"] .hero-heading { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+  html[dir="rtl"] .navbar-link { font-size: 13px; }
+  .navbar-link, .filter-list button, .work-picker label { min-height: 44px; }
+}
+
+/* ==========================================================================
+   RTL layout corrections (physical left/right values in the base CSS)
+   ========================================================================== */
+
+/* Stats: base CSS pins text-align:left and a right-hand divider */
+html[dir="rtl"] .stats-grid .stat-card,
+html[dir="rtl"] .stat-card {
+  text-align: right;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+html[dir="rtl"] .stat-card:last-child { border-left: 0; }
+html[dir="rtl"] .stat-number { text-align: right; }
+html[dir="rtl"] .stat-label { text-align: right; font-size: 13.5px; line-height: 1.8; }
+
+/* Featured cards: role, title, text and CTA all start on the right */
+html[dir="rtl"] .featured-card,
+html[dir="rtl"] .featured-card h4,
+html[dir="rtl"] .featured-card p,
+html[dir="rtl"] .featured-role,
+html[dir="rtl"] .featured-action { text-align: right; }
+
+/* Accent underline under section titles sits under the first letter (right) */
+html[dir="rtl"] .article-title::after { left: auto; right: 0; }
+
+/* Testimonial avatar badge moves to the right corner */
+html[dir="rtl"] .testimonials-avatar-box {
+  left: auto;
+  right: 0;
+  transform: translate(-15px, -25px);
+}
+
+/* Name / title block in the hero card */
+html[dir="rtl"] .info-content .name,
+html[dir="rtl"] .info-content .title,
+html[dir="rtl"] .contact-form .form-feedback { text-align: right; }
+
+/* Command palette rows */
+html[dir="rtl"] .cmd-item { text-align: right; }
+
+/* Hero: keep the Latin tagline's leading dot on the correct side */
+html[dir="rtl"] .morphing-text { display: inline-block; }
+
+/* Testimonial: avatar on the right corner must not sit on top of the name */
+html[dir="rtl"] .testimonials-item-title,
+html[dir="rtl"] [data-testimonials-title] { margin-top: 34px; }
+
+/* Arabic minimum readable sizes (base CSS uses 8–12px Latin sizes) */
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .section-intro,
+html[dir="rtl"] .contact-options small,
+html[dir="rtl"] .contact-direct a,
+html[dir="rtl"] .contact-direct button,
+html[dir="rtl"] #delivery-note,
+html[dir="rtl"] .delivery-options label,
+html[dir="rtl"] .quick-faq summary,
+html[dir="rtl"] .expertise-details summary,
+html[dir="rtl"] .about-list li,
+html[dir="rtl"] .cmd-palette-footer { font-size: 13.5px; }
+html[dir="rtl"] .contact-form label,
+html[dir="rtl"] .contact-form legend,
+html[dir="rtl"] .work-picker legend { font-size: 14.5px; }
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select { font-size: 15px; }
+html[dir="rtl"] .about-text,
+html[dir="rtl"] .about-text p { font-size: 15px; line-height: 2; }
+html[dir="rtl"] .work-picker span,
+html[dir="rtl"] .filter-list button,
+html[dir="rtl"] .primary-action,
+html[dir="rtl"] .secondary-action,
+html[dir="rtl"] .header-contact { font-size: 14px; }
+
+/* "Key contributions:" label is plain bold text, not a chip (base rules use !important) */
+.timeline-text .highlight {
+  display: inline !important;
+  background: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  min-height: 0 !important;
+  font-size: inherit !important;
+  color: #d8e5d0 !important;
+}
+html[dir="rtl"] .brand-label small { font-size: 11px; }

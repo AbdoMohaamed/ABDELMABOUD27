@@ -21,21 +21,29 @@ const setContactFeedback = message => {
   contactFeedback.textContent = message;
 };
 contactForm.addEventListener('change', () => {
-  contactSubmit.textContent = contactForm.elements.channel.value === 'email' ? 'Continue to email ↗' : 'Continue to WhatsApp ↗';
+  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
+  if (contactForm.elements.channel.value === 'email') {
+    contactSubmit.innerHTML = (isAr ? 'المتابعة عبر البريد الإلكتروني' : 'Continue to email') + ' <span aria-hidden="true">↗</span>';
+  } else {
+    contactSubmit.innerHTML = (isAr ? 'المتابعة عبر واتساب' : 'Continue to WhatsApp') + ' <span aria-hidden="true">↗</span>';
+  }
 });
 contactForm.addEventListener('submit', event => {
   event.preventDefault();
   if (!contactForm.reportValidity()) return;
+  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
   const values = draftValues();
   if (!values.fullname.trim() || !values.message.trim()) {
-    setContactFeedback('Please add your name and a short message.');
+    setContactFeedback(isAr ? 'يرجى كتابة الاسم ونبذة قصيرة عن الرسالة.' : 'Please add your name and a short message.');
     return;
   }
   const draft = buildContactDraft(values);
   // Keep every field intact: opening an app does not confirm delivery.
   if (values.channel === 'email') window.location.href = draft.email;
   else window.open(draft.whatsapp, '_blank', 'noopener,noreferrer');
-  setContactFeedback('Your draft is ready. Complete sending in the app that opens. If it doesn’t open, copy the message below or use a direct contact link above.');
+  setContactFeedback(isAr
+    ? 'مسودة الرسالة جاهزة الآن. أكمل الإرسال من التطبيق الذي سيفتح، أو انسخ الرسالة أدناه.'
+    : 'Your draft is ready. Complete sending in the app that opens. If it doesn’t open, copy the message below or use a direct contact link above.');
 });
 async function copyTextSafely(text) {
   if (navigator.clipboard && window.isSecureContext) {
@@ -54,26 +62,28 @@ async function copyTextSafely(text) {
 }
 document.getElementById('copyDraft').addEventListener('click', async () => {
   if (!contactForm.reportValidity()) return;
+  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
   const values = draftValues();
   if (!values.fullname.trim() || !values.message.trim()) {
-    setContactFeedback('Please add your name and a short message.'); return;
+    setContactFeedback(isAr ? 'يرجى كتابة الاسم ونبذة قصيرة عن الرسالة.' : 'Please add your name and a short message.'); return;
   }
   try {
     await copyTextSafely(buildContactDraft(values).message);
-    setContactFeedback('Message copied. Paste it into WhatsApp or email when you’re ready.');
+    setContactFeedback(isAr ? 'تم نسخ نص الرسالة. يمكنك لصقها في واتساب أو بريدك الإلكتروني.' : 'Message copied. Paste it into WhatsApp or email when you’re ready.');
   } catch {
-    setContactFeedback('Clipboard unavailable. Select and copy your message manually; your text is still here.');
+    setContactFeedback(isAr ? 'الحافظة غير متاحة. يرجى تحديد النص ونسخه يدوياً.' : 'Clipboard unavailable. Select and copy your message manually; your text is still here.');
   }
 });
 let copyNoticeTimer;
 document.querySelectorAll('[data-copy]').forEach(button => {
   button.addEventListener('click', async () => {
+    const isAr = document.documentElement.getAttribute('dir') === 'rtl';
     const notice = document.getElementById('toastNotification');
     try {
       await copyTextSafely(button.dataset.copy);
-      notice.querySelector('.toast-text').textContent = 'Copied to clipboard!';
+      notice.querySelector('.toast-text').textContent = isAr ? 'تم النسخ إلى الحافظة!' : 'Copied to clipboard!';
     } catch {
-      notice.querySelector('.toast-text').textContent = 'Could not copy. Please select the contact details manually.';
+      notice.querySelector('.toast-text').textContent = isAr ? 'تعذر النسخ، يرجى النسخ يدوياً.' : 'Could not copy. Please select the contact details manually.';
     }
     notice.classList.add('active');
     clearTimeout(copyNoticeTimer);
@@ -103,7 +113,8 @@ document.querySelectorAll('[data-highlight]').forEach(item => {
   description.textContent = item.dataset.projectDesc;
   const action = document.createElement('span');
   action.className = 'featured-action';
-  action.textContent = 'Explore project ↗';
+  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
+  action.textContent = isAr ? 'استكشف المشروع ↗' : 'Explore project ↗';
   button.append(img, role, title, description, action);
   button.addEventListener('click', () => openProjectModal(item));
   featuredHost.appendChild(button);
@@ -124,7 +135,7 @@ showSelectedWork();
 const projectConversation = document.createElement('button');
 projectConversation.type = 'button';
 projectConversation.className = 'secondary-action project-conversation';
-projectConversation.textContent = 'Have a similar project? Let’s talk ↗';
+projectConversation.textContent = document.documentElement.getAttribute('dir') === 'rtl' ? 'هل لديك مشروع مماثل؟ تواصل معي ↗' : 'Have a similar project? Let’s talk ↗';
 projectConversation.addEventListener('click', () => {
   const project = pModalTitle.textContent;
   closeProjectModal();
