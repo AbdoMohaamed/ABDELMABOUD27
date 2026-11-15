@@ -150,9 +150,9 @@
                             <img src="./assets/images/Abdo.jpg" width="64" height="64" alt="Abdelmaboud Mohamed" fetchpriority="high" decoding="sync">
                             <div>
                                 <h1 class="intro-name">Abdelmaboud Mohamed</h1>
-                                <div class="availability-badge">
-                                    <span class="status-indicator"></span>
-                                    <span>Riyadh, KSA · Transferable Iqama · Open for Roles</span>
+                                <div class="availability-badge" title="Available immediately in Riyadh · Transferable Iqama">
+                                    <span class="status-indicator" aria-hidden="true"></span>
+                                    <span class="status-text">Riyadh, KSA · Immediate Transferable Iqama · Open for Roles</span>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                     </div>
                     <button type="button" class="intro-project" id="introProject" aria-label="Explore the Dar Al-Ifta Arabic portal">
                         <span class="intro-preview"><img src="./assets/images/daralifta.jpg" alt="" decoding="async"></span>
-                        <span class="intro-caption"><span><small>Featured project</small><strong>Dar Al-Ifta Arabic Portal</strong></span><span class="intro-arrow" aria-hidden="true">↗</span></span>
+                        <span class="intro-caption"><span><small>Featured project</small><strong>Dar Al-Ifta Arabic Portal</strong></span><span class="intro-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></span>
                     </button>
                 </header>
 
@@ -697,6 +697,8 @@
                         <!-- 0. Zad Al-Muslim (Flagship Mobile Platform) -->
                         <li class="project-item active" data-filter-item data-category="mobile development"
                             data-highlight="mobile" data-project-title="Zad Al-Muslim Mobile Platform (زاد المسلم)"
+                            data-project-badge-en="10M+ Active Users"
+                            data-project-badge-ar="+10 مليون مستخدم نشط"
                             data-project-category="Mobile Development"
                             data-project-img="./assets/images/zad_almuslim.png"
                             data-project-role="Lead Backend & High-Scale API Architect"
@@ -707,6 +709,10 @@
                             data-tilt>
                             <a href="https://play.google.com/store/apps/details?id=com.zad.muslim">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="10M+ Active Users">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">10M+ Active Users</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -717,9 +723,9 @@
                                 <p class="project-tech">
                                     <span>ASP.NET Core</span>
                                     <span>C#</span>
+                                    <span>Redis Cache</span>
                                     <span>Web API</span>
-                                    <span>Redis</span>
-                                    <span>Firebase</span>
+                                    <span>Firebase FCM</span>
                                 </p>
                             </a>
                         </li>
@@ -728,6 +734,8 @@
                         <!-- 1. Dar-Alifta Arabic -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-highlight="content" data-project-title="Dar-Alifta Arabic Portal"
+                            data-project-badge-en="Gov-Grade · Millions Monthly"
+                            data-project-badge-ar="منصة حكومية · ملايين الزوار"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/daralifta.jpg"
                             data-project-role="Lead Full-Stack .NET Developer"
@@ -738,6 +746,10 @@
                             data-tilt>
                             <a href="https://www.dar-alifta.org">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Gov-Grade · Millions Monthly">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Gov-Grade · Millions Monthly</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -749,6 +761,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>C#</span>
                                     <span>SQL Server</span>
+                                    <span>High Concurrency</span>
                                     <span>REST API</span>
                                 </p>
                             </a>
@@ -757,6 +770,8 @@
                         <!-- 2. Mefan -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Mefan Creative Agency"
+                            data-project-badge-en="KSA Enterprise Portfolio"
+                            data-project-badge-ar="مشاريع كبرى بالمملكة"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/mefan.jpg"
                             data-project-role="Full Stack .NET Developer"
@@ -767,6 +782,10 @@
                             data-tilt>
                             <a href="https://www.mefan.sa/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="KSA Enterprise Portfolio">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">KSA Enterprise Portfolio</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -775,10 +794,10 @@
                                 <h3 class="project-title">Mefan Agency</h3>
                                 <p class="project-category">Web Development</p>
                                 <p class="project-tech">
-                                    <span>ASP.NET</span>
+                                    <span>ASP.NET Core</span>
                                     <span>JavaScript</span>
+                                    <span>UI/UX Architecture</span>
                                     <span>Bootstrap</span>
-                                    <span>UI/UX</span>
                                 </p>
                             </a>
                         </li>
@@ -786,6 +805,8 @@
                         <!-- 3. Restful -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-highlight="business" data-project-title="Restful ERP Solutions"
+                            data-project-badge-en="ZATCA Phase 2 Certified"
+                            data-project-badge-ar="معتمد من الزكاة والضريبة (ZATCA)"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/restful.jpg"
                             data-project-role="Senior .NET / ERP Architect"
@@ -796,6 +817,10 @@
                             data-tilt>
                             <a href="https://restfuleg.com/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="ZATCA Phase 2 Certified">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">ZATCA Phase 2 Certified</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -805,9 +830,10 @@
                                 <p class="project-category">Web Development</p>
                                 <p class="project-tech">
                                     <span>.NET Core</span>
-                                    <span>ERP Architecture</span>
+                                    <span>Clean Architecture</span>
                                     <span>SQL Server</span>
-                                    <span>Web APIs</span>
+                                    <span>ZATCA e-Invoice</span>
+                                    <span>Web API</span>
                                 </p>
                             </a>
                         </li>
@@ -815,6 +841,8 @@
                         <!-- 4. VOIP Egypt -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="VOIP Egypt Telecommunication"
+                            data-project-badge-en="Real-time Telecom PBX"
+                            data-project-badge-ar="اتصالات وسنترال لحظي"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/voipegypt.jpg"
                             data-project-role="Backend & Integration Engineer"
@@ -825,6 +853,10 @@
                             data-tilt>
                             <a href="https://voipegypt.net/en">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Real-time Telecom PBX">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Real-time Telecom PBX</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -835,8 +867,9 @@
                                 <p class="project-tech">
                                     <span>ASP.NET MVC</span>
                                     <span>C#</span>
-                                    <span>VoIP Integration</span>
+                                    <span>VoIP SIP PBX</span>
                                     <span>SQL Server</span>
+                                    <span>WebSockets</span>
                                 </p>
                             </a>
                         </li>
@@ -844,6 +877,8 @@
                         <!-- 5. Dar-Alifta English -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Dar-Alifta English Portal"
+                            data-project-badge-en="Global Multi-Lingual Reach"
+                            data-project-badge-ar="انتشار دولي متعدد اللغات"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/Project_4.jpg"
                             data-project-role="Full-Stack Developer"
@@ -854,6 +889,10 @@
                             data-tilt>
                             <a href="https://www.dar-alifta.org/en">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Global Multi-Lingual Reach">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Global Multi-Lingual Reach</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -864,8 +903,8 @@
                                 <p class="project-tech">
                                     <span>ASP.NET MVC</span>
                                     <span>Localization</span>
-                                    <span>RESTful APIs</span>
                                     <span>SQL Server</span>
+                                    <span>RESTful APIs</span>
                                 </p>
                             </a>
                         </li>
@@ -873,6 +912,8 @@
                         <!-- 6. Family -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Family Guidance Platform"
+                            data-project-badge-en="High-Privacy Consultation"
+                            data-project-badge-ar="استشارات بسرية وحماية عالية"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/family.jpg"
                             data-project-role="Full-Stack .NET Developer"
@@ -883,6 +924,10 @@
                             data-tilt>
                             <a href="http://family.dar-alifta.org/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="High-Privacy Consultation">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">High-Privacy Consultation</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -894,6 +939,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>Entity Framework</span>
                                     <span>SQL Server</span>
+                                    <span>Role Security</span>
                                 </p>
                             </a>
                         </li>
@@ -901,6 +947,8 @@
                         <!-- 7. Buccino -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="BUCCINO MARBLE Kuwait"
+                            data-project-badge-en="Multi-Currency E-Commerce"
+                            data-project-badge-ar="متجر تجارة ودفع دولي"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/buccino.jpg"
                             data-project-role="E-Commerce & .NET Developer"
@@ -911,6 +959,10 @@
                             data-tilt>
                             <a href="https://buccinokw.com/ar/home">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Multi-Currency E-Commerce">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Multi-Currency E-Commerce</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -919,10 +971,10 @@
                                 <h3 class="project-title">BUCCINO MARBLE Kuwait</h3>
                                 <p class="project-category">Web Development</p>
                                 <p class="project-tech">
-                                    <span>ASP.NET</span>
+                                    <span>ASP.NET Core</span>
                                     <span>E-Commerce</span>
-                                    <span>Payment Integration</span>
-                                    <span>SQL</span>
+                                    <span>Payment Gateway</span>
+                                    <span>SQL Server</span>
                                 </p>
                             </a>
                         </li>
@@ -930,6 +982,8 @@
                         <!-- 8. Ramadan -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Ramadan Portal"
+                            data-project-badge-en="Seasonal High-Peak Traffic"
+                            data-project-badge-ar="ملايين الزيارات اللحظية"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/ramdan.jpg"
                             data-project-role="Full-Stack Developer"
@@ -940,6 +994,10 @@
                             data-tilt>
                             <a href="https://ramadan.dar-alifta.org/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Seasonal High-Peak Traffic">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Seasonal High-Peak Traffic</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -949,9 +1007,9 @@
                                 <p class="project-category">Web Development</p>
                                 <p class="project-tech">
                                     <span>ASP.NET MVC</span>
-                                    <span>C#</span>
                                     <span>Dynamic CMS</span>
-                                    <span>Responsive UI</span>
+                                    <span>Performance Tuning</span>
+                                    <span>C#</span>
                                 </p>
                             </a>
                         </li>
@@ -959,6 +1017,8 @@
                         <!-- 9. Fatwa Conference App -->
                         <li class="project-item active" data-filter-item data-category="mobile development"
                             data-project-title="Fatwa Conference Mobile Application"
+                            data-project-badge-en="International Summit App"
+                            data-project-badge-ar="مؤتمرات ووفود دولية"
                             data-project-category="Mobile Development"
                             data-project-img="./assets/images/Project_9.jpg"
                             data-project-role="Mobile API & Backend Architect"
@@ -969,6 +1029,10 @@
                             data-tilt>
                             <a href="https://play.google.com/store/apps/details?id=com.dareleftaa.Events&hl=en_US">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="International Summit App">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">International Summit App</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -977,10 +1041,10 @@
                                 <h3 class="project-title">Fatwa Conference App</h3>
                                 <p class="project-category">Mobile Development</p>
                                 <p class="project-tech">
-                                    <span>Backend APIs</span>
                                     <span>ASP.NET Core</span>
+                                    <span>Micro-APIs</span>
                                     <span>Push Notifications</span>
-                                    <span>JSON</span>
+                                    <span>JSON Services</span>
                                 </p>
                             </a>
                         </li>
@@ -988,6 +1052,8 @@
                         <!-- 10. Misr Quran Kareem -->
                         <li class="project-item active" data-filter-item data-category="mobile development"
                             data-project-title="مصر قرآن كريم Mobile Platform"
+                            data-project-badge-en="Ultra-Low Latency Audio CDN"
+                            data-project-badge-ar="بث صوتي CDN بملايين الاستماعات"
                             data-project-category="Mobile Development"
                             data-project-img="./assets/images/united.jpg"
                             data-project-role="Mobile Backend API Developer"
@@ -998,6 +1064,10 @@
                             data-tilt>
                             <a href="https://play.google.com/store/apps/details?id=com.clicksegypt.qurankareem&hl=ar&pli=1">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Ultra-Low Latency Audio CDN">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Ultra-Low Latency Audio CDN</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1008,7 +1078,7 @@
                                 <p class="project-tech">
                                     <span>RESTful APIs</span>
                                     <span>Audio Streaming</span>
-                                    <span>ASP.NET</span>
+                                    <span>ASP.NET Core</span>
                                     <span>SQL Server</span>
                                 </p>
                             </a>
@@ -1017,6 +1087,8 @@
                         <!-- 11. Conference Admin -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Conference Admin Portal"
+                            data-project-badge-en="Delegation & VIP Access"
+                            data-project-badge-ar="إدارة الوفود وكبار الزوار"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/Project_1.jpg"
                             data-project-role="Senior Backend Engineer"
@@ -1027,6 +1099,10 @@
                             data-tilt>
                             <a href="http://conferenceapi.fatwaacademy.org/Admin/Account/login">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Delegation & VIP Access">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Delegation & VIP Access</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1037,8 +1113,8 @@
                                 <p class="project-tech">
                                     <span>ASP.NET MVC</span>
                                     <span>Admin Dashboard</span>
-                                    <span>Authentication</span>
-                                    <span>Reports</span>
+                                    <span>RBAC Auth</span>
+                                    <span>Live Reporting</span>
                                 </p>
                             </a>
                         </li>
@@ -1046,6 +1122,8 @@
                         <!-- 12. Shawky Allam -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Prof. Shawky Allam Portal"
+                            data-project-badge-en="Official Leadership Portal"
+                            data-project-badge-ar="البوابة الرسمية المعتمدة"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/Project_8.jpg"
                             data-project-role="Full-Stack Developer"
@@ -1056,6 +1134,10 @@
                             data-tilt>
                             <a href="http://shawkyallam.com/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Official Leadership Portal">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Official Leadership Portal</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1067,6 +1149,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>Media Management</span>
                                     <span>SQL Server</span>
+                                    <span>Dynamic Archive</span>
                                 </p>
                             </a>
                         </li>
@@ -1074,6 +1157,8 @@
                         <!-- 13. Impact -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Impact Agency"
+                            data-project-badge-en="High-Conversion Platform"
+                            data-project-badge-ar="منصة تسويق رقمي تفاعلية"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/Impact.jpg"
                             data-project-role="Frontend & Web Developer"
@@ -1084,6 +1169,10 @@
                             data-tilt>
                             <a href="https://abdomohaamed.github.io/Impact/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="High-Conversion Platform">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">High-Conversion Platform</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1094,8 +1183,8 @@
                                 <p class="project-tech">
                                     <span>JavaScript</span>
                                     <span>HTML5 / CSS3</span>
+                                    <span>Modern UX</span>
                                     <span>Bootstrap</span>
-                                    <span>Responsive</span>
                                 </p>
                             </a>
                         </li>
@@ -1103,6 +1192,8 @@
                         <!-- 14. Freelancer -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Freelancer Hub"
+                            data-project-badge-en="Scalable Cloud Architecture"
+                            data-project-badge-ar="معمارية سحابية موزعة"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/freelancer.jpg"
                             data-project-role="Cloud .NET Engineer"
@@ -1113,6 +1204,10 @@
                             data-tilt>
                             <a href="https://freelancer-hjfdcuhahrhhdnad.canadacentral-01.azurewebsites.net/projects">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Scalable Cloud Architecture">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Scalable Cloud Architecture</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1124,7 +1219,7 @@
                                     <span>Azure App Service</span>
                                     <span>ASP.NET Core</span>
                                     <span>EF Core</span>
-                                    <span>SQL</span>
+                                    <span>SQL Server</span>
                                 </p>
                             </a>
                         </li>
@@ -1132,6 +1227,8 @@
                         <!-- 15. Palestine -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Palestine Information Portal"
+                            data-project-badge-en="Rich Media Archival Portal"
+                            data-project-badge-ar="أرشيف توثيقي متعدد الوسائط"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/Palestine.jpg"
                             data-project-role="Full-Stack Developer"
@@ -1142,6 +1239,10 @@
                             data-tilt>
                             <a href="http://palestine.dar-alifta.org/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Rich Media Archival Portal">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Rich Media Archival Portal</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1153,7 +1254,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>C#</span>
                                     <span>SQL Server</span>
-                                    <span>Media Portal</span>
+                                    <span>Media CDN</span>
                                 </p>
                             </a>
                         </li>
@@ -1161,6 +1262,8 @@
                         <!-- 16. VerifyFatwa -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="VerifyFatwa Engine"
+                            data-project-badge-en="Anti-Tamper Verification"
+                            data-project-badge-ar="محرك فحص ومصادقة المستندات"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/verifyfatwa.jpg"
                             data-project-role="Lead System Architect"
@@ -1171,6 +1274,10 @@
                             data-tilt>
                             <a href="#portfolio">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Anti-Tamper Verification">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Anti-Tamper Verification</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1182,6 +1289,7 @@
                                     <span>ASP.NET Core</span>
                                     <span>Verification Engine</span>
                                     <span>Search Algorithm</span>
+                                    <span>Security</span>
                                 </p>
                             </a>
                         </li>
@@ -1189,6 +1297,8 @@
                         <!-- 17. Dashboard -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Events Analytics Dashboard"
+                            data-project-badge-en="Real-Time Telemetry & Insights"
+                            data-project-badge-ar="لوحة قياس وتحليلات فورية"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/dashboard.png"
                             data-project-role="Senior .NET Dashboard Developer"
@@ -1199,6 +1309,10 @@
                             data-tilt>
                             <a href="#portfolio">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Real-Time Telemetry & Insights">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Real-Time Telemetry & Insights</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1210,7 +1324,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>DataTables</span>
                                     <span>Chart.js</span>
-                                    <span>SQL Server</span>
+                                    <span>SQL Server Analytics</span>
                                 </p>
                             </a>
                         </li>
@@ -1218,6 +1332,8 @@
                         <!-- 18. Staff HR -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Staff Enterprise HR Portal"
+                            data-project-badge-en="Enterprise RBAC & Payroll"
+                            data-project-badge-ar="شؤون موظفين ورواتب وصلاحيات"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/HR.jpg"
                             data-project-role="Full-Stack Developer"
@@ -1228,6 +1344,10 @@
                             data-tilt>
                             <a href="https://hr.dar-alifta.org/Account/Login">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="Enterprise RBAC & Payroll">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">Enterprise RBAC & Payroll</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1238,8 +1358,8 @@
                                 <p class="project-tech">
                                     <span>ASP.NET MVC</span>
                                     <span>RBAC Security</span>
-                                    <span>Payroll & Attendance</span>
-                                    <span>SQL</span>
+                                    <span>Payroll Engine</span>
+                                    <span>SQL Server</span>
                                 </p>
                             </a>
                         </li>
@@ -1247,6 +1367,8 @@
                         <!-- 19. Nazir Ayyad -->
                         <li class="project-item active" data-filter-item data-category="web development"
                             data-project-title="Prof. Nazir Ayyad Portal"
+                            data-project-badge-en="High-Security Official CMS"
+                            data-project-badge-ar="بوابة رسمية وإعلامية مؤمنة"
                             data-project-category="Web Development"
                             data-project-img="./assets/images/nazirayad.jpg"
                             data-project-role="Full-Stack Developer"
@@ -1257,6 +1379,10 @@
                             data-tilt>
                             <a href="http://nazirayad.com/">
                                 <figure class="project-img">
+                                <span class="project-badge" aria-label="High-Security Official CMS">
+                                    <span class="badge-pulse-dot" aria-hidden="true"></span>
+                                    <span class="badge-label">High-Security Official CMS</span>
+                                </span>
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
@@ -1268,6 +1394,7 @@
                                     <span>ASP.NET MVC</span>
                                     <span>CMS Architecture</span>
                                     <span>SQL Server</span>
+                                    <span>Enterprise Security</span>
                                 </p>
                             </a>
                         </li>

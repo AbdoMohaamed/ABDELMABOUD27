@@ -24,7 +24,7 @@ button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
 .header-location { margin-left: auto; color: #a7b1a7; font-size: 12px; display: flex; align-items: center; gap: 10px; }
 .location-dot { width: 6px; height: 6px; border-radius: 50%; background: #b9ed84; }
 .header-contact { display: flex; gap: 26px; color: #eaf0e7; font-size: 13px; padding: 10px 18px; border: 1px solid #485344; border-radius: 6px; }
-main { display: block; max-width: 1200px; margin: 32px auto 70px; padding: 0 32px; }
+main { display: block; max-width: 1200px; margin: 32px auto 70px; }
 .sidebar, article, .sidebar:hover, article:hover { background: var(--surface) !important; border: 1px solid var(--line) !important; box-shadow: none !important; backdrop-filter: none; border-radius: 16px; }
 .sidebar { position: sticky; top: 24px; width: 100%; padding: 26px 22px; max-height: none; height: auto; margin: 0; overflow: hidden; }
 .sidebar-info { flex-direction: column; gap: 18px; align-items: flex-start; }
@@ -192,7 +192,7 @@ article { padding: 32px; min-height: 500px; }
 .text-action { color: #b9ed84; display: flex; align-items: center; gap: 12px; padding: 16px 0; font-size: 12px; text-decoration: underline; text-underline-offset: 5px; }
 .working-together { margin-top: 40px; }
 .process-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin: 26px 0; }
-.step-number { color: #b9ed84; font-size: 12px; margin-bottom: 14px; }
+.step-number { color: #b9ed84; font-size: 14px; margin-bottom: 14px; }
 .process-grid h4 { color: #e4eddf; font-size: 13px; font-weight: 500; margin-bottom: 9px; }
 .process-grid p, .quick-faq p { color: #a3afa3; font-size: 12px; line-height: 1.9; }
 .quick-faq { border-top: 1px solid var(--line); }
@@ -264,7 +264,7 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
 .project-story h4 { color: #b9ed84; font-size: 11px; font-weight: 500; margin-bottom: 8px; }
 .project-story p { color: #c1cdb8; font-size: 12px; line-height: 1.8; }
 .project-modal { background: #171e18 !important; border-color: #3b4933 !important; }
-.motion-toggle { color: #a7b59c; font-size: 11px; padding: 12px 0; text-decoration: underline; text-underline-offset: 4px; }
+.motion-toggle { color: #a7b59c; font-size: 16px; padding: 12px 0; text-decoration: underline; text-underline-offset: 4px; }
 .motion-toggle[hidden] { display: none; }
 .site-footer { max-width: 1296px; margin: 0 auto; padding: 26px 24px; border-top: 1px solid var(--line); color: #92a187; display: flex; justify-content: space-between; gap: 16px; font-size: 11px; }
 .site-footer a { color: #b9dca0; }
@@ -381,8 +381,36 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
 .intro-caption { color: var(--hero-ink); }
 .intro-caption small { color: var(--hero-muted); }
 .intro-arrow {
-  display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px;
-  border-radius: 50%; border: 1px solid #647c6e; color: var(--hero-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #647c6e;
+  color: var(--hero-accent);
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+.intro-arrow svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  stroke: currentColor;
+  margin: auto;
+  transition: transform 0.25s ease;
+}
+.intro-project:hover .intro-arrow {
+  background: rgba(185, 237, 132, 0.15);
+  border-color: #b9ed84;
+  color: #b9ed84;
+}
+.intro-project:hover .intro-arrow svg {
+  transform: translate(2px, -2px);
 }
 .intro-preview {
   background: linear-gradient(135deg, #dfbfa4, #f0dcc0 55%, #c9cbaf);
@@ -1139,33 +1167,127 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
    # COMMAND PALETTE (CTRL + K), AVAILABILITY BADGE & INTERACTIVE TECH TAGS
    ========================================================================== */
 
-/* Availability & Relocation Badge */
+/* Availability & Relocation Badge (Live Radar Pulse) */
 .availability-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #19271c;
-  border: 1px solid #364831;
-  color: #b9ed84;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 500;
-  margin-top: 4px;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(25, 41, 28, 0.92) 0%, rgba(16, 28, 18, 0.96) 100%);
+  border: 1px solid rgba(185, 237, 132, 0.42);
+  color: #c9f598;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-top: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 0 16px rgba(185, 237, 132, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.availability-badge:hover {
+  border-color: rgba(185, 237, 132, 0.7);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 20px rgba(185, 237, 132, 0.22);
+  transform: translateY(-1px);
 }
 
 .status-indicator {
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
+  min-width: 9px;
   background: #b9ed84;
   border-radius: 50%;
-  box-shadow: 0 0 8px #b9ed84;
-  animation: pulse-dot 2s infinite ease-in-out;
+  position: relative;
+  box-shadow: 0 0 10px #b9ed84, 0 0 3px #ffffff;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-indicator::before,
+.status-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1.5px solid #b9ed84;
+  pointer-events: none;
+}
+
+.status-indicator::before {
+  animation: statusRadarPulse 2.4s cubic-bezier(0.15, 0.85, 0.35, 1) infinite;
+}
+
+.status-indicator::after {
+  animation: statusRadarPulse 2.4s cubic-bezier(0.15, 0.85, 0.35, 1) infinite 1.2s;
+}
+
+@keyframes statusRadarPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.95;
+    box-shadow: 0 0 4px rgba(185, 237, 132, 0.8);
+  }
+  75% {
+    transform: scale(2.6);
+    opacity: 0;
+    box-shadow: 0 0 10px transparent;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
 }
 
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Project Scale & Impact Badges */
+.project-badge {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(13, 22, 12, 0.88);
+  border: 1px solid rgba(185, 237, 132, 0.45);
+  border-radius: 999px;
+  padding: 4px 11px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 12px rgba(185, 237, 132, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-item:hover .project-badge {
+  transform: translateY(-2px);
+  border-color: rgba(185, 237, 132, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55), 0 0 16px rgba(185, 237, 132, 0.3);
+}
+
+.badge-pulse-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background: #b9ed84;
+  box-shadow: 0 0 8px #b9ed84;
+  flex-shrink: 0;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.badge-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e3fed2;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  line-height: 1.25;
 }
 
 /* Header Quick Actions & Command Palette Trigger */
@@ -1411,21 +1533,41 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
   font-size: 10px;
 }
 
-/* Interactive click-to-filter tech tags */
-.project-tech span,
-.skill-tag,
-.project-modal-tech-item {
+/* Direct Tech Chips on Cards */
+.project-tech {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 8px 14px 18px !important;
+  margin: 0 !important;
+}
+
+.project-tech span {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(185, 237, 132, 0.08) !important;
+  border: 1px solid rgba(185, 237, 132, 0.24) !important;
+  color: #cbf59c !important;
+  font-family: var(--ff-mono, 'JetBrains Mono', 'Fira Code', monospace) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 3px 9px !important;
+  border-radius: 6px !important;
+  letter-spacing: 0.15px !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
   cursor: pointer !important;
-  transition: all 0.2s ease !important;
-  position: relative !important;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.4, 1) !important;
 }
 
 .project-tech span:hover,
 .skill-tag:hover,
 .project-modal-tech-item:hover {
   background: #b9ed84 !important;
-  color: #15200f !important;
+  color: #0b1509 !important;
   border-color: #b9ed84 !important;
+  box-shadow: 0 4px 12px rgba(185, 237, 132, 0.4) !important;
   transform: translateY(-2px) !important;
 }
 
@@ -1907,9 +2049,18 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
 }
 
 [dir="rtl"] .intro-arrow {
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+}
+
+[dir="rtl"] .intro-arrow svg {
   transform: scaleX(-1);
+}
+
+[dir="rtl"] .intro-project:hover .intro-arrow svg {
+  transform: scaleX(-1) translate(2px, -2px);
 }
 
 [dir="rtl"] .intro-caption {
@@ -2652,15 +2803,16 @@ html, body {
     display: none !important;
   }
 
-  .site-header .header-contact {
-    display: inline-flex !important;
-    align-items: center !important;
-    padding: 6px 12px !important;
-    font-size: 11.5px !important;
-    border-radius: 8px !important;
-    min-height: 34px !important;
-    white-space: nowrap !important;
-  }
+    .site-header .header-contact {
+        display: inline-flex !important;
+        align-items: center !important;
+        padding: 6px 12px !important;
+        font-size: 11.5px !important;
+        border-radius: 8px !important;
+        min-height: 34px !important;
+        white-space: nowrap !important;
+        font-weight: bold !important;
+    }
 
   /* 2. BULLETPROOF NATIVE MOBILE BOTTOM NAVIGATION BAR */
   .site-header .navbar,
@@ -2772,12 +2924,12 @@ html, body {
   /* 3. BODY & MAIN CLEARANCE (PREVENTS DOCK OVERLAP) */
   main {
     padding: 0 16px !important;
-    margin: 14px auto 0 !important;
+    margin: 14px auto 15px !important;
     max-width: 100% !important;
   }
 
   .main-content > article {
-    padding-bottom: calc(88px + env(safe-area-inset-bottom, 12px)) !important;
+    padding-bottom:20px!important;
   }
 
   .site-footer {
@@ -2956,6 +3108,32 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+  }
+
+  .project-badge {
+    top: 10px !important;
+    inset-inline-start: 10px !important;
+    padding: 3px 9px !important;
+    gap: 6px !important;
+  }
+
+  .project-badge .badge-label {
+    font-size: 10.5px !important;
+  }
+
+  .badge-pulse-dot {
+    width: 5.5px !important;
+    height: 5.5px !important;
+  }
+
+  .project-tech {
+    padding: 6px 10px 14px !important;
+    gap: 5px !important;
+  }
+
+  .project-tech span {
+    font-size: 10.5px !important;
+    padding: 2.5px 7.5px !important;
   }
 
   /* 8. SKILLS SECTION MOBILE FIX */

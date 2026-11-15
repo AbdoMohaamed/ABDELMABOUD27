@@ -635,120 +635,140 @@ function downloadVCard() {
   const projectTranslationsAr = {
     "Zad Al-Muslim Mobile Platform (زاد المسلم)": {
       cardTitle: "منصة تطبيق زاد المسلم",
+      badge: "+10 مليون مستخدم نشط",
       title: "منصة تطبيق زاد المسلم",
       role: "مهندس معماري أول للباك إند والـ APIs",
       desc: "معمارية الباك إند عالية التزامن والواجهات البرمجية الموزعة لتطبيق زاد المسلم الشهير (أكثر من 10 ملايين مستخدم). تم هندسة RESTful APIs عالية التوافر، وخوارزميات دقيقة لمواقيت الصلاة، وبث صوتي للقرآن الكريم عبر CDN، وإرسال إشعارات لحظية لملايين المستخدمين حول العالم."
     },
     "Dar-Alifta Arabic Portal": {
       cardTitle: "بوابة دار الإفتاء المصرية",
+      badge: "منصة حكومية · ملايين الزوار",
       title: "بوابة دار الإفتاء المصرية (العربية)",
       role: "مهندس برمجيات أول Full-Stack .NET",
       desc: "بوابة إلكترونية رسمية عالية التوافر تخدم ملايين الزوار شهرياً في العالمين العربي والإسلامي. تم تطوير نظام إدارة محتوى ديناميكي، ومحرك بحث فتاوى يتحمل الضغط العالي، والأرشفة التلقائية مع فهرسة SQL Server بأعلى معايير الأمان واستقرار البيانات."
     },
     "Mefan Creative Agency": {
       cardTitle: "وكالة ميفان الإبداعية",
+      badge: "مشاريع كبرى بالمملكة",
       title: "وكالة ميفان الإبداعية (Mefan)",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "منصة متكاملة وبورتفوليو تفاعلي لوكالة إبداعية رائدة في المملكة العربية السعودية. شملت تنفيذ حركات تفاعلية مخصصة، ولوحة تحكم ديناميكية لإدارة المشاريع، ونماذج متجاوبة لاستقطاب العملاء."
     },
     "Restful ERP Solutions": {
       cardTitle: "حلول Restful ERP للمؤسسات",
+      badge: "معتمد من الزكاة والضريبة (ZATCA)",
       title: "حلول Restful ERP المؤسسية",
       role: "مهندس معماري أول لأنظمة ERP و .NET",
       desc: "نظام تخطيط موارد مؤسسات (ERP) شامل لإدارة المستودعات متعددة الفروع، والربط الكامل مع منظومة الفاتورة الإلكترونية المعتمدة من مصلحة الضرائب، ونقاط البيع (POS)، ووحدات التقارير المالية الآلية."
     },
     "VOIP Egypt Telecommunication": {
       cardTitle: "شركة VOIP Egypt للاتصالات",
+      badge: "اتصالات وسنترال لحظي",
       title: "بوابة VOIP Egypt للاتصالات",
       role: "مهندس باك إند وتكامل أنظمة",
       desc: "بوابة اتصالات مؤسسية تربط سجلات مكالمات الـ PBX، وحسابات أرصدة العملاء والفوترة، ولوحات تحكم متعددة المستويات، وإدارة اتصالات VoIP في الوقت الفعلي."
     },
     "Dar-Alifta English Portal": {
       cardTitle: "بوابة دار الإفتاء (الإنجليزية)",
+      badge: "انتشار دولي متعدد اللغات",
       title: "بوابة دار الإفتاء المصرية (النسخة الإنجليزية)",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "بوابة دولية للفتاوى والبحوث الإسلامية باللغة الإنجليزية مع تصنيفات مخصصة، وتوزيع عالمي للمحتوى، وتحسين متقدم لمحركات البحث (SEO)."
     },
     "Family Guidance Platform": {
       cardTitle: "منصة الإرشاد الأسري",
+      badge: "استشارات بسرية وحماية عالية",
       title: "منصة الإرشاد والتنمية الأسرية",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "بوابة مجتمعية متكاملة لتنظيم مواعيد الاستشارات الأسرية، والندوات التثقيفية، والمقالات المتخصصة، وإدارة جلسات الإرشاد التفاعلية."
     },
     "BUCCINO MARBLE Kuwait": {
       cardTitle: "شركة BUCCINO للرخام (الكويت)",
+      badge: "متجر تجارة ودفع دولي",
       title: "منصة BUCCINO MARBLE للرخام - الكويت",
       role: "مطور تجارة إلكترونية و .NET",
       desc: "منصة تجارة إلكترونية متكاملة للرخام والأحجار الطبيعية في الكويت، تشمل حاسبة تقدير الأسعار، وطلبات التسعير الفورية، والربط مع بوابات الدفع الإلكتروني."
     },
     "Ramadan Portal": {
       cardTitle: "بوابة رمضان التفاعلية",
+      badge: "ملايين الزيارات اللحظية",
       title: "بوابة شهر رمضان المبارك",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "منصة موسمية عالية الكثافة تقدم إمساكية ومواقيت رمضان اليومية، والأدعية، والبث المباشر للفتاوى، والمحتوى الصوتي والمرئي المتكامل."
     },
     "Fatwa Conference Mobile Application": {
       cardTitle: "تطبيق مؤتمر الإفتاء العالمي",
+      badge: "مؤتمرات ووفود دولية",
       title: "تطبيق مؤتمر الأمانة العامة لدور الإفتاء",
       role: "مهندس معماري لواجهات الموبايل APIs",
       desc: "التطبيق الرسمي للمؤتمر الدولي لتنظيم الجداول الزمنية، والجلسات الحوارية المباشرة، وإرسال الإشعارات الفورية، وإدارة تسجيل المشاركين والوفود."
     },
     "مصر قرآن كريم Mobile Platform": {
       cardTitle: "تطبيق مصر قرآن كريم",
+      badge: "بث صوتي CDN بملايين الاستماعات",
       title: "منصة وتطبيق مصر قرآن كريم",
       role: "مطور واجهات برمجية للموبايل APIs",
       desc: "تطبيق ديني واسع الانتشار يتيح البث الصوتي فائق الجودة لتلاوات القرآن الكريم، والتحميل للاستماع بدون إنترنت، وحفظ العلامات المرجعية ومزامنة الصوت."
     },
     "Conference Admin Portal": {
       cardTitle: "بوابة إدارة المؤتمرات",
+      badge: "إدارة الوفود وكبار الزوار",
       title: "لوحة تحكم وإدارة المؤتمر العالمي",
       role: "مهندس برمجيات باك إند أول",
       desc: "لوحة تحكم إدارية متقدمة لإدارة ضيوف المؤتمر والدعوات، وتقديم الأوراق البحثية، وتنظيم مقاعد كبار الشخصيات (VIP)، واستخراج تقارير التحليلات."
     },
     "Prof. Shawky Allam Portal": {
       cardTitle: "الموقع الرسمي لفضيلة أ.د. شوقي علام",
+      badge: "البوابة الرسمية المعتمدة",
       title: "البوابة الرسمية لفضيلة أ.د. شوقي علام",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "الأرشيف الرقمي والمركز الإعلامي الرسمي لعرض المؤلفات العلمية، والزيارات الدولية، والمحاضرات، والبيانات الصحفية."
     },
     "Impact Agency": {
       cardTitle: "وكالة إمباكت التسويقية",
+      badge: "منصة تسويق رقمي تفاعلية",
       title: "منصة وكالة إمباكت (Impact Agency)",
       role: "مطور واجهات أمامية ومواقع ويب",
       desc: "موقع وكالة تسويق رقمي حديث يتميز بحركات تفاعلية انسيابية، واستعراض الخدمات، ونماذج تواصل ذكية لاستقطاب العملاء."
     },
     "Freelancer Hub": {
       cardTitle: "منصة Freelancer Hub للعمل الحر",
+      badge: "معمارية سحابية موزعة",
       title: "منصة العمل الحر السحابية (Freelancer Hub)",
       role: "مهندس سحابة و .NET",
       desc: "منصة متكاملة للعمل الحر منشورة على خدمات Microsoft Azure السحابية، تتضمن تقديم العروض، والمحادثة الفورية بين العملاء والمستقلين، وإدارة الدفع."
     },
     "Palestine Information Portal": {
       cardTitle: "بوابة فلسطين التوثيقية",
+      badge: "أرشيف توثيقي متعدد الوسائط",
       title: "بوابة فلسطين للمعلومات والتوثيق",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "بوابة معرفية وتوثيقية شاملة تعرض الخرائط التفاعلية، والخطوط الزمنية التاريخية، والمقالات والأبحاث العلمية الموثقة."
     },
     "VerifyFatwa Engine": {
       cardTitle: "محرك التحقق VerifyFatwa",
+      badge: "محرك فحص ومصادقة المستندات",
       title: "محرك التحقق والمصادقة (VerifyFatwa Engine)",
       role: "مهندس معماري للنظام",
       desc: "محرك تحقق داخلي متطور لفحص ومطابقة الفتاوى والشهادات الصادرة ومكافحة التزوير عبر خوارزميات البحث والتحقق الرقمي."
     },
     "Events Analytics Dashboard": {
       cardTitle: "لوحة تحليلات الفعاليات",
+      badge: "لوحة قياس وتحليلات فورية",
       title: "لوحة تحليلات ومؤشرات الفعاليات والمؤتمرات",
       role: "مطور لوحات تحكم .NET أول",
       desc: "لوحة تحكم تحليلية في الوقت الفعلي لتتبع تفاعل الحضور، ونسب الحضور بالجلسات، ونتائج الاستبيانات اللحظية والرسوم البيانية."
     },
     "Staff Enterprise HR Portal": {
       cardTitle: "بوابة الموارد البشرية للموظفين",
+      badge: "شؤون موظفين ورواتب وصلاحيات",
       title: "نظام إدارة الموارد البشرية المؤسسي (HR Portal)",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "نظام مؤسسي داخلي لإدارة شؤون الموظفين، والحضور والانصراف، والإجازات، ومسير الرواتب، والصلاحيات متعددة المستويات (RBAC)."
     },
     "Prof. Nazir Ayyad Portal": {
       cardTitle: "البوابة الرسمية لفضيلة أ.د. نظير عياد",
+      badge: "بوابة رسمية وإعلامية مؤمنة",
       title: "البوابة العلمية لفضيلة أ.د. نظير عياد - مفتي الجمهورية",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "البوابة العلمية الرسمية لفضيلة مفتي الديار المصرية، لعرض المقالات البحثية، والتحديثات الصحفية، والمكتبة المرئية والمقروءة."
@@ -794,7 +814,7 @@ function downloadVCard() {
     // 1. HEADER, SKIP LINK, FLOATING ACTIONS & FOOTER
     if (isAr) {
       applyText(".skip-link", "الانتقال إلى المحتوى");
-      applyText(".wordmark .brand-label", "عبد المعبود<br><small>بورتفوليو مهندس البرمجيات</small>", true);
+      applyText(".wordmark .brand-label", "عبد المعبود محمد<br><small>مهندس برمجيات أول .NET</small>", true);
       applyText('[data-nav-link-target="about"] .nav-text', "نبذة عني");
       applyText('[data-nav-link-target="resume"] .nav-text', "السيرة الذاتية");
       applyText('[data-nav-link-target="portfolio"] .nav-text', "المشاريع");
@@ -827,9 +847,9 @@ function downloadVCard() {
 
     if (isAr) {
       applyText(".intro-name", "عبد المعبود محمد");
-      applyText(".availability-badge span:last-child", "الرياض، المملكة العربية السعودية · إقامة قابلة للتحويل · متاح للفرص");
-      applyText(".hero-heading", 'مهندس برمجيات أول<br><em id="morphingText" class="morphing-text">تطبيقات .NET المتكاملة</em>', true);
-      applyText(".hero-description", 'من المنصات الرقمية المليونية مثل <strong>زاد المسلم</strong> و<strong>دار الإفتاء</strong>، إلى أنظمة تخطيط موارد المؤسسات (ERP)، أبني حلولاً برمجية مرنة ومصممة لتحمل أعتى أعباء العمل والطلب العالي.', true);
+      applyText(".availability-badge .status-text, .availability-badge span:last-child", "متاح فوراً للفرص والمشاريع في الرياض · إقامة قابلة للتحويل · نقل كفالة فوري");
+      applyText(".hero-heading", 'مهندس برمجيات أول<br><em id="morphingText" class="morphing-text">تطبيقات .NET وحلول المؤسسات</em>', true);
+      applyText(".hero-description", 'أبني وأقود تطوير حلول برمجية مؤسسية عالية الكفاءة والموثوقية، من المنصات ذات ملايين المستخدمين مثل <strong>زاد المسلم</strong> و<strong>دار الإفتاء المصرية</strong>، إلى أنظمة تخطيط الموارد (ERP) الموزعة، وفق أحدث ممارسات Clean Architecture والمعمارية السحابية.', true);
       applyText(".hero-actions .primary-action", 'استكشف أعمالي <span aria-hidden="true">↗</span>', true);
       applyText(".hero-actions .secondary-action", 'تواصل معي <span aria-hidden="true">←</span>', true);
       applyText(".intro-caption small", "مشروع مميز");
@@ -841,7 +861,7 @@ function downloadVCard() {
       if (statLabels[2]) applyText(statLabels[2], "أسواق إقليمية · السعودية ومصر والكويت");
     } else {
       restoreOriginal(".intro-name");
-      restoreOriginal(".availability-badge span:last-child");
+      restoreOriginal(".availability-badge .status-text, .availability-badge span:last-child");
       restoreOriginal(".hero-heading", true);
       restoreOriginal(".hero-description", true);
       restoreOriginal(".hero-actions .primary-action", true);
@@ -856,37 +876,37 @@ function downloadVCard() {
       applyText("#selected-heading", "مشاريع مختارة");
       applyText(".work-picker legend", "ما الذي تسعى لبنائه؟");
       const pickerSpans = document.querySelectorAll(".work-picker label span");
-      if (pickerSpans[0]) applyText(pickerSpans[0], "كل المشاريع المختارة");
-      if (pickerSpans[1]) applyText(pickerSpans[1], "أنظمة الأعمال وERP");
-      if (pickerSpans[2]) applyText(pickerSpans[2], "تطبيقات الموبايل");
-      if (pickerSpans[3]) applyText(pickerSpans[3], "بوابات المحتوى");
+      if (pickerSpans[0]) applyText(pickerSpans[0], "كافة المشاريع");
+      if (pickerSpans[1]) applyText(pickerSpans[1], "أنظمة المؤسسات وERP");
+      if (pickerSpans[2]) applyText(pickerSpans[2], "تطبيقات الموبايل والـ APIs");
+      if (pickerSpans[3]) applyText(pickerSpans[3], "المنصات والبوابات الرقمية");
       applyText(".selected-work .text-action", 'استكشف كافة المشاريع <span aria-hidden="true">↗</span>', true);
 
       // Bio
       applyText(".about-text .section-heading", "نبذة عني");
       const bioParas = document.querySelectorAll(".about-text > p");
-      if (bioParas[0]) applyText(bioParas[0], 'مرحباً! أنا <strong>عبد المعبود محمد</strong>، مهندس برمجيات أول Full-Stack .NET بخبرة عملية تتجاوز <strong>5 سنوات</strong> في تصميم وهندسة وتطوير تطبيقات المؤسسات عالية الأمان وقابلية التوسع. أقيم حالياً في <strong>الرياض، المملكة العربية السعودية</strong>، وأعمل لدى <strong>شركة العرض المتقن (2P)</strong> على أنظمة التحول الرقمي الكبرى.', true);
-      if (bioParas[1]) applyText(bioParas[1], 'أحمل درجة البكالوريوس في علوم الحاسب من أكاديمية مودرن، ولدي سجل حافل بالإنجازات في تسليم حلول برمجية كبرى لجهات مرموقة من بينها <strong>جامعة الملك سعود</strong>، <strong>دار الإفتاء المصرية</strong>، وكبرى شركات تخطيط موارد المؤسسات.', true);
+      if (bioParas[0]) applyText(bioParas[0], 'مرحباً بك! أنا <strong>عبد المعبود محمد</strong>، مهندس برمجيات أول Full-Stack .NET بخبرة عملية تتجاوز <strong>5 سنوات</strong> في تصميم وهندسة وتطوير تطبيقات المؤسسات عالية الأمان وقابلية التوسع. أقيم حالياً في <strong>الرياض، المملكة العربية السعودية</strong>، وأعمل لدى <strong>شركة العرض المتقن (2P)</strong> على مشاريع التحول الرقمي الكبرى.', true);
+      if (bioParas[1]) applyText(bioParas[1], 'أحمل درجة البكالوريوس في علوم الحاسب من أكاديمية مودرن، ولدي سجل حافل بالإنجازات في تسليم حلول برمجية كبرى لجهات وهيئات مرموقة من بينها <strong>جامعة الملك سعود</strong>، و<strong>دار الإفتاء المصرية</strong>، وكبرى شركات حلول تخطيط موارد المؤسسات.', true);
       applyText(".expertise-details summary", "استكشف خلفيتي التقنية بالتفصيل");
       const bioBullets = document.querySelectorAll(".about-list li");
       const bioBulletsAr = [
-        '<strong>تطوير .NET Core والأنظمة المؤسسية:</strong> خبرة عميقة في C# و ASP.NET Core و ASP.NET MVC و Entity Framework Core و LINQ.',
-        '<strong>الأنماط المعمارية المتقدمة:</strong> تطبيق عملي راسخ لـ Clean Architecture و CQRS ونمط المستودع (Repository Pattern) وحقن التبعيات (DI).',
-        '<strong>واجهات برمجية RESTful آمنة وعالية التدفق:</strong> بناء Web APIs عالية السرعة وربط بوابات الدفع الإلكتروني (Stripe, مدى) ومزودي الرسائل (Nexmo, Cequens, SMSMisr) والبريد الإلكتروني.',
-        '<strong>هندسة قواعد البيانات:</strong> تصميم المخططات المعيارية، الإجراءات المخزنة (Stored Procedures)، الفهرسة المتقدمة، وضبط أداء الاستعلامات على SQL Server و MySQL.',
-        '<strong>واجهات أمامية حديثة وتفاعلية:</strong> احترافية في JavaScript (ES6+) و TypeScript و Angular وتصميم واجهات متجاوبة باستخدام HTML5 و CSS3 و Bootstrap.',
-        '<strong>السحابة والذكاء الاصطناعي:</strong> تدريب معتمد من مايكروسوفت على Azure ودمج خدمات Azure OpenAI لأتمتة سير العمل الذكي.',
-        '<strong>منهجيات Agile وأدوات DevOps:</strong> إتقان Git (GitHub, GitLab)، خطوط الأتمتة CI/CD، واختبار الـ APIs عبر Postman، وإدارة المشاريع عبر JIRA.'
+        '<strong>تطوير .NET والأنظمة المؤسسية:</strong> خبرة متعمقة في C# و ASP.NET Core (الإصدارات 8 و 9) و ASP.NET MVC و Entity Framework Core و LINQ.',
+        '<strong>الأنماط المعمارية المتقدمة:</strong> تطبيق عملي راسخ لمعمارية Clean Architecture و CQRS ونمط المستودع (Repository Pattern) وحقن التبعيات (DI) والأنظمة الموزعة.',
+        '<strong>واجهات برمجية RESTful عالية التدفق:</strong> بناء وتأمين Web APIs فائقة السرعة، وربط بوابات الدفع الإلكتروني (مدى، Stripe) ومزودي الرسائل (SMS) والبريد الإلكتروني.',
+        '<strong>هندسة قواعد البيانات:</strong> تصميم المخططات المعيارية، والإجراءات المخزنة (Stored Procedures)، والفهرسة المتقدمة، وضبط أداء الاستعلامات على SQL Server و PostgreSQL.',
+        '<strong>الواجهات الأمامية الحديثة والتفاعلية:</strong> احترافية في JavaScript (ES6+) و TypeScript و Angular وتصميم واجهات متجاوبة عصرية باستخدام HTML5 و CSS3.',
+        '<strong>الحوسبة السحابية والذكاء الاصطناعي:</strong> تدريب معتمد من مايكروسوفت على Azure، ودمج خدمات Azure OpenAI لأتمتة سير العمل الذكي.',
+        '<strong>منهجيات Agile وأدوات DevOps:</strong> إتقان Git (GitHub, GitLab)، وخطوط الأتمتة CI/CD، واختبار الـ APIs عبر Postman، وإدارة المشاريع عبر JIRA.'
       ];
       bioBullets.forEach((li, i) => { if (bioBulletsAr[i]) applyText(li, bioBulletsAr[i], true); });
 
       // Services
       applyText(".service .article-title", "مجالات خبرتي وخدماتي");
       const servicesAr = [
-        { title: "تطوير تطبيقات الويب المتكاملة (Full-Stack)", text: "بناء منصات وتطبيقات ويب مؤسسية متكاملة باستخدام .NET 8/9 و ASP.NET Core وأحدث تقنيات الويب، مع التركيز على قابلية التوسع والكود النظيف والموثوقية العالية." },
-        { title: "تصميم وضبط أداء قواعد البيانات", text: "هندسة مخططات قواعد البيانات المعيارية وفائقة الأداء في SQL Server، مع تصميم استعلامات معقدة واستراتيجيات فهرسة متقدمة للبيانات الحيوية." },
-        { title: "تصميم الواجهات البرمجية وتكامل الأنظمة", text: "صياغة RESTful APIs آمنة ومعمارية مايكروسيرفيسز، وربط بوابات الدفع والفوترة الإلكترونية والرسائل النصية وإشعارات السحابة مع توثيق متكامل." },
-        { title: "خوادم تطبيقات الموبايل والخدمات السحابية", text: "تطوير البنى التحتية الخلفية فائقة السرعة والـ APIs اللحظية لتطبيقات iOS وأندرويد، مدعومة ببنية Azure السحابية والتخزين المؤقت الموزع." }
+        { title: "تطوير تطبيقات ومنصات الويب المتكاملة", text: "بناء أنظمة ومنصات ويب مؤسسية متكاملة (Full-Stack) باستخدام .NET 8/9 و ASP.NET Core، مع التركيز على أمان البيانات، وقابلية التوسع، وتطبيق مبادئ الكود النظيف (Clean Code)." },
+        { title: "تصميم وهندسة قواعد البيانات وتحسين الأداء", text: "هندسة قواعد بيانات SQL Server عالية الكفاءة، وتحسين أداء الاستعلامات المعقدة والفهرسة (Query Optimization & Indexing) لضمان سرعة الاستجابة ومنع الاختناقات تحت الضغط العالي." },
+        { title: "تصميم الواجهات البرمجية وتكامل الأنظمة", text: "بناء وتأمين RESTful APIs ومعمارية المايكروسيرفيسز، وربط بوابات الدفع والفوترة الإلكترونية، وخدمات الرسائل النصية، مع توثيق تقني شامل (Swagger / OpenAPI)." },
+        { title: "خوادم تطبيقات الموبايل والبنى السحابية", text: "تطوير البنية الخلفية (Back-End) فائقة السرعة لتطبيقات iOS وأندرويد، مدعومة بالتخزين المؤقت الموزع (Redis) وخدمات سحابة Azure للتعامل مع ملايين المستخدمين المتزامنين." }
       ];
       document.querySelectorAll(".service-item").forEach((item, i) => {
         if (servicesAr[i]) {
@@ -904,9 +924,9 @@ function downloadVCard() {
       // Working Together & FAQ
       applyText("#working-heading", "ابدأ بمحادثة مباشرة");
       const stepsAr = [
-        { title: "شاركني ما تحتاجه", desc: "فكرة منتج، تحدٍّ تقني، أو دور وظيفي في فريقك. نبذة قصيرة تكفي تماماً للبدء." },
-        { title: "استكشاف مدى التوافق", desc: "نناقش معاً أهدافك، الأنظمة الحالية، والخبرة التقنية الدقيقة التي يتطلبها مشروعك." },
-        { title: "تحديد الخطوة التالية", desc: "التوافق على نطاق العمل والأولويات والتطلعات قبل الانطلاق في التنفيذ." }
+        { title: "شاركني احتياجاتك", desc: "فكرة مشروع جديد، تحدٍّ برمجي في نظام قائم، أو فرصة وظيفية ضمن فريقك. نبذة سريعة تكفي تماماً للبدء." },
+        { title: "دراسة التوافق والحلول", desc: "نناقش معاً أهدافك، البنية التقنية المطلوبة، والحلول المعمارية الدقيقة المناسبة لنظامك." },
+        { title: "تحديد خطوات التنفيذ", desc: "الاتفاق على نطاق العمل، والأولويات، والجدول الزمني للبدء الفعلي في البناء والتسليم." }
       ];
       document.querySelectorAll(".process-grid > div").forEach((step, i) => {
         if (stepsAr[i]) {
@@ -915,9 +935,9 @@ function downloadVCard() {
         }
       });
       const faqAr = [
-        { q: "ماذا ينبغي أن أكتب في رسالتي الأولى؟", a: "هدفك، نوع المساعدة التي تحتاجها، وأي إطار زمني في بالك. لست بحاجة لكتابة مواصفات تفصيلية للبدء." },
-        { q: "هل يمكنني التواصل بخصوص فرصة عمل بدوام كامل؟", a: "بكل سرور. اختر «فرصة وظيفية / انضمام لفريق» من نموذج التواصل وشاركني تفاصيل الدور والفريق وطبيعة العمل." },
-        { q: "هل يمكننا مناقشة نظام أو تطبيق موجود بالفعل؟", a: "نعم بالتأكيد. شاركني تفاصيل بنيتكم التقنية الحالية والخصائص أو التحديات التي تودون تطويرها أو تسريع أدائها." }
+        { q: "ما الذي ينبغي كتابته في الرسالة الأولى؟", a: "هدفك الأساسي، نوع الدعم أو النظام المطلوب، والجدول الزمني المتوقع. لست بحاجة لكتابة مواصفات مفصلة للبدء." },
+        { q: "هل يمكنني التواصل بخصوص فرصة عمل بدوام كامل؟", a: "بكل سرور. اختر «فرصة وظيفية / انضمام لفريق» من نموذج التواصل وشاركني تفاصيل الدور وطبيعة العمل (حضوري بالرياض أو عن بُعد)." },
+        { q: "هل يمكننا مناقشة نظام أو تطبيق موجود بالفعل؟", a: "بالتأكيد. شاركني تفاصيل بنيتكم التقنية الحالية والتحديات التي تودون تحسينها، مثل تسريع الأداء، إعادة الهيكلة، أو إضافة ميزات جديدة." }
       ];
       document.querySelectorAll(".quick-faq details").forEach((faq, i) => {
         if (faqAr[i]) {
@@ -969,27 +989,27 @@ function downloadVCard() {
         const expAr = [
           {
             title: "شركة العرض المتقن (2P)",
-            role: "مهندس برمجيات أول FULL-STACK .NET",
+            role: "مهندس برمجيات أول Full-Stack .NET",
             date: "10/2025 — حتى الآن (دوام كامل حضوري · الرياض، المملكة العربية السعودية)",
-            desc: 'المساهمة في بناء وتطوير منصات رقمية مؤسسية كبرى في شركة العرض المتقن (2P)، لتقديم أنظمة ويب آمنة وعالية التوسع باستخدام ASP.NET Core و .NET Framework و SQL Server و RESTful APIs.<br><span class="highlight">أبرز المساهمات:</span><br>• بناء وصيانة تطبيقات ويب حيوية تخدم آلاف المستخدمين في القطاعين المؤسسي والحكومي.<br>• ربط بوابات الدفع الإلكتروني، ومزودي الرسائل النصية، وخدمات البريد المؤتمتة.<br>• تطوير أنظمة المصادقة الآمنة وإدارة الجلسات والصلاحيات المعتمدة على الأدوار (RBAC).<br>• تصميم واستهلاك RESTful APIs عالية الأداء للتكامل السلس بين الويب وتطبيقات الهاتف.<br>• تحسين استعلامات SQL Server وفهارس قواعد البيانات مما رفع كفاءة واستجابة الأنظمة.<br>• التعاون الوثيق ضمن فرق Agile لتسليم حلول برمجية بمعايير جودة عالمية.'
+            desc: 'المساهمة في بناء وتطوير حلول رقمية مؤسسية كبرى لدى شركة العرض المتقن (2P)، وتقديم منصات ويب آمنة وعالية التوسع باستخدام ASP.NET Core و .NET Framework و SQL Server و RESTful APIs.<br><span class="highlight">أبرز المساهمات:</span><br>• تطوير وصيانة تطبيقات ويب حيوية تخدم آلاف المستخدمين في القطاعين الحكومي والمؤسسي.<br>• ربط بوابات الدفع الإلكتروني، ومزودي الرسائل النصية، والخدمات المؤتمتة.<br>• تطبيق معايير الأمان المتقدمة، وإدارة الهوية والصلاحيات المعتمدة على الأدوار (RBAC).<br>• تصميم واستهلاك واجهات RESTful APIs عالية الأداء لربط منصات الويب وتطبيقات الموبايل.<br>• تحسين استعلامات وفهارس SQL Server لضمان سرعة الاستجابة تحت الضغط العالي.<br>• العمل ضمن فرق Agile متعددة التخصصات لتسليم حلول تقنية بمعايير مؤسسية صارمة.'
           },
           {
             title: "شركة سمارت جيت / سيج للتقنية (Sig Smart Technology)",
-            role: "مهندس برمجيات أول FULL-STACK .NET",
+            role: "مهندس برمجيات أول Full-Stack .NET",
             date: "05/2022 — 10/2025 (دوام كامل)",
-            desc: 'قيادة تصميم وتنفيذ تطبيقات الويب المتكاملة باستخدام ASP.NET MVC و Entity Framework و SQL Server.<br><span class="highlight">أبرز المساهمات:</span><br>• هندسة وتوسيع واجهات برمجية RESTful Web APIs عالية التزامن لمنظومة تطبيق <strong>زاد المسلم (Zad Al-Muslim)</strong> المليوني (أكثر من 10 ملايين مستخدم نشط)، مع دمج Redis للتخزين المؤقت وإرسال الإشعارات عبر FCM وخدمات مواقيت الصلاة.<br>• تطبيق معمارية Clean Architecture مع أنماط Repository و Dependency Injection لكود مرن وقابل للصيانة.<br>• هندسة مسارات مصادقة آمنة تشمل التحقق متعدد العوامل (MFA) ورموز OTP وإعادة تعيين كلمات المرور.<br>• ربط مزودي الرسائل النصية (Nexmo, Cequens, SMSMisr) ومرسلات البريد الآلية عبر OAuth و SMTP.<br>• تحسين قواعد البيانات العلائقية وخطط تنفيذ الاستعلامات في بيئات الضغط العالي.'
+            desc: 'قيادة تصميم وتطوير تطبيقات الويب والخدمات الخلفية باستخدام ASP.NET Core و ASP.NET MVC و Entity Framework و SQL Server.<br><span class="highlight">أبرز المساهمات:</span><br>• هندسة وتوسيع الواجهات البرمجية (RESTful APIs) لمنظومة تطبيق <strong>زاد المسلم (Zad Al-Muslim)</strong> المليوني (أكثر من 10 ملايين مستخدم نشط)، مع دمج كاش Redis، وخدمات الإشعارات الفورية (FCM)، ومواقيت الصلاة الدقيقة.<br>• تطبيق معمارية Clean Architecture وأنماط Repository و Dependency Injection لضمان استقلالية الكود وسهولة صيانته.<br>• بناء مسارات مصادقة آمنة تدعم التحقق الثنائي (MFA) ورموز التحقق المؤقتة (OTP).<br>• ربط مزودي الرسائل النصية المعتمدين (Nexmo, Cequens, SMSMisr) وبوابات البريد الإلكتروني.<br>• تحسين قواعد البيانات العلائقية ومراقبة خطط تنفيذ الاستعلامات في بيئات الاستخدام المكثف.'
           },
           {
             title: "الشركة العربية (Arabian)",
-            role: "مطور برمجيات FULL-STACK .NET",
+            role: "مطور برمجيات Full-Stack .NET",
             date: "12/2020 — 04/2022 (دوام كامل حضوري)",
-            desc: 'المسؤولية عن تطوير وتحسين بوابات الويب وبناء واجهات RESTful APIs المستهلكة من قِبل تطبيقات الموبايل.<br><span class="highlight">أبرز المساهمات:</span><br>• تطوير وحدات متكاملة لأنظمة ERP وربط البرمجيات ببوابات الفاتورة والإيصال الإلكتروني الحكومية.<br>• تصميم واجهات ويب ديناميكية ومتجاوبة باستخدام ASP.NET و C# و JavaScript و jQuery و Bootstrap.'
+            desc: 'تطوير بوابات الويب وبناء واجهات RESTful APIs المستهلكة بواسطة تطبيقات الهواتف الذكية.<br><span class="highlight">أبرز المساهمات:</span><br>• تطوير وحدات أنظمة ERP والربط مع منظومة الفاتورة والإيصال الإلكتروني الحكومية.<br>• تصميم واجهات ويب تفاعلية متجاوبة باستخدام ASP.NET و C# و JavaScript و Bootstrap.'
           },
           {
             title: "البيت للتصميم (Albait Design)",
-            role: "مطور برمجيات مبتدئ FULL-STACK .NET",
+            role: "مطور برمجيات Full-Stack .NET",
             date: "01/2020 — 11/2020 (دوام جزئي عن بُعد)",
-            desc: 'تطوير جداول DataTables من جانب الخادم، وفلاتر البحث اللحظي، ووحدات التقارير الآلية مع التصدير والطباعة السريعة، وتنفيذ كافة عمليات CRUD والتواصل غير المتزامن عبر ASP.NET MVC و Ajax و jQuery.'
+            desc: 'تطوير جداول البيانات المتقدمة من جانب الخادم (Server-Side DataTables)، وفلاتر البحث اللحظي، ووحدات التقارير الآلية مع إمكانية التصدير والطباعة، وتنفيذ عمليات البيانات غير المتزامنة عبر ASP.NET MVC و Ajax و jQuery.'
           }
         ];
         expItems.forEach((item, i) => {
@@ -1011,7 +1031,7 @@ function downloadVCard() {
           applyText(eduItem.querySelector(".timeline-item-title"), "أكاديمية مودرن (Modern Academy)");
           const spans = eduItem.querySelectorAll(":scope > span");
           if (spans[0]) applyText(spans[0], "بكالوريوس في علوم الحاسب (Computer Science)");
-          applyText(eduItem.querySelector(".timeline-text"), 'دراسة شاملة في أساسيات علوم الحاسب، وهياكل البيانات، والخوارزميات، وهندسة البرمجيات.<br>• <strong>التقدير العام:</strong> جيد<br>• <strong>مشروع التخرج:</strong> امتياز (التقدير: A+)', true);
+          applyText(eduItem.querySelector(".timeline-text"), 'دراسة شاملة في أساسيات علوم الحاسب، وهياكل البيانات، والخوارزميات، وهندسة البرمجيات.<br>• <strong>التقدير العام:</strong> جيد<br>• <strong>مشروع التخرج:</strong> ممتاز (A+)', true);
         }
       }
 
@@ -1020,10 +1040,10 @@ function downloadVCard() {
         applyText(resumeTimelines[2].querySelector(".h3"), "الدورات والشهادات التخصصية");
         const certItems = resumeTimelines[2].querySelectorAll(".timeline-item");
         const certAr = [
-          { title: "خدمات الذكاء الاصطناعي (Azure OpenAI Service)", span: "مايكروسوفت (Microsoft) · 2024", text: "تدريب عملي على نشر وإدارة نماذج الذكاء الاصطناعي عبر سحابة Microsoft Azure، ودمج نماذج OpenAI لمعالجة اللغات الطبيعية (NLP) والحلول التوليدية." },
-          { title: "تصميم الويب وتطوير الواجهات الأمامية", span: "المعهد القومي للاتصالات (NTI) · 11/2020 — 01/2021", text: "تدريب تخصصي مكثف يركز على تصميم الويب الحديث، والتخطيطات المتجاوبة، و HTML5 و CSS3 و JavaScript و Bootstrap." },
-          { title: "تدريب مطور Full Stack متكامل", span: "المركز الثقافي الروسي · 04/2020 — 10/2020", text: "تدريب متقدم يغطي لغة C# و .NET Framework والتحليل والتصميم كائني التوجه (OOAD) و SQL Server ومعمارية الويب." },
-          { title: "تدريب مطور Full Stack متكامل", span: "مجموعة العربي (Elaraby Group) · 06/2019 — 01/2020", text: "تدريب عملي في تطوير تطبيقات الويب المؤسسية بتقنيات مايكروسوفت، ونمذجة قواعد البيانات، والعمل ضمن فرق التطوير." }
+          { title: "تطوير حلول الذكاء الاصطناعي (Azure OpenAI)", span: "مايكروسوفت (Microsoft) · 2024", text: "تدريب عملي على بناء ونشر حلول الذكاء الاصطناعي التوليدي ومعالجة اللغات الطبيعية عبر سحابة Microsoft Azure." },
+          { title: "تصميم الويب وتطوير الواجهات الأمامية", span: "المعهد القومي للاتصالات (NTI) · 2021", text: "تدريب تخصصي مكثف على أحدث معايير تطوير الواجهات المتجاوبة وتقنيات HTML5 و CSS3 و JavaScript الحديثة." },
+          { title: "برنامج مطور Full-Stack .NET المتكامل", span: "المركز الثقافي الروسي · 2020", text: "برنامج متقدم يغطي لغة C# وممارسات البرمجة كائنية التوجه (OOP) و SQL Server ومعمارية ASP.NET." },
+          { title: "تدريب مطور برمجيات Full-Stack", span: "مجموعة العربي (Elaraby Group) · 2019", text: "تدريب عملي على تطوير الأنظمة المؤسسية، وتصميم قواعد البيانات، والعمل الجماعي في مشاريع برمجية حقيقية." }
         ];
         certItems.forEach((item, i) => {
           if (certAr[i]) {
@@ -1094,6 +1114,7 @@ function downloadVCard() {
     document.querySelectorAll(".project-item").forEach(item => {
       const catEl = item.querySelector(".project-category");
       const titleEl = item.querySelector(".project-title");
+      const badgeEl = item.querySelector(".project-badge .badge-label");
 
       // Store original values on first run
       cacheOriginalEnglish(item, "data-en-title", item.getAttribute("data-project-title") || "");
@@ -1120,9 +1141,15 @@ function downloadVCard() {
           item.setAttribute("data-project-desc", tr.desc);
           item.setAttribute("data-project-category", enCat.toLowerCase().includes("mobile") ? "تطبيقات الموبايل" : "تطبيقات الويب");
         }
+        if (badgeEl) {
+          cacheOriginalEnglish(badgeEl, "data-en-text", badgeEl.textContent);
+          const arBadge = item.getAttribute("data-project-badge-ar") || (tr && tr.badge);
+          if (arBadge) badgeEl.textContent = arBadge;
+        }
       } else {
         if (catEl) restoreOriginal(catEl);
         if (titleEl) restoreOriginal(titleEl);
+        if (badgeEl) restoreOriginal(badgeEl);
         if (item.hasAttribute("data-en-title")) item.setAttribute("data-project-title", item.getAttribute("data-en-title"));
         if (item.hasAttribute("data-en-role")) item.setAttribute("data-project-role", item.getAttribute("data-en-role"));
         if (item.hasAttribute("data-en-desc")) item.setAttribute("data-project-desc", item.getAttribute("data-en-desc"));
@@ -1153,11 +1180,11 @@ function downloadVCard() {
     // 6. CONTACT PAGE & CONVERSATION BANNER
     if (isAr) {
       applyText(".contact .article-title", "تواصل معي");
-      applyText(".contact-form .eyebrow", "لنصنع معاً شيئاً ذا قيمة");
-      applyText(".contact-form .form-title", "ما الذي يدور في ذهنك؟");
-      applyText(".contact-form .section-intro", "مشروع جديد، تحسين تطبيق قائم، أو فرصة قيادية في فريقك البرمجي. ابدأ بمشاركة التفاصيل وسننطلق من هناك.");
+      applyText(".contact-form .eyebrow", "فرص التعاون وبناء المشاريع");
+      applyText(".contact-form .form-title", "كيف يمكنني مساعدتك؟");
+      applyText(".contact-form .section-intro", "سواء كنت تخطط لبناء مشروع جديد، أو تحتاج لتطوير وتسريع نظام قائم، أو ترغب في مناقشة فرصة قيادية في فريقك. يسعدني دائماً تواصلك.");
       applyText(".contact-options a:first-child strong", "محادثة عبر واتساب");
-      applyText(".contact-options a:first-child small", "ابدأ محادثة مباشرة الآن");
+      applyText(".contact-options a:first-child small", "ابدأ محادثة فورية الآن");
       applyText(".contact-options a:last-child strong", "تفضل البريد الإلكتروني؟");
       applyText('.contact-direct button[data-copy*="gmail"]', "نسخ البريد");
       applyText('.contact-direct a[href="tel:+966597228231"]', "اتصل بالسعودية (+966 59 722 8231)");
@@ -1168,17 +1195,17 @@ function downloadVCard() {
 
       applyText('label[for="contact-interest"]', "أود التحدث بشأن");
       const interestOpts = document.querySelectorAll("#contact-interest option");
-      const optsAr = ["مشروع جديد", "تحسين نظام أو تطبيق قائم", "فرصة وظيفية / انضمام لفريق", "موضوع آخر"];
+      const optsAr = ["مشروع جديد", "تحسين وتطوير نظام قائم", "فرصة وظيفية / انضمام لفريق", "موضوع آخر"];
       interestOpts.forEach((opt, i) => { if (optsAr[i]) applyText(opt, optsAr[i]); });
 
       applyText('label[for="contact-name"]', "الاسم الكريم");
       const nameInput = document.getElementById("contact-name");
-      if (nameInput) { cacheOriginalEnglish(nameInput, "data-en-placeholder", nameInput.placeholder); nameInput.placeholder = "كيف تحب أن أناديك؟"; }
+      if (nameInput) { cacheOriginalEnglish(nameInput, "data-en-placeholder", nameInput.placeholder); nameInput.placeholder = "اسمك الكريم"; }
 
       applyText('label[for="contact-email"]', 'البريد الإلكتروني <span>(اختياري)</span>', true);
-      applyText('label[for="contact-message"]', "نبذة عما تحتاجه أو تبحث عنه");
+      applyText('label[for="contact-message"]', "تفاصيل الرسالة أو المشروع");
       const msgInput = document.getElementById("contact-message");
-      if (msgInput) { cacheOriginalEnglish(msgInput, "data-en-placeholder", msgInput.placeholder); msgInput.placeholder = "ما الذي تسعى لبنائه أو تبحث عنه؟ شاركني أهدافك والإطار الزمني المتوقع."; }
+      if (msgInput) { cacheOriginalEnglish(msgInput, "data-en-placeholder", msgInput.placeholder); msgInput.placeholder = "شاركني نبذة عن أهداف مشروعك، التحديات التقنية، والإطار الزمني المتوقع..."; }
 
       applyText(".delivery-options legend", "متابعة المحادثة عبر");
       const radioLabels = document.querySelectorAll(".delivery-options label");
@@ -1194,7 +1221,7 @@ function downloadVCard() {
         const checked1 = inp1?.checked;
         radioLabels[1].innerHTML = `<input type="radio" name="channel" value="email" ${checked1 ? "checked" : ""}> البريد الإلكتروني`;
       }
-      applyText("#delivery-note", "هذا يجهز مسودة للرسالة لمراجعتها وإرسالها بنفسك عبر واتساب أو تطبيق بريدك. لا يتم إرسال أي بيانات من هذه الصفحة.");
+      applyText("#delivery-note", "سيتم تجهيز مسودة بالرسالة لتراجعها وترسلها مباشرة عبر تطبيقك المفضل. خصوصيتك محفوظة 100% ولا يتم تخزين أي بيانات.");
 
       const submitBtn = document.querySelector('[data-form-btn]');
       if (submitBtn) {
@@ -1205,8 +1232,8 @@ function downloadVCard() {
       applyText("#copyDraft", "نسخ نص الرسالة");
 
       applyText(".conversation-banner .eyebrow", "هل لديك فكرة أو فرصة جديدة؟");
-      applyText(".conversation-banner h3", "لنحوّل فكرتك القادمة إلى واقع حي ومتقن.");
-      applyText(".conversation-banner div > p:last-of-type", "أخبرني قليلاً عن مشروعك أو الفرصة المتاحة وسنتواصل فوراً.");
+      applyText(".conversation-banner h3", "جاهز لتحويل رؤيتك التقنية إلى نظام برمجي عالي الكفاءة؟");
+      applyText(".conversation-banner div > p:last-of-type", "شاركني تفاصيل مشروعك أو الفرصة المتاحة، وسأكون سعيداً بمناقشتها معك.");
       applyText(".conversation-banner .primary-action", 'تواصل معي <span aria-hidden="true">↗</span>', true);
     } else {
       restoreOriginal(".contact .article-title");
