@@ -647,3 +647,27 @@ html[dir="rtl"] .project-tech span {
   font-family: var(--ff-mono, monospace) !important;
   font-size: 11px !important;
 }
+
+/* ========================================================
+   RTL Mobile Header & Navigation Typography Polish
+======================================================== */
+html[dir="rtl"] .site-header .brand-label {
+  font-family: var(--ar-font) !important;
+  font-weight: 700 !important;
+}
+
+html[dir="rtl"] .site-header .lang-toggle-btn {
+  font-family: var(--ar-font) !important;
+  font-weight: 600 !important;
+}
+
+html[dir="rtl"] .navbar-link .nav-text {
+  font-family: var(--ar-font) !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+html[dir="rtl"] .site-header .navbar-link ion-icon {
+  margin-inline-end: 6px !important;
+  margin-inline-start: 0 !important;
+}

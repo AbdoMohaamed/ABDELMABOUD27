@@ -630,7 +630,9 @@ function downloadVCard() {
   const langLabel = document.getElementById("langLabel");
   if (!langBtn) return;
 
-  let currentLang = localStorage.getItem("portfolio_lang") || "en";
+  // Default language is ALWAYS English (en)
+  localStorage.removeItem("portfolio_lang"); // Clear old cached "ar" from previous testing
+  let currentLang = sessionStorage.getItem("portfolio_lang_active") || "en";
 
   const projectTranslationsAr = {
     "Zad Al-Muslim Mobile Platform (زاد المسلم)": {
@@ -1344,14 +1346,12 @@ function downloadVCard() {
     window.dispatchEvent(new CustomEvent("portfolio:langchange", { detail: { lang } }));
   }
 
-  // Initialize
-  if (currentLang === "ar") {
-    applyLanguage("ar");
-  }
+  // Initialize: Always default to English unless manually chosen in this session
+  applyLanguage(currentLang);
 
   langBtn.addEventListener("click", () => {
     currentLang = currentLang === "en" ? "ar" : "en";
-    localStorage.setItem("portfolio_lang", currentLang);
+    sessionStorage.setItem("portfolio_lang_active", currentLang);
     applyLanguage(currentLang);
   });
 })();

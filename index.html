@@ -72,6 +72,8 @@
     }
     </script>
 
+    <!-- Ionicons Universal Mode Config (Prevents iOS icon shape divergence) -->
+    <script>window.Ionic = window.Ionic || {}; window.Ionic.config = { mode: 'md' };</script>
 </head>
 
 <body>
@@ -86,10 +88,10 @@
     <!-- Floating Quick Actions -->
     <div class="floating-actions">
         <button class="back-to-top-btn" id="backToTopBtn" title="Back to top">
-            <ion-icon name="arrow-up-outline"></ion-icon>
+            <ion-icon name="arrow-up-outline" mode="md"></ion-icon>
         </button>
         <a href="https://wa.me/201013470551" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" title="Chat on WhatsApp">
-            <ion-icon name="logo-whatsapp"></ion-icon>
+            <ion-icon name="logo-whatsapp" mode="md"></ion-icon>
             <span class="whatsapp-tooltip">Chat on WhatsApp</span>
         </a>
     </div>
@@ -101,25 +103,25 @@
                 <ul class="navbar-list">
                     <li class="navbar-item">
                         <button class="navbar-link active" data-nav-link data-nav-link-target="about">
-                            <ion-icon name="person-outline"></ion-icon>
+                            <ion-icon name="person-outline" mode="md"></ion-icon>
                             <span class="nav-text">About</span>
                         </button>
                     </li>
                     <li class="navbar-item">
                         <button class="navbar-link" data-nav-link data-nav-link-target="resume">
-                            <ion-icon name="document-text-outline"></ion-icon>
+                            <ion-icon name="document-text-outline" mode="md"></ion-icon>
                             <span class="nav-text">Resume</span>
                         </button>
                     </li>
                     <li class="navbar-item">
                         <button class="navbar-link" data-nav-link data-nav-link-target="portfolio">
-                            <ion-icon name="grid-outline"></ion-icon>
+                            <ion-icon name="grid-outline" mode="md"></ion-icon>
                             <span class="nav-text">Portfolio</span>
                         </button>
                     </li>
                     <li class="navbar-item">
                         <button class="navbar-link" data-nav-link data-nav-link-target="contact">
-                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                            <ion-icon name="chatbubble-ellipses-outline" mode="md"></ion-icon>
                             <span class="nav-text">Contact</span>
                         </button>
                     </li>
@@ -127,11 +129,11 @@
             </nav>
         <div class="header-actions">
             <button class="lang-toggle-btn" id="langToggleBtn" title="Switch language (العربية / English)" aria-label="Switch Language">
-                <ion-icon name="globe-outline"></ion-icon>
+                <ion-icon name="globe-outline" mode="md"></ion-icon>
                 <span id="langLabel">عربي</span>
             </button>
             <button class="cmd-palette-btn" id="cmdPaletteBtn" title="Press Ctrl + K to open Command Palette" aria-label="Open Command Palette (Ctrl+K)">
-                <ion-icon name="search-outline"></ion-icon>
+                <ion-icon name="search-outline" mode="md"></ion-icon>
                 <span class="cmd-palette-label">Quick Actions</span>
                 <kbd class="cmd-kbd">Ctrl K</kbd>
             </button>
@@ -240,7 +242,7 @@
 
                         <li class="service-item" data-tilt>
                             <div class="service-icon-box">
-                                <img src="./assets/images/icons-database.png" alt="Database Icon" width="40" loading="lazy" decoding="async">
+                                <img src="./assets/images/icon-database.svg" alt="Database Icon" width="40" loading="lazy" decoding="async">
                             </div>
                             <div class="service-content-box">
                                 <h4 class="h4 service-item-title">Database Design & Query Tuning</h4>
@@ -639,7 +641,7 @@
                     <div class="portfolio-controls">
 
                         <div class="portfolio-search-box">
-                            <ion-icon name="search-outline"></ion-icon>
+                            <ion-icon name="search-outline" mode="md"></ion-icon>
                             <input type="text" id="projectSearch" aria-label="Search projects by name or technology" class="portfolio-search-input" placeholder="Search by project name or technology (e.g. Stripe, ERP, Azure, SQL)...">
                             <button class="search-clear-btn" id="searchClearBtn" title="Clear search">
                                 <ion-icon name="close-circle"></ion-icon>
@@ -1511,7 +1513,7 @@
         <div class="cmd-palette-overlay" id="cmdPaletteOverlay"></div>
         <div class="cmd-palette-modal">
             <div class="cmd-palette-header">
-                <ion-icon name="search-outline"></ion-icon>
+                <ion-icon name="search-outline" mode="md"></ion-icon>
                 <input type="text" class="cmd-palette-input" id="cmdPaletteInput" placeholder="Type a command, project, or tech stack..." autocomplete="off" spellcheck="false">
                 <kbd class="cmd-palette-esc">ESC</kbd>
             </div>
