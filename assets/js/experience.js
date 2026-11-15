@@ -795,10 +795,10 @@ function downloadVCard() {
     if (isAr) {
       applyText(".skip-link", "الانتقال إلى المحتوى");
       applyText(".wordmark .brand-label", "عبد المعبود<br><small>بورتفوليو مهندس البرمجيات</small>", true);
-      applyText('[data-nav-link-target="about"]', "نبذة عني");
-      applyText('[data-nav-link-target="resume"]', "السيرة الذاتية");
-      applyText('[data-nav-link-target="portfolio"]', "المشاريع");
-      applyText('[data-nav-link-target="contact"]', "تواصل معي");
+      applyText('[data-nav-link-target="about"] .nav-text', "نبذة عني");
+      applyText('[data-nav-link-target="resume"] .nav-text', "السيرة الذاتية");
+      applyText('[data-nav-link-target="portfolio"] .nav-text', "المشاريع");
+      applyText('[data-nav-link-target="contact"] .nav-text', "تواصل معي");
       applyText(".cmd-palette-label", "إجراءات سريعة");
       applyText(".header-contact", 'تواصل معي <span aria-hidden="true">↗</span>', true);
       applyText(".whatsapp-tooltip", "محادثة عبر واتساب");
@@ -808,10 +808,10 @@ function downloadVCard() {
     } else {
       restoreOriginal(".skip-link");
       restoreOriginal(".wordmark .brand-label", true);
-      restoreOriginal('[data-nav-link-target="about"]');
-      restoreOriginal('[data-nav-link-target="resume"]');
-      restoreOriginal('[data-nav-link-target="portfolio"]');
-      restoreOriginal('[data-nav-link-target="contact"]');
+      restoreOriginal('[data-nav-link-target="about"] .nav-text');
+      restoreOriginal('[data-nav-link-target="resume"] .nav-text');
+      restoreOriginal('[data-nav-link-target="portfolio"] .nav-text');
+      restoreOriginal('[data-nav-link-target="contact"] .nav-text');
       restoreOriginal(".cmd-palette-label");
       restoreOriginal(".header-contact", true);
       restoreOriginal(".whatsapp-tooltip");
@@ -1366,3 +1366,59 @@ function downloadVCard() {
     });
   });
 })();
+
+// ---------------------------------------------------------------------------
+// 3D PERSPECTIVE TILT PHYSICS & DYNAMIC GLASS SHEEN REFLECTION
+// ---------------------------------------------------------------------------
+(function init3DCardTilt() {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const tiltCardSelector = "[data-tilt], .project-item, .featured-card, .service-item, .skills-category";
+
+  function setupTiltOnElements() {
+    document.querySelectorAll(tiltCardSelector).forEach(card => {
+      if (card.__tiltInitialized) return;
+      card.__tiltInitialized = true;
+
+      let bounds = null;
+      let rafId = null;
+
+      card.addEventListener("mouseenter", () => {
+        bounds = card.getBoundingClientRect();
+        card.style.transition = "transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease";
+      }, { passive: true });
+
+      card.addEventListener("mousemove", (e) => {
+        if (!bounds) bounds = card.getBoundingClientRect();
+        const mouseX = e.clientX - bounds.left;
+        const mouseY = e.clientY - bounds.top;
+        const xPct = (mouseX / bounds.width - 0.5);
+        const yPct = (mouseY / bounds.height - 0.5);
+
+        const maxRotate = 7; // degrees max tilt
+        const rotX = (-yPct * maxRotate).toFixed(2);
+        const rotY = (xPct * maxRotate).toFixed(2);
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.018, 1.018, 1.018)`;
+          card.style.setProperty("--sheen-x", `${(mouseX / bounds.width * 100).toFixed(1)}%`);
+          card.style.setProperty("--sheen-y", `${(mouseY / bounds.height * 100).toFixed(1)}%`);
+        });
+      }, { passive: true });
+
+      card.addEventListener("mouseleave", () => {
+        bounds = null;
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transition = "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease";
+        card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+      }, { passive: true });
+    });
+  }
+
+  setupTiltOnElements();
+  window.addEventListener("portfolio:pagechange", setupTiltOnElements);
+  window.addEventListener("DOMContentLoaded", setupTiltOnElements);
+})();
+
