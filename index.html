@@ -373,16 +373,20 @@
 
                 <!-- Header with Print ATS CV action -->
                 <header class="resume-header">
-                    <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
-                    <button class="blueprint-btn" id="openBlueprintBtn" title="View Enterprise Clean Architecture Blueprint">
-                        <ion-icon name="git-network-outline"></ion-icon>
-                        <span>Architecture Blueprint 📐</span>
-                    </button>
-                    <a class="resume-file" href="https://drive.google.com/file/d/1QOYCwKpqWnF85dwzb5TD34j0w3a305QF/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
-                    <button class="print-cv-btn" id="printCvBtn" title="Print or save as clean ATS-ready PDF">
-                        <ion-icon name="print-outline"></ion-icon>
-                        <span>Print ATS CV</span>
-                    </button>
+                    <div class="resume-title-wrap">
+                        <h2 class="h2 article-title" style="margin-bottom: 0;">Resume</h2>
+                    </div>
+                    <div class="resume-actions">
+                        <a class="resume-file" href="https://drive.google.com/file/d/1QOYCwKpqWnF85dwzb5TD34j0w3a305QF/view?usp=drive_link" target="_blank" rel="noopener noreferrer">View résumé ↗</a>
+                        <button class="blueprint-btn" id="openBlueprintBtn" title="View Enterprise Clean Architecture Blueprint">
+                            <ion-icon name="git-network-outline"></ion-icon>
+                            <span>Architecture Blueprint 📐</span>
+                        </button>
+                        <button class="print-cv-btn" id="printCvBtn" title="Print or save as clean ATS-ready PDF">
+                            <ion-icon name="print-outline"></ion-icon>
+                            <span>Print ATS CV</span>
+                        </button>
+                    </div>
                 </header>
 
                 <!-- Print-Only Header (visible only on paper / PDF export) -->

@@ -255,3 +255,24 @@ html[dir="rtl"] .header-contact { font-size: 14px; }
   color: #d8e5d0 !important;
 }
 html[dir="rtl"] .brand-label small { font-size: 11px; }
+
+/* Resume Header RTL Harmonization */
+html[dir="rtl"] .resume-header {
+  direction: rtl;
+}
+
+html[dir="rtl"] .resume-title-wrap {
+  text-align: right;
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .resume-actions {
+  direction: rtl;
+}
+
+html[dir="rtl"] .resume-file,
+html[dir="rtl"] .blueprint-btn,
+html[dir="rtl"] .print-cv-btn {
+  font-family: var(--ar-font);
+  font-size: 13px;
+}

@@ -414,12 +414,10 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
 .intro-identity img { width: 60px; height: 60px; object-fit: cover; object-position: center 30%; border-radius: 50%; }
 .intro-identity .intro-name { font-size: 17px; color: var(--hero-ink); margin: 0 0 3px; line-height: 1.3; }
 .intro-identity p { color: var(--hero-muted); font-size: 12px; }
-.resume-header { flex-wrap: wrap; gap: 12px; }
-.resume-file { margin-inline-start: auto; color: #c1e99f; font-size: 14px; padding: 10px 4px; }
 .contact-direct, .profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
 .contact-direct { margin: -14px 0 26px; }
 .contact-direct :is(button,a), .profile-links a { color: #c0d8b0; font-size: 13px; padding: 6px 0; }
-.contact-direct :is(button,a):hover, .profile-links a:hover, .resume-file:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-direct :is(button,a):hover, .profile-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 /* Stage each screenshot so the whole interface stays readable. */
 .featured-card img {
@@ -444,6 +442,62 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
    ========================================================================== */
 
 /* 1. Resume Header & Action Buttons */
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 32px;
+}
+
+.resume-title-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.resume-title-wrap .article-title {
+  margin-bottom: 0 !important;
+  padding-bottom: 8px;
+}
+
+.resume-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resume-file {
+  background: rgba(185, 237, 132, 0.12) !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  padding: 8px 16px !important;
+  min-height: 38px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+}
+
+.resume-file:hover {
+  background: #b9ed84 !important;
+  color: #121c10 !important;
+  border-color: #b9ed84 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 18px rgba(185, 237, 132, 0.25) !important;
+  text-decoration: none !important;
+}
+
 .print-cv-btn {
   background: #202b1c !important;
   border: 1px solid #364831 !important;
@@ -451,13 +505,16 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
   border-radius: 8px !important;
   font-weight: 500 !important;
   font-size: 13px !important;
-  padding: 8px 18px !important;
+  padding: 8px 16px !important;
+  min-height: 38px !important;
   display: inline-flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 8px !important;
   box-shadow: none !important;
   transform: none !important;
   transition: all 0.25s ease !important;
+  white-space: nowrap !important;
 }
 
 .print-cv-btn:hover {
@@ -468,13 +525,29 @@ body { background-image: radial-gradient(ellipse at 78% 8%, rgba(185,237,132,.05
   box-shadow: 0 4px 18px rgba(185, 237, 132, 0.25) !important;
 }
 
-.resume-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 22px;
-  margin-bottom: 32px;
+.blueprint-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: #202b1c !important;
+  border: 1px solid #364831 !important;
+  color: #b9ed84 !important;
+  padding: 8px 16px !important;
+  min-height: 38px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.blueprint-btn:hover {
+  background: #2b3b27 !important;
+  border-color: #b9ed84 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 18px rgba(185, 237, 132, 0.2) !important;
 }
 
 /* 2. Timeline Experience & Education */
@@ -2896,6 +2969,85 @@ html, body {
     border-radius: 12px !important;
   }
 
+  /* 8b. RESUME HEADER ON MOBILE */
+  .resume-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 24px !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .resume-title-wrap {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .resume-title-wrap .article-title {
+    font-size: clamp(22px, 5.5vw, 26px) !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 8px !important;
+    width: auto !important;
+  }
+
+  .resume-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .resume-file {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    background: #b9ed84 !important;
+    color: #121c10 !important;
+    border-color: #b9ed84 !important;
+    box-shadow: 0 4px 14px rgba(185, 237, 132, 0.22) !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .resume-file:hover {
+    background: #cbf59f !important;
+    color: #0f180e !important;
+    border-color: #cbf59f !important;
+  }
+
+  .blueprint-btn,
+  .print-cv-btn {
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    background: #1a251b !important;
+    border: 1px solid #364831 !important;
+    color: #d6e8ce !important;
+  }
+
+  .blueprint-btn span,
+  .print-cv-btn span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .blueprint-btn ion-icon,
+  .print-cv-btn ion-icon {
+    font-size: 16px !important;
+    flex-shrink: 0 !important;
+  }
+
   /* 9. FORMS & INPUTS (iOS ZOOM FIX) */
   .form-input,
   .portfolio-search-input,
@@ -3018,6 +3170,21 @@ html, body {
   .stats-grid .stat-label {
     margin-top: 0 !important;
     font-size: 10.5px !important;
+  }
+
+  /* Resume Header on Compact Devices */
+  .resume-actions {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .resume-file,
+  .blueprint-btn,
+  .print-cv-btn {
+    grid-column: 1 !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    font-size: 12.5px !important;
   }
 }
 
