@@ -487,3 +487,14 @@ window.addEventListener('portfolio:langchange', () => {
   if (modalTitle) modalTitle.textContent = item.querySelector('[data-testimonials-title]').textContent;
   if (modalText) modalText.innerHTML = item.querySelector('[data-testimonials-text]').innerHTML;
 });
+
+// Keep the clear button name in sync with the selected interface language.
+window.addEventListener('portfolio:langchange', () => {
+  const ar = document.documentElement.lang === 'ar';
+  if (searchClearBtn) {
+    const label = ar ? 'مسح البحث' : 'Clear search';
+    searchClearBtn.title = label;
+    searchClearBtn.setAttribute('aria-label', label);
+  }
+  projectSearchInput?.setAttribute('aria-label', ar ? 'البحث عن مشروع أو تقنية' : 'Search projects by name or technology');
+});
