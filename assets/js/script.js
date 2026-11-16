@@ -206,15 +206,18 @@ const pModalDesc = document.getElementById("pModalDesc");
 const pModalTechList = document.getElementById("pModalTechList");
 const pModalAction = document.getElementById("pModalAction");
 
+let projectReturnFocus = null;
 const closeProjectModal = function () {
   if (projectModalContainer) {
     projectModalContainer.classList.remove("active");
     document.body.style.overflow = "";
+    projectReturnFocus?.focus({ preventScroll: true });
   }
 };
 
 const openProjectModal = function (item) {
   if (!projectModalContainer) return;
+  projectReturnFocus = document.activeElement;
 
   const isAr = document.documentElement.getAttribute("dir") === "rtl";
   const title = item.getAttribute("data-project-title") || item.querySelector(".project-title")?.innerText || "";
@@ -278,7 +281,7 @@ const openProjectModal = function (item) {
       `;
     } else {
       const isLogin = /\/(?:Admin|Account|login)(?:\/|$)/i.test(url);
-      const btnText = isAr ? (isLogin ? "فتح النظام · يتطلب تسجيل دخول" : "زيارة النظام الحي ↗") : (isLogin ? "Open application · sign-in required" : "Visit Live Application");
+      const btnText = isAr ? (isLogin ? "فتح التطبيق · يتطلب تسجيل الدخول" : "زيارة المشروع") : (isLogin ? "Open application · sign-in required" : "Visit Live Application");
       pModalAction.innerHTML = `
         <a href="${url}" target="_blank" rel="noopener noreferrer" class="project-modal-btn-primary">
           <ion-icon name="globe-outline"></ion-icon>
@@ -292,42 +295,8 @@ const openProjectModal = function (item) {
   if (story) {
     story.replaceChildren();
 
-    // Tailored architecture highlights based on project scope
-    let architectureHighlight = isAr
-      ? "معمارية برمجية متعددة الطبقات (Multi-tier) مع مراعاة أعلى معايير الأمان، واستعلامات SQL Server مفهرسة، وتصميم متجاوب وسريع للواجهات."
-      : "Multi-tier layered architecture engineered with high security, optimized SQL Server queries, and responsive front-end.";
-    
-    const lowerTitle = title.toLowerCase();
-
-    if (lowerTitle.includes("zad") || lowerTitle.includes("زاد")) {
-      architectureHighlight = isAr
-        ? "بوابات APIs موزعة ومعمارية مايكروسيرفيسز مصممة لتحمل ضغط استثنائي وتزامن عالٍ (أكثر من 10 ملايين مستخدم). تم تطبيق Redis للتخزين المؤقت الموزع لمواقيت الصلاة، وبث تلاوات القرآن عبر CDN، وإرسال إشعارات جماعية لحظية عبر Firebase FCM."
-        : "Multi-region distributed API gateways and microservices engineered for extreme concurrency (10M+ users). Implemented Redis distributed caching for geo-calculated prayer times, Quran audio CDN streaming, and Firebase FCM bulk push notification dispatchers.";
-    } else if (lowerTitle.includes("dar-alifta") || lowerTitle.includes("portal")) {
-      architectureHighlight = isAr
-        ? "بنية N-tier عالية التوافر ومحسنة بواسطة Redis Output Caching، وتقسيم جداول SQL، وفهرسة بحث الفتاوى عالية التزامن لتخدم ملايين الزوار شهرياً."
-        : "High-availability N-tier architecture optimized with Redis output caching, SQL table partitioning, and high-concurrency search indexing serving millions of monthly visitors.";
-    } else if (lowerTitle.includes("erp") || lowerTitle.includes("restful")) {
-      architectureHighlight = isAr
-        ? "معمارية برمجية نظيفة (Clean Architecture) بتصميم موجه للمجال (DDD)، و CQRS عبر MediatR، وعزل قواعد البيانات للمستأجرين، وموازنة القيود المحاسبية التلقائية وتكامل الفوترة الإلكترونية."
-        : "Clean Architecture with Domain-Driven Design (DDD), CQRS with MediatR, multi-tenant database isolation, and automated financial journal balancing.";
-    } else if (lowerTitle.includes("mobile") || lowerTitle.includes("conference") || lowerTitle.includes("app")) {
-      architectureHighlight = isAr
-        ? "واجهات برمجية RESTful Web APIs عالية التدفق، مصادقة عديمة الحالة عبر JWT، مزامنة غير متصلة للبيانات، وخدمات إشعارات لحظية متكاملة."
-        : "High-throughput RESTful Web APIs, JWT stateless authentication, offline database sync, and real-time push notification microservices.";
-    } else if (lowerTitle.includes("dashboard") || lowerTitle.includes("analytics")) {
-      architectureHighlight = isAr
-        ? "محرك تحليلات فورية، واستعلامات SQL مجمعة ومحسنة، ورسوم بيانية تنفيذية، وأمان بيانات قائم على الصلاحيات والأدوار (RBAC)."
-        : "Real-time analytics engine, optimized aggregated SQL queries, executive BI charts, and role-based data security.";
-    } else if (lowerTitle.includes("hr") || lowerTitle.includes("staff")) {
-      architectureHighlight = isAr
-        ? "محرك مسارات العمل المؤسسية لإدارة الموارد البشرية، وحسابات الرواتب التلقائية، وتشفير المستندات الحساسة، وسجلات تدقيق كاملة."
-        : "Enterprise HR workflow engine, automated payroll calculations, secure document encryption, and complete audit logging.";
-    } else if (lowerTitle.includes("buccino") || lowerTitle.includes("marble")) {
-      architectureHighlight = isAr
-        ? "كتالوج منتجات مؤسسي فائق السرعة، ومحول عملات ديناميكي، وتتبع دولي للمخزون، وعرض محسن لمحركات البحث (SEO)."
-        : "High-performance enterprise catalog, dynamic multi-currency converter, international inventory tracking, and SEO-optimized server rendering.";
-    }
+    // Use project-specific content, without guessing infrastructure from a title.
+    const architectureHighlight = item.getAttribute('data-project-desc') || desc;
 
     const systemAccessText = isInternal
       ? (isAr ? "منصة مؤسسية داخلية — استعرض لقطات الشاشة والتفاصيل الفنية المرفقة." : "Internal enterprise platform — examine screenshots and details.")
@@ -337,7 +306,7 @@ const openProjectModal = function (item) {
 
     const storyItems = [
       [isAr ? 'الدور والمسؤولية' : 'Role & Scope', role],
-      [isAr ? 'أبرز ملامح المعمارية البرمجية' : 'Architecture Highlights', architectureHighlight],
+      [isAr ? 'أبرز ملامح المعمارية البرمجية' : 'Project overview', architectureHighlight],
       [isAr ? 'التقنيات الأساسية' : 'Core Tech Stack', tech],
       [isAr ? 'طريقة الوصول للنظام' : 'System Access', systemAccessText]
     ];
@@ -357,6 +326,7 @@ const openProjectModal = function (item) {
 
   projectModalContainer.classList.add("active");
   document.body.style.overflow = "hidden";
+  projectModalCloseBtn?.focus();
 };
 
 // Attach click listener to each project card
@@ -499,3 +469,21 @@ window.addEventListener('hashchange', () => {
 });
 window.addEventListener('portfolio:pagechange', syncNavigationState);
 applyFilters();
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Tab' || !projectModalContainer?.classList.contains('active')) return;
+  const controls = Array.from(projectModalContainer.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"]')).filter(el => el.getClientRects().length);
+  if (!controls.length) return;
+  const first = controls[0], last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});
+
+// Refresh an open testimonial when the visitor switches languages.
+window.addEventListener('portfolio:langchange', () => {
+  if (!modalContainer?.classList.contains('active')) return;
+  const item = document.querySelector('[data-testimonials-item]');
+  if (!item) return;
+  if (modalTitle) modalTitle.textContent = item.querySelector('[data-testimonials-title]').textContent;
+  if (modalText) modalText.innerHTML = item.querySelector('[data-testimonials-text]').innerHTML;
+});

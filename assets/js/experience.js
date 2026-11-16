@@ -38,7 +38,7 @@ function setupReveals() {
     });
   });
 
-  document.querySelectorAll('.selected-work, .service, .testimonials, .working-together, .conversation-banner, .skills-category, .timeline').forEach(node => {
+  document.querySelectorAll('.selected-work, .service, .testimonials, .clients, .working-together, .conversation-banner, .skills-category, .timeline').forEach(node => {
     // Hidden tabs are left intact and reconsidered when activated.
     if (!node.getClientRects().length || node.getBoundingClientRect().top < window.innerHeight) return;
     node.classList.add('reveal-pending');
@@ -124,8 +124,8 @@ if (select) {
     { group: "Quick Actions", groupAr: "إجراءات سريعة", icon: "logo-linkedin", title: "Visit LinkedIn Profile", titleAr: "زيارة الحساب على LinkedIn", desc: "linkedin.com/in/abdo-mohamed-2277b1191", descAr: "linkedin.com/in/abdo-mohamed-2277b1191", action: () => window.open("https://www.linkedin.com/in/abdo-mohamed-2277b1191/", "_blank") },
 
     // Key Featured Projects
-    { group: "Featured Projects", groupAr: "مشاريع مميزة", icon: "phone-portrait-outline", title: "Zad Al-Muslim Mobile Platform (زاد المسلم)", titleAr: "منصة تطبيق زاد المسلم (زاد المسلم)", desc: "10M+ Users, High-Concurrency APIs, Redis, FCM", descAr: "أكثر من 10 ملايين مستخدم، APIs عالية التزامن، Redis، FCM", action: () => openProjectByHighlight("mobile") },
-    { group: "Featured Projects", groupAr: "مشاريع مميزة", icon: "layers-outline", title: "Dar-Alifta Arabic Portal", titleAr: "بوابة دار الإفتاء المصرية", desc: "ASP.NET MVC, High Concurrency, Millions of Visitors", descAr: "ASP.NET MVC، ملايين الزوار شهرياً، أداء فائق", action: () => openProjectByHighlight("content") },
+    { group: "Featured Projects", groupAr: "مشاريع مميزة", icon: "phone-portrait-outline", title: "Zad Al-Muslim Mobile Platform (زاد المسلم)", titleAr: "منصة تطبيق زاد المسلم (زاد المسلم)", desc: "Mobile backend, prayer times & notifications", descAr: "أكثر من  مستخدم، APIs عالية التزامن، Redis، FCM", action: () => openProjectByHighlight("mobile") },
+    { group: "Featured Projects", groupAr: "مشاريع مميزة", icon: "layers-outline", title: "Dar-Alifta Arabic Portal", titleAr: "بوابة دار الإفتاء المصرية", desc: "ASP.NET MVC, Content management & search", descAr: "ASP.NET MVC، إدارة المحتوى والبحث", action: () => openProjectByHighlight("content") },
     { group: "Featured Projects", groupAr: "مشاريع مميزة", icon: "business-outline", title: "Restful ERP Solutions", titleAr: "حلول Restful ERP للمؤسسات", desc: "Clean Architecture, CQRS, Financial Accounting", descAr: "Clean Architecture، CQRS، المحاسبة والفاتورة الإلكترونية", action: () => openProjectByHighlight("business") }
   ];
 
@@ -592,7 +592,7 @@ function downloadVCard() {
     "URL;TYPE=WORK:https://abdomohaamed.github.io/portfolio-v2/",
     "URL;TYPE=LINKEDIN:https://www.linkedin.com/in/abdo-mohamed-2277b1191/",
     "URL;TYPE=GITHUB:https://github.com/AbdoMohaamed",
-    "NOTE:Senior Full-Stack .NET Developer specializing in ASP.NET Core, Clean Architecture, CQRS, Angular, Microservices, and high-concurrency systems (Zad Al-Muslim 10M+ users, Dar-Alifta).",
+    "NOTE:Senior Full-Stack .NET Developer specializing in ASP.NET Core, Clean Architecture, CQRS, Angular, Microservices, and high-concurrency systems (Zad Al-Muslim, Dar-Alifta).",
     "REV:2026-11-11T12:00:00Z",
     "END:VCARD"
   ].join("\r\n");
@@ -631,23 +631,23 @@ function downloadVCard() {
   if (!langBtn) return;
 
   // Default language is ALWAYS English (en)
-  localStorage.removeItem("portfolio_lang"); // Clear old cached "ar" from previous testing
+  // Preserve the visitor language choice.
   let currentLang = sessionStorage.getItem("portfolio_lang_active") || "en";
 
   const projectTranslationsAr = {
     "Zad Al-Muslim Mobile Platform (زاد المسلم)": {
       cardTitle: "منصة تطبيق زاد المسلم",
-      badge: "+10 مليون مستخدم نشط",
+      badge: "خدمات تطبيق الموبايل",
       title: "منصة تطبيق زاد المسلم",
       role: "مهندس معماري أول للباك إند والـ APIs",
-      desc: "معمارية الباك إند عالية التزامن والواجهات البرمجية الموزعة لتطبيق زاد المسلم الشهير (أكثر من 10 ملايين مستخدم). تم هندسة RESTful APIs عالية التوافر، وخوارزميات دقيقة لمواقيت الصلاة، وبث صوتي للقرآن الكريم عبر CDN، وإرسال إشعارات لحظية لملايين المستخدمين حول العالم."
+      desc: "معمارية الباك إند عالية التزامن والواجهات البرمجية الموزعة لتطبيق زاد المسلم الشهير. تم هندسة RESTful APIs عالية التوافر، وخوارزميات دقيقة لمواقيت الصلاة، وبث صوتي للقرآن الكريم عبر CDN، وإرسال إشعارات لحظية لدعم خصائص التطبيق."
     },
     "Dar-Alifta Arabic Portal": {
       cardTitle: "بوابة دار الإفتاء المصرية",
-      badge: "منصة حكومية · ملايين الزوار",
+      badge: "بوابة محتوى عامة",
       title: "بوابة دار الإفتاء المصرية (العربية)",
       role: "مهندس برمجيات أول Full-Stack .NET",
-      desc: "بوابة إلكترونية رسمية عالية التوافر تخدم ملايين الزوار شهرياً في العالمين العربي والإسلامي. تم تطوير نظام إدارة محتوى ديناميكي، ومحرك بحث فتاوى يتحمل الضغط العالي، والأرشفة التلقائية مع فهرسة SQL Server بأعلى معايير الأمان واستقرار البيانات."
+      desc: "بوابة إلكترونية رسمية عالية التوافر تخدم المحتوى والفتاوى في العالمين العربي والإسلامي. تم تطوير نظام إدارة محتوى ديناميكي، ومحرك بحث فتاوى يتحمل الضغط العالي، والأرشفة التلقائية مع فهرسة SQL Server بأعلى معايير الأمان واستقرار البيانات."
     },
     "Mefan Creative Agency": {
       cardTitle: "وكالة ميفان الإبداعية",
@@ -658,7 +658,7 @@ function downloadVCard() {
     },
     "Restful ERP Solutions": {
       cardTitle: "حلول Restful ERP للمؤسسات",
-      badge: "معتمد من الزكاة والضريبة (ZATCA)",
+      badge: "أنظمة تخطيط موارد الأعمال",
       title: "حلول Restful ERP المؤسسية",
       role: "مهندس معماري أول لأنظمة ERP و .NET",
       desc: "نظام تخطيط موارد مؤسسات (ERP) شامل لإدارة المستودعات متعددة الفروع، والربط الكامل مع منظومة الفاتورة الإلكترونية المعتمدة من مصلحة الضرائب، ونقاط البيع (POS)، ووحدات التقارير المالية الآلية."
@@ -693,7 +693,7 @@ function downloadVCard() {
     },
     "Ramadan Portal": {
       cardTitle: "بوابة رمضان التفاعلية",
-      badge: "ملايين الزيارات اللحظية",
+      badge: "بوابة محتوى",
       title: "بوابة شهر رمضان المبارك",
       role: "مطور برمجيات Full-Stack .NET",
       desc: "منصة موسمية عالية الكثافة تقدم إمساكية ومواقيت رمضان اليومية، والأدعية، والبث المباشر للفتاوى، والمحتوى الصوتي والمرئي المتكامل."
@@ -707,7 +707,7 @@ function downloadVCard() {
     },
     "مصر قرآن كريم Mobile Platform": {
       cardTitle: "تطبيق مصر قرآن كريم",
-      badge: "بث صوتي CDN بملايين الاستماعات",
+      badge: "محتوى صوتي",
       title: "منصة وتطبيق مصر قرآن كريم",
       role: "مطور واجهات برمجية للموبايل APIs",
       desc: "تطبيق ديني واسع الانتشار يتيح البث الصوتي فائق الجودة لتلاوات القرآن الكريم، والتحميل للاستماع بدون إنترنت، وحفظ العلامات المرجعية ومزامنة الصوت."
@@ -849,11 +849,11 @@ function downloadVCard() {
 
     if (isAr) {
       applyText(".intro-name", "عبد المعبود محمد");
-      applyText(".availability-badge .status-text, .availability-badge span:last-child", "متاح فوراً للفرص والمشاريع في الرياض · إقامة قابلة للتحويل · نقل كفالة فوري");
+      applyText(".availability-badge .status-text, .availability-badge span:last-child", "الرياض، السعودية · متاح للفرص");
       applyText(".hero-heading", 'مهندس برمجيات أول<br><em id="morphingText" class="morphing-text">تطبيقات .NET وحلول المؤسسات</em>', true);
-      applyText(".hero-description", 'أبني وأقود تطوير حلول برمجية مؤسسية عالية الكفاءة والموثوقية، من المنصات ذات ملايين المستخدمين مثل <strong>زاد المسلم</strong> و<strong>دار الإفتاء المصرية</strong>، إلى أنظمة تخطيط الموارد (ERP) الموزعة، وفق أحدث ممارسات Clean Architecture والمعمارية السحابية.', true);
+      applyText(".hero-description", 'أطور تطبيقات الويب وواجهات البرمجة وأنظمة الأعمال باستخدام .NET. تشمل أعمالي بوابات المحتوى وخدمات تطبيقات الموبايل وأنظمة المؤسسات في السعودية ومصر.', true);
       applyText(".hero-actions .primary-action", 'استكشف أعمالي <span aria-hidden="true">↗</span>', true);
-      applyText(".hero-actions .secondary-action", 'تواصل معي <span aria-hidden="true">←</span>', true);
+      applyText(".hero-actions .secondary-action", 'عرض السيرة الذاتية <span aria-hidden="true">↗</span>', true);
       applyText(".intro-caption small", "مشروع مميز");
       applyText(".intro-caption strong", "بوابة دار الإفتاء المصرية");
 
@@ -908,7 +908,7 @@ function downloadVCard() {
         { title: "تطوير تطبيقات ومنصات الويب المتكاملة", text: "بناء أنظمة ومنصات ويب مؤسسية متكاملة (Full-Stack) باستخدام .NET 8/9 و ASP.NET Core، مع التركيز على أمان البيانات، وقابلية التوسع، وتطبيق مبادئ الكود النظيف (Clean Code)." },
         { title: "تصميم وهندسة قواعد البيانات وتحسين الأداء", text: "هندسة قواعد بيانات SQL Server عالية الكفاءة، وتحسين أداء الاستعلامات المعقدة والفهرسة (Query Optimization & Indexing) لضمان سرعة الاستجابة ومنع الاختناقات تحت الضغط العالي." },
         { title: "تصميم الواجهات البرمجية وتكامل الأنظمة", text: "بناء وتأمين RESTful APIs ومعمارية المايكروسيرفيسز، وربط بوابات الدفع والفوترة الإلكترونية، وخدمات الرسائل النصية، مع توثيق تقني شامل (Swagger / OpenAPI)." },
-        { title: "خوادم تطبيقات الموبايل والبنى السحابية", text: "تطوير البنية الخلفية (Back-End) فائقة السرعة لتطبيقات iOS وأندرويد، مدعومة بالتخزين المؤقت الموزع (Redis) وخدمات سحابة Azure للتعامل مع ملايين المستخدمين المتزامنين." }
+        { title: "خوادم تطبيقات الموبايل والبنى السحابية", text: "تطوير البنية الخلفية (Back-End) فائقة السرعة لتطبيقات iOS وأندرويد، مدعومة بالتخزين المؤقت الموزع (Redis) وخدمات سحابة Azure لدعم خدمات التطبيقات." }
       ];
       document.querySelectorAll(".service-item").forEach((item, i) => {
         if (servicesAr[i]) {
@@ -919,9 +919,16 @@ function downloadVCard() {
 
       // Testimonials & Clients
       applyText(".testimonials .article-title", "آراء العملاء والشركاء");
-      applyText("[data-testimonials-title]", "عميل من دولة الكويت");
-      applyText("[data-modal-time]", "تقييم عميل موثق");
-      applyText(".clients .article-title", "ثقة كبرى الكيانات والشركات");
+      applyText("[data-testimonials-title]", "عميل من الكويت");
+      applyText("[data-testimonials-text] p", "عبدو شخص رائع ومحترف، قام بإكمال العمل في الوقت المحدد، وقام بالإبداع ونفّذ كافة التعديلات على أكمل وجه دون ملل أو كلل. أشكرك جزيل الشكر وأنصح الجميع بالتعامل معه لأنه يستحق عن جدارة.");
+      document.querySelector('.testimonials-rating')?.setAttribute('aria-label', '٥ من ٥ نجوم');
+      applyText("[data-modal-time]", "رأي العميل");
+      applyText(".clients .article-title", "جهات ومشاريع من خبرتي");
+      applyText(".organizations-eyebrow", "خبرات المشاريع");
+      applyText(".organizations-intro", "جهات مرتبطة بالمشاريع المعروضة، وتشمل أعمالاً نفذتها ضمن فرق العمل لدى جهات توظيفي ومشاريع مستقلة.");
+      applyText(".organizations-action", 'استعرض الأعمال المرتبطة <span aria-hidden="true">↗</span>', true);
+      applyText(".organizations-note", "اضغط على الجهة لزيارة موقعها. تفاصيل مساهمتي موضحة داخل المشاريع.");
+      document.querySelectorAll('[data-org-ar]').forEach(el => { el.textContent = el.dataset.orgAr; });
 
       // Working Together & FAQ
       applyText("#working-heading", "ابدأ بمحادثة مباشرة");
@@ -963,8 +970,15 @@ function downloadVCard() {
       });
       restoreOriginal(".testimonials .article-title");
       restoreOriginal("[data-testimonials-title]");
+      restoreOriginal("[data-testimonials-text] p");
+      document.querySelector('.testimonials-rating')?.setAttribute('aria-label', '5 out of 5 stars');
       restoreOriginal("[data-modal-time]");
       restoreOriginal(".clients .article-title");
+      restoreOriginal(".organizations-eyebrow");
+      restoreOriginal(".organizations-intro");
+      restoreOriginal(".organizations-action", true);
+      restoreOriginal(".organizations-note");
+      document.querySelectorAll('[data-org-en]').forEach(el => { el.textContent = el.dataset.orgEn; });
       restoreOriginal("#working-heading");
       document.querySelectorAll(".process-grid > div").forEach(step => {
         restoreOriginal(step.querySelector("h4"));
@@ -999,7 +1013,7 @@ function downloadVCard() {
             title: "شركة سمارت جيت / سيج للتقنية (Sig Smart Technology)",
             role: "مهندس برمجيات أول Full-Stack .NET",
             date: "05/2022 — 10/2025 (دوام كامل)",
-            desc: 'قيادة تصميم وتطوير تطبيقات الويب والخدمات الخلفية باستخدام ASP.NET Core و ASP.NET MVC و Entity Framework و SQL Server.<br><span class="highlight">أبرز المساهمات:</span><br>• هندسة وتوسيع الواجهات البرمجية (RESTful APIs) لمنظومة تطبيق <strong>زاد المسلم (Zad Al-Muslim)</strong> المليوني (أكثر من 10 ملايين مستخدم نشط)، مع دمج كاش Redis، وخدمات الإشعارات الفورية (FCM)، ومواقيت الصلاة الدقيقة.<br>• تطبيق معمارية Clean Architecture وأنماط Repository و Dependency Injection لضمان استقلالية الكود وسهولة صيانته.<br>• بناء مسارات مصادقة آمنة تدعم التحقق الثنائي (MFA) ورموز التحقق المؤقتة (OTP).<br>• ربط مزودي الرسائل النصية المعتمدين (Nexmo, Cequens, SMSMisr) وبوابات البريد الإلكتروني.<br>• تحسين قواعد البيانات العلائقية ومراقبة خطط تنفيذ الاستعلامات في بيئات الاستخدام المكثف.'
+            desc: 'قيادة تصميم وتطوير تطبيقات الويب والخدمات الخلفية باستخدام ASP.NET Core و ASP.NET MVC و Entity Framework و SQL Server.<br><span class="highlight">أبرز المساهمات:</span><br>• هندسة وتوسيع الواجهات البرمجية (RESTful APIs) لمنظومة تطبيق <strong>زاد المسلم (Zad Al-Muslim)</strong> المليوني (أكثر من  مستخدم نشط)، مع دمج كاش Redis، وخدمات الإشعارات الفورية (FCM)، ومواقيت الصلاة الدقيقة.<br>• تطبيق معمارية Clean Architecture وأنماط Repository و Dependency Injection لضمان استقلالية الكود وسهولة صيانته.<br>• بناء مسارات مصادقة آمنة تدعم التحقق الثنائي (MFA) ورموز التحقق المؤقتة (OTP).<br>• ربط مزودي الرسائل النصية المعتمدين (Nexmo, Cequens, SMSMisr) وبوابات البريد الإلكتروني.<br>• تحسين قواعد البيانات العلائقية ومراقبة خطط تنفيذ الاستعلامات في بيئات الاستخدام المكثف.'
           },
           {
             title: "الشركة العربية (Arabian)",
@@ -1309,8 +1323,8 @@ function downloadVCard() {
         }
       });
       const specs = document.querySelectorAll(".arch-specs span");
-      if (specs[0]) applyText(specs[0], '⚡ <strong>الأداء الفائق:</strong> استجابات APIs في أقل من 50ms', true);
-      if (specs[1]) applyText(specs[1], '🔒 <strong>الأمان العالي:</strong> متوافق مع معايير OWASP وتشفير شامل', true);
+      if (specs[0]) applyText(specs[0], '⚡ <strong>الأداء الفائق:</strong> تحسين الاستعلامات والتخزين المؤقت', true);
+      if (specs[1]) applyText(specs[1], '🔒 <strong>الأمان العالي:</strong> المصادقة والتحكم في الصلاحيات', true);
       if (specs[2]) applyText(specs[2], '📈 <strong>قابلية التوسع:</strong> بنية موزعة ومتعددة المستأجرين (Multi-Tenant)', true);
     } else {
       restoreOriginal(".arch-modal-title");
