@@ -21,7 +21,7 @@
 
   function wrapTextNode(node) {
     var text = node.nodeValue;
-    if (!ARABIC.test(text) || !LATIN.test(text)) return;       // only mixed-script text
+    if (!ARABIC.test(text) || (!LATIN.test(text) && !/\+\d/.test(text))) return;       // only mixed-script text
     var parent = node.parentNode;
     if (!parent || parent.nodeType !== 1) return;
     if (SKIP[parent.tagName] || parent.closest("bdi.ltr")) return;
@@ -38,7 +38,7 @@
       var start = m.index, end = start + run.length;
       if (start > last) frag.appendChild(document.createTextNode(text.slice(last, start)));
       var bdi = document.createElement("bdi");
-      bdi.className = "ltr";
+      bdi.className = /^\+\d/.test(run) ? "ltr phone-number" : "ltr";
       bdi.setAttribute("dir", "ltr");
       bdi.textContent = run;
       frag.appendChild(bdi);

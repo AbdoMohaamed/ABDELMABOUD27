@@ -3524,7 +3524,11 @@ article { padding: 32px; min-height: 500px; }
 .conversation-banner button { flex-shrink: 0; }
 .contact-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0 30px; }
 .contact-options a { border: 1px solid #3b4a35; background: #202a1d; padding: 20px; border-radius: 8px; min-width: 0; }
-.contact-options a > span { float: right; color: #b9ed84; }
+.contact-options a > span {  float:left; color: #b9ed84; }
+    html[dir="ltr"] .contact-options a > span {
+    float:right;
+    }
+
 .contact-options strong { color: #e3eddd; font-size: 13px; font-weight: 500; }
 .contact-options small { display: block; margin-top: 10px; color: #a8b69f; font-size: 10px; overflow-wrap: anywhere; }
 .field-label { display: block; color: #d8e2d1; font-size: 12px; margin: 18px 0 9px; }
@@ -7586,3 +7590,11 @@ html[dir="rtl"] .dir-arrow.fa-icon-wrap {
   transform: none;
 }
 html .organization-link.fa-icon-wrap { position: absolute; }
+
+/* Isolate phone digits from surrounding Arabic labels. */
+html[dir="rtl"] .phone-number {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+  white-space: nowrap;
+}
