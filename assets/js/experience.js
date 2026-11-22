@@ -484,6 +484,11 @@ if (select) {
 
       if (progress < 1) {
         requestAnimationFrame(updateCounters);
+      } else {
+        // Trigger subtle neon completion pulse on stat cards
+        statsContainer.querySelectorAll(".stat-card").forEach((card, idx) => {
+          setTimeout(() => card.classList.add("completed-pulse"), idx * 120);
+        });
       }
     }
 
@@ -861,6 +866,20 @@ function downloadVCard() {
       if (statLabels[0]) applyText(statLabels[0], "سنوات من الخبرة العملية");
       if (statLabels[1]) applyText(statLabels[1], "تطبيقات مؤسسية ومنصات مليونية");
       if (statLabels[2]) applyText(statLabels[2], "أسواق إقليمية · السعودية ومصر والكويت");
+
+      // Architecture Topology Flow Translations
+      applyText(".arch-topology-title", "تدفق البيانات عالي التزامن والتوافر للمؤسسات");
+      applyText(".arch-topology-badge-text", "معمارية الأنظمة");
+      applyText('[data-node="client"] .arch-node-title', "طبقة العملاء");
+      applyText('[data-node="client"] .arch-node-desc', "تطبيقات موبايل · منصات ويب");
+      applyText('[data-node="gateway"] .arch-node-title', "بوابة الواجهات");
+      applyText('[data-node="gateway"] .arch-node-desc', "مصادقة · تحديد معدل الطلب");
+      applyText('[data-node="core"] .arch-node-title', "محرك .NET 9 Core");
+      applyText('[data-node="core"] .arch-node-desc', "Clean Arch & CQRS");
+      applyText('[data-node="cache"] .arch-node-title', "كاش موزع Redis");
+      applyText('[data-node="cache"] .arch-node-desc', "استجابة فائقة السرعة");
+      applyText('[data-node="db"] .arch-node-title', "قواعد بيانات SQL");
+      applyText('[data-node="db"] .arch-node-desc', "توافرية عالية وفهرسة متقدمة");
     } else {
       restoreOriginal(".intro-name");
       restoreOriginal(".availability-badge .status-text, .availability-badge span:last-child");

@@ -7598,3 +7598,1296 @@ html[dir="rtl"] .phone-number {
   display: inline-block;
   white-space: nowrap;
 }
+
+/* ==========================================================================
+   HIGH-END UI UPGRADES (Blueprint Grid, Sheen Hover, Architecture Flow)
+========================================================================== */
+
+/* 1. Architectural Blueprint Dot Grid */
+body {
+  background-color: #0e1410 !important;
+  background-image: 
+    radial-gradient(rgba(185, 237, 132, 0.08) 1px, transparent 1px),
+    radial-gradient(ellipse at 80% 12%, rgba(185, 237, 132, 0.045), transparent 45%) !important;
+  background-size: 28px 28px, 100% 100% !important;
+  background-position: 0 0, 0 0 !important;
+  background-attachment: fixed !important;
+}
+
+/* 2. Micro Architecture Topology Flow Widget */
+.arch-topology-card {
+  margin: 28px 0 16px;
+  background: linear-gradient(135deg, rgba(20, 31, 23, 0.75) 0%, rgba(13, 21, 15, 0.9) 100%);
+  border: 1px solid rgba(185, 237, 132, 0.22);
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 18px rgba(185, 237, 132, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-topology-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(185, 237, 132, 0.5), transparent);
+}
+
+.arch-topology-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.arch-topology-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(185, 237, 132, 0.1);
+  border: 1px solid rgba(185, 237, 132, 0.3);
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: #b9ed84;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.arch-topology-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b9ed84;
+  box-shadow: 0 0 8px #b9ed84;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.arch-topology-title {
+  color: #edf2e9;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.arch-topology-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 4px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185, 237, 132, 0.2) transparent;
+}
+
+.arch-topology-flow::-webkit-scrollbar {
+  height: 4px;
+}
+.arch-topology-flow::-webkit-scrollbar-thumb {
+  background: rgba(185, 237, 132, 0.2);
+  border-radius: 4px;
+}
+
+.arch-flow-node {
+  flex: 1;
+  min-width: 110px;
+  background: rgba(17, 26, 19, 0.9);
+  border: 1px solid rgba(185, 237, 132, 0.18);
+  border-radius: 12px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  cursor: default;
+}
+
+.arch-flow-node:hover {
+  transform: translateY(-3px);
+  border-color: rgba(185, 237, 132, 0.55);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45), 0 0 14px rgba(185, 237, 132, 0.15);
+}
+
+.arch-node-highlight {
+  background: linear-gradient(135deg, rgba(25, 41, 28, 0.95) 0%, rgba(18, 30, 20, 0.95) 100%);
+  border-color: rgba(185, 237, 132, 0.45);
+  box-shadow: 0 0 14px rgba(185, 237, 132, 0.12);
+}
+
+.arch-node-badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(185, 237, 132, 0.12);
+  border: 1px solid rgba(185, 237, 132, 0.25);
+  color: #b9ed84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.arch-flow-node:hover .arch-node-badge-icon {
+  transform: scale(1.1);
+  background: #b9ed84;
+  color: #0d150b;
+}
+
+.arch-node-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arch-node-title {
+  color: #edf2e9;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.arch-node-desc {
+  color: #8fa78d;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.arch-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: rgba(185, 237, 132, 0.4);
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.arch-flow-pulse {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b9ed84;
+  box-shadow: 0 0 8px #b9ed84;
+  animation: flowPacketTravel 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes flowPacketTravel {
+  0% {
+    transform: translateX(-14px) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-4px) scale(1.2);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(4px) scale(1.2);
+  }
+  100% {
+    transform: translateX(14px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+/* In RTL: flip flow direction arrow */
+html[dir="rtl"] .arch-flow-arrow ion-icon {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .arch-topology-title,
+html[dir="rtl"] .arch-topology-badge-text,
+html[dir="rtl"] .arch-node-title {
+  font-family: var(--ff-cairo, var(--ff-arabic, 'Cairo', sans-serif));
+}
+
+/* 3. Cinematic Card Hover & Sheen Glow on Projects */
+.project-item {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+  position: relative !important;
+}
+
+.project-item:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(185, 237, 132, 0.45) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.65), 0 0 24px rgba(185, 237, 132, 0.16) !important;
+}
+
+.project-img {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.project-img img {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.5s ease !important;
+  will-change: transform;
+}
+
+.project-item:hover .project-img img {
+  transform: scale(1.05) !important;
+  filter: brightness(1.04) contrast(1.02) !important;
+}
+
+.project-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(185, 237, 132, 0.08) 40%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(185, 237, 132, 0.08) 60%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-item:hover .project-img::after {
+  opacity: 1;
+  animation: projectSheenSweep 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes projectSheenSweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* 4. Stat Counter Completion Pulse */
+.stat-card.completed-pulse {
+  border-color: rgba(185, 237, 132, 0.65) !important;
+  box-shadow: 0 0 20px rgba(185, 237, 132, 0.22) !important;
+  animation: statGlowPulse 1.2s ease-out;
+}
+
+@keyframes statGlowPulse {
+  0% {
+    box-shadow: 0 0 26px rgba(185, 237, 132, 0.45);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(185, 237, 132, 0.08);
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   DESIGN POLISH & CONSISTENCY (Radii, Contrast, Spacing, Stats, Hero Balance)
+========================================================================== */
+
+/* 1. UNIFIED DESIGN SYSTEM RADII */
+.project-item,
+.service-item,
+.content-card-clients,
+.skills-category,
+.featured-card,
+.arch-topology-card,
+.client-logo-card,
+.about-text {
+  border-radius: 16px !important;
+}
+
+.intro-layout,
+.project-modal-container,
+.arch-modal-content {
+  border-radius: 20px !important;
+}
+
+.intro-layout .primary-action,
+.intro-layout .secondary-action,
+.form-btn {
+  border-radius: 12px !important;
+}
+
+.project-tech span,
+.skill-tag,
+.project-badge,
+.arch-topology-badge {
+  border-radius: 999px !important;
+}
+
+/* 2. SUBTEXT CONTRAST & READABILITY */
+.hero-description {
+  color: #c9d8c6 !important;
+  font-size: 15.5px !important;
+  line-height: 1.8 !important;
+}
+
+.about-text p {
+  color: #c8d6c5 !important;
+  font-size: 14.5px !important;
+  line-height: 1.85 !important;
+}
+
+.service-item-text {
+  color: #b8ccb5 !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+.featured-card p {
+  color: #b8ccb5 !important;
+  font-size: 12.5px !important;
+  line-height: 1.75 !important;
+}
+
+.timeline-text {
+  color: #b8ccb5 !important;
+  font-size: 13.5px !important;
+  line-height: 1.8 !important;
+}
+
+/* 3. VERTICAL RHYTHM & SPACIOUS SECTION BREATHING ROOM */
+.intro-layout {
+  margin-bottom: 40px !important;
+}
+
+.stats-grid {
+  margin-bottom: 56px !important;
+}
+
+.selected-work {
+  margin-bottom: 56px !important;
+}
+
+.about-text {
+  margin-bottom: 56px !important;
+}
+
+.service {
+  margin-bottom: 56px !important;
+}
+
+.testimonials {
+  margin-bottom: 56px !important;
+}
+
+.clients {
+  margin-bottom: 56px !important;
+}
+
+/* 4. HARMONIOUS STATS CARDS */
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin: 32px 0 56px !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.stats-grid .stat-card {
+  background: linear-gradient(135deg, rgba(23, 34, 25, 0.88) 0%, rgba(14, 23, 16, 0.96) 100%) !important;
+  border: 1px solid rgba(185, 237, 132, 0.22) !important;
+  border-radius: 16px !important;
+  padding: 24px 20px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.stats-grid .stat-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(185, 237, 132, 0.5) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 16px rgba(185, 237, 132, 0.14) !important;
+}
+
+.stats-grid .stat-number {
+  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-weight: 700 !important;
+  color: #b9ed84 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 6px !important;
+  background: none !important;
+  -webkit-text-fill-color: #b9ed84 !important;
+}
+
+.stats-grid .stat-label {
+  font-size: 13px !important;
+  color: #b8ccb4 !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 680px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 18px 0 36px !important;
+  }
+  .stats-grid .stat-card {
+    padding: 13px 6px !important;
+    border-radius: 12px !important;
+  }
+  .stats-grid .stat-number {
+    font-size: 21px !important;
+  }
+  .stats-grid .stat-label {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* 5. HERO VISUAL BALANCE & PROPORTIONS */
+@media (min-width: 801px) {
+  .intro-layout {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    align-items: stretch !important;
+    gap: clamp(24px, 3.5vw, 48px) !important;
+    padding: clamp(28px, 4vw, 54px) !important;
+    border-radius: 20px !important;
+  }
+
+  .intro-project {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 320px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .intro-preview {
+    flex: 1 1 auto !important;
+    height: 100% !important;
+    min-height: 220px !important;
+    padding: 0 !important;
+    position: relative !important;
+    aspect-ratio: auto !important;
+  }
+
+  .intro-preview img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+}
+
+
+/* ==========================================================================
+   ULTRA-LUXURY AESTHETICS (Apple / Vercel / Linear Tier Polish)
+========================================================================== */
+
+/* 1. Global Polish: Smooth antialiased typography & Selection */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(185, 237, 132, 0.3) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(185, 237, 132, 0.5);
+}
+
+/* 2. Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f0c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(185, 237, 132, 0.22);
+  border-radius: 999px;
+  border: 2px solid #0a0f0c;
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(185, 237, 132, 0.55);
+}
+
+/* 3. Deep Cinematic Ambient Atmosphere */
+body {
+  background-color: #0b110d !important;
+  background-image: 
+    radial-gradient(rgba(185, 237, 132, 0.08) 1px, transparent 1px),
+    radial-gradient(circle 700px at 90% 10%, rgba(185, 237, 132, 0.08), transparent 70%),
+    radial-gradient(circle 600px at 10% 80%, rgba(45, 135, 98, 0.07), transparent 70%) !important;
+  background-size: 28px 28px, 100% 100%, 100% 100% !important;
+  background-position: 0 0, 0 0, 0 0 !important;
+  background-attachment: fixed !important;
+}
+
+/* 4. Ambient Cursor Glow Enhancement */
+.cursor-glow {
+  width: 600px !important;
+  height: 600px !important;
+  background: radial-gradient(circle, rgba(185, 237, 132, 0.09) 0%, rgba(185, 237, 132, 0.02) 40%, transparent 70%) !important;
+  filter: blur(20px);
+  will-change: transform;
+}
+
+/* 5. Top Reading Progress Bar: High-Tech Neon Glow */
+.reading-progress {
+  height: 3px !important;
+  background: transparent !important;
+}
+#readingProgress {
+  height: 100% !important;
+  background: linear-gradient(90deg, #68e09f, #b9ed84, #d8ff96) !important;
+  box-shadow: 0 0 12px rgba(185, 237, 132, 0.7), 0 0 4px #b9ed84 !important;
+}
+
+/* 6. PIXEL-PERFECT MASTER HEADER & NAVIGATION SUITE */
+/* A. Desktop Header (>= 769px) */
+@media (min-width: 769px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 12px clamp(20px, 4vw, 54px) !important;
+    background: rgba(11, 17, 13, 0.84) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(185, 237, 132, 0.16) !important;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.45) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+  }
+
+  .site-header .wordmark {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .brand-symbol {
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: #b9ed84 !important;
+    background: rgba(21, 34, 24, 0.95) !important;
+    border: 1px solid rgba(185, 237, 132, 0.35) !important;
+    border-radius: 9px !important;
+    padding: 6px 10px !important;
+    letter-spacing: -0.5px !important;
+    box-shadow: 0 0 14px rgba(185, 237, 132, 0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  }
+
+  .wordmark:hover .brand-symbol {
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 20px rgba(185, 237, 132, 0.35) !important;
+  }
+
+  .site-header .brand-label {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #edf2e9 !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.25 !important;
+  }
+
+  .site-header .brand-label small {
+    display: block !important;
+    font-size: 9.5px !important;
+    color: #8fa78d !important;
+    letter-spacing: 1.2px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Centered Desktop Pill Dock */
+  .site-header .navbar {
+    position: static !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .site-header .navbar-list {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: rgba(18, 28, 20, 0.72) !important;
+    border: 1px solid rgba(185, 237, 132, 0.2) !important;
+    border-radius: 999px !important;
+    padding: 4px 6px !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+    list-style: none !important;
+    margin: 0 !important;
+  }
+
+  .site-header .navbar-link {
+    padding: 7px 18px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #a4bba0 !important;
+    border: 1px solid transparent !important;
+    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .site-header .navbar-link ion-icon {
+    font-size: 15px !important;
+    color: inherit !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  .site-header .navbar-link:hover:not(.active) {
+    color: #edf2e9 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .site-header .navbar-link.active {
+    background: rgba(185, 237, 132, 0.15) !important;
+    color: #b9ed84 !important;
+    border-color: rgba(185, 237, 132, 0.38) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 14px rgba(185, 237, 132, 0.15) !important;
+  }
+
+  .site-header .navbar-link.active::after {
+    display: none !important;
+  }
+
+  /* Desktop Header Actions: Uniform 38px Height */
+  .site-header .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .lang-toggle-btn {
+    height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    background: rgba(20, 31, 23, 0.75) !important;
+    border: 1px solid rgba(185, 237, 132, 0.25) !important;
+    color: #c9f598 !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .site-header .lang-toggle-btn:hover {
+    background: rgba(185, 237, 132, 0.15) !important;
+    border-color: rgba(185, 237, 132, 0.45) !important;
+    color: #edf2e9 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .site-header .cmd-palette-btn {
+    height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 999px !important;
+    background: rgba(20, 31, 23, 0.75) !important;
+    border: 1px solid rgba(185, 237, 132, 0.25) !important;
+    color: #c9f598 !important;
+    font-size: 12px !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .site-header .cmd-palette-btn:hover {
+    background: rgba(185, 237, 132, 0.15) !important;
+    border-color: rgba(185, 237, 132, 0.45) !important;
+    color: #edf2e9 !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .site-header .cmd-kbd {
+    background: rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(185, 237, 132, 0.2) !important;
+    border-radius: 6px !important;
+    padding: 2px 7px !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: #b9ed84 !important;
+  }
+
+  .site-header .header-contact {
+    height: 38px !important;
+    padding: 0 20px !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #b9ed84 0%, #9ce45c 100%) !important;
+    color: #0c140e !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    box-shadow: 0 2px 14px rgba(185, 237, 132, 0.35) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .site-header .header-contact:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(185, 237, 132, 0.5) !important;
+    background: linear-gradient(135deg, #ccff99 0%, #a8ee68 100%) !important;
+  }
+}
+
+/* B. Mobile Top Header & Fixed Bottom Dock (<= 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 16px !important;
+    margin: 0 !important;
+    background: #0d140f !important;
+    /* Explicitly prevent containing block trap for fixed bottom dock */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    transform: none !important;
+    filter: none !important;
+    border-bottom: 1px solid rgba(185, 237, 132, 0.16) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .site-header .wordmark {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .brand-symbol {
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
+    color: #b9ed84 !important;
+    background: #152218 !important;
+    border: 1px solid rgba(185, 237, 132, 0.35) !important;
+    border-radius: 8px !important;
+    padding: 5px 8px !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+  }
+
+  .site-header .brand-label {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #edf2e9 !important;
+    line-height: 1.25 !important;
+  }
+
+  .site-header .brand-label small {
+    display: block !important;
+    font-size: 9px !important;
+    color: #8fa78d !important;
+  }
+
+  .site-header .header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .lang-toggle-btn {
+    height: 34px !important;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    background: rgba(25, 41, 28, 0.85) !important;
+    border: 1px solid rgba(185, 237, 132, 0.3) !important;
+    color: #c9f598 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+  }
+
+  .site-header .cmd-palette-btn {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(25, 41, 28, 0.85) !important;
+    border: 1px solid rgba(185, 237, 132, 0.3) !important;
+    color: #c9f598 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .site-header .header-contact {
+    display: none !important;
+  }
+
+  /* Fixed Native Bottom Navigation Dock */
+  .site-header .navbar,
+  .navbar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    background: rgba(13, 20, 15, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-top: 1px solid rgba(185, 237, 132, 0.22) !important;
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.85) !important;
+    padding: 6px 10px calc(6px + env(safe-area-inset-bottom, 12px)) !important;
+    z-index: 99999 !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  .site-header .navbar-list,
+  .navbar-list {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    max-width: 480px !important;
+    padding: 0 !important;
+    list-style: none !important;
+    gap: 4px !important;
+  }
+
+  .site-header .navbar-item,
+  .navbar-item {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  .site-header .navbar-link,
+  .navbar-link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    width: 100% !important;
+    padding: 6px 4px !important;
+    border-radius: 12px !important;
+    color: #8fa78d !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    background: transparent !important;
+    border: 0 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-decoration: none !important;
+    transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  }
+
+  .site-header .navbar-link ion-icon,
+  .navbar-link ion-icon {
+    display: block !important;
+    font-size: 21px !important;
+    color: inherit !important;
+  }
+
+  .site-header .navbar-link .nav-text,
+  .navbar-link .nav-text {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header .navbar-link.active,
+  .navbar-link.active {
+    color: #b9ed84 !important;
+    background: rgba(185, 237, 132, 0.12) !important;
+    font-weight: 600 !important;
+  }
+
+  .site-header .navbar-link.active ion-icon,
+  .navbar-link.active ion-icon {
+    transform: translateY(-2px) scale(1.08) !important;
+    color: #b9ed84 !important;
+  }
+
+  .site-header .navbar-link.active::after,
+  .navbar-link.active::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 2px !important;
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 50% !important;
+    background: #b9ed84 !important;
+    box-shadow: 0 0 6px #b9ed84 !important;
+  }
+}
+
+/* C. RTL Alignment for Header */
+[dir="rtl"] .site-header .header-actions {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .site-header .wordmark {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 7. Hero Identity: Avatar Glowing Halo & Live Availability Radar */
+.intro-identity img {
+  border-radius: 50% !important;
+  border: 2px solid rgba(185, 237, 132, 0.45) !important;
+  box-shadow: 0 0 24px rgba(185, 237, 132, 0.28), 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+}
+.intro-identity img:hover {
+  transform: scale(1.06) rotate(1deg);
+  box-shadow: 0 0 35px rgba(185, 237, 132, 0.5), 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+  border-color: #b9ed84 !important;
+}
+
+.availability-badge {
+  background: rgba(185, 237, 132, 0.08) !important;
+  border: 1px solid rgba(185, 237, 132, 0.28) !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
+
+.status-indicator {
+  position: relative;
+  width: 8px !important;
+  height: 8px !important;
+  background: #b9ed84 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #b9ed84 !important;
+}
+.status-indicator::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #b9ed84;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes radar-ping {
+  0% { transform: scale(0.8); opacity: 1; }
+  75%, 100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* 8. Hero Headline: Editorial Modern Typography & Glowing Accent */
+.hero-heading {
+  letter-spacing: -0.035em !important;
+  line-height: 1.16 !important;
+  font-weight: 700 !important;
+}
+.morphing-text {
+  background: linear-gradient(135deg, #b9ed84 0%, #76ec98 50%, #b9ed84 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 32px rgba(185, 237, 132, 0.35) !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+/* 9. Glassmorphic Hero Card Container (.intro-layout) */
+.intro-layout {
+  background: linear-gradient(145deg, rgba(20, 31, 23, 0.75) 0%, rgba(12, 18, 14, 0.9) 100%) !important;
+  border: 1px solid rgba(185, 237, 132, 0.22) !important;
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.12), inset 0 0 24px rgba(185, 237, 132, 0.03) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  position: relative;
+  overflow: hidden;
+}
+.intro-layout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(185, 237, 132, 0.6), transparent);
+  pointer-events: none;
+}
+
+/* 10. CTA Buttons: Apple-Style Tactile Glow & Sheen */
+.intro-layout .primary-action {
+  background: linear-gradient(135deg, #b9ed84 0%, #a2ea64 100%) !important;
+  color: #0b140c !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 4px 18px rgba(185, 237, 132, 0.35), 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+.intro-layout .primary-action:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px rgba(185, 237, 132, 0.5), 0 0 12px rgba(185, 237, 132, 0.3) !important;
+}
+.intro-layout .primary-action::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+}
+.intro-layout .primary-action:hover::after {
+  left: 140%;
+  transition: left 0.75s ease-in-out;
+}
+
+.intro-layout .secondary-action {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(185, 237, 132, 0.25) !important;
+  color: #edf2e9 !important;
+  font-weight: 500 !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.intro-layout .secondary-action:hover {
+  background: rgba(185, 237, 132, 0.12) !important;
+  border-color: rgba(185, 237, 132, 0.5) !important;
+  color: #b9ed84 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 14px rgba(185, 237, 132, 0.12) !important;
+}
+
+/* 11. Hero Featured Project Card (.intro-project) */
+.intro-project {
+  border: 1px solid rgba(185, 237, 132, 0.25) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+.intro-project:hover {
+  transform: translateY(-3px) scale(1.01) !important;
+  border-color: rgba(185, 237, 132, 0.55) !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65), 0 0 24px rgba(185, 237, 132, 0.18) !important;
+}
+.intro-preview img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.intro-project:hover .intro-preview img {
+  transform: scale(1.04) !important;
+}
+.intro-caption {
+  background: rgba(12, 19, 14, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-top: 1px solid rgba(185, 237, 132, 0.2) !important;
+}
+.intro-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease !important;
+}
+.intro-project:hover .intro-arrow {
+  transform: translate(3px, -3px) !important;
+  background-color: #b9ed84 !important;
+  color: #0c140e !important;
+}
+html[dir="rtl"] .intro-project:hover .intro-arrow {
+  transform: translate(-3px, -3px) !important;
+}
+
+/* 12. Stats Grid: Trophy Card Bevels */
+.stats-grid .stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stats-grid .stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b9ed84, transparent);
+  opacity: 0.75;
+}
+.stats-grid .stat-number {
+  text-shadow: 0 0 20px rgba(185, 237, 132, 0.45) !important;
+}
+
+/* 13. Project Cards (.project-item & .featured-card): Specular Sheen & Floating Depth */
+.project-item,
+.featured-card {
+  background: linear-gradient(145deg, rgba(20, 31, 23, 0.8) 0%, rgba(13, 20, 15, 0.95) 100%) !important;
+  border: 1px solid rgba(185, 237, 132, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+.project-item:hover,
+.featured-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(185, 237, 132, 0.5) !important;
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.7), 0 0 28px rgba(185, 237, 132, 0.16) !important;
+}
+.project-item::before,
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(185, 237, 132, 0.6), transparent);
+  pointer-events: none;
+}
+
+.project-img img,
+.featured-preview img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease !important;
+}
+.project-item:hover .project-img img,
+.featured-card:hover .featured-preview img {
+  transform: scale(1.04) !important;
+  filter: brightness(1.05) !important;
+}
+
+/* 14. Direct Tech Chips & Tags: Refined Micro-Borders */
+.project-tech span,
+.skill-tag {
+  background: rgba(185, 237, 132, 0.08) !important;
+  border: 1px solid rgba(185, 237, 132, 0.22) !important;
+  color: #c4f29a !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  padding: 4px 10px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+.project-tech span:hover,
+.skill-tag:hover {
+  background: #b9ed84 !important;
+  color: #0b140c !important;
+  border-color: #b9ed84 !important;
+  transform: translateY(-1px) scale(1.04) !important;
+  box-shadow: 0 0 10px rgba(185, 237, 132, 0.4) !important;
+}
+
+/* 15. Scale & Impact Badges: Glowing Trophy */
+.project-badge {
+  background: linear-gradient(135deg, rgba(25, 41, 28, 0.95) 0%, rgba(18, 30, 20, 0.95) 100%) !important;
+  border: 1px solid rgba(185, 237, 132, 0.38) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 12px rgba(185, 237, 132, 0.12) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* 16. Service Items & Skills Categories */
+.service-item,
+.skills-category {
+  background: linear-gradient(145deg, rgba(19, 29, 22, 0.75) 0%, rgba(12, 19, 14, 0.92) 100%) !important;
+  border: 1px solid rgba(185, 237, 132, 0.18) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.service-item:hover,
+.skills-category:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(185, 237, 132, 0.45) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(185, 237, 132, 0.14) !important;
+}
+
+.service-icon-box {
+  background: rgba(185, 237, 132, 0.1) !important;
+  border: 1px solid rgba(185, 237, 132, 0.25) !important;
+  border-radius: 12px !important;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease !important;
+}
+.service-item:hover .service-icon-box {
+  transform: scale(1.08) rotate(-2deg);
+  background: rgba(185, 237, 132, 0.2) !important;
+  box-shadow: 0 0 16px rgba(185, 237, 132, 0.25);
+}
+
+/* 17. Section Headings: Modern Editorial Line Accent */
+.section-heading,
+.article-title {
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.025em;
+}
+
+/* 18. Floating WhatsApp & Back-to-Top Actions */
+.floating-actions button,
+.floating-actions a {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 14px rgba(185, 237, 132, 0.18) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+}
+.floating-actions button:hover,
+.floating-actions a:hover {
+  transform: scale(1.1) translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55), 0 0 22px rgba(185, 237, 132, 0.35) !important;
+}

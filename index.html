@@ -217,6 +217,70 @@
                         <li><strong>Agile & DevOps:</strong> Proficient with Git (GitHub, GitLab), CI/CD workflows, Postman, and JIRA.</li>
                     </ul>
                     </details>
+
+                    <!-- Micro Architecture Topology Flow Widget -->
+                    <div class="arch-topology-card" aria-label="Enterprise Architecture Pipeline">
+                        <div class="arch-topology-header">
+                            <div class="arch-topology-badge">
+                                <span class="arch-topology-dot"></span>
+                                <span class="arch-topology-badge-text">Architecture Pipeline</span>
+                            </div>
+                            <h4 class="arch-topology-title">High-Concurrency Enterprise Topology</h4>
+                        </div>
+                        <div class="arch-topology-flow">
+                            <div class="arch-flow-node" data-node="client">
+                                <div class="arch-node-badge-icon"><ion-icon name="phone-portrait-outline" mode="md"></ion-icon></div>
+                                <div class="arch-node-meta">
+                                    <strong class="arch-node-title">Clients Layer</strong>
+                                    <span class="arch-node-desc">Mobile Apps · Web SPAs</span>
+                                </div>
+                            </div>
+                            <div class="arch-flow-arrow" aria-hidden="true">
+                                <span class="arch-flow-pulse"></span>
+                                <ion-icon name="arrow-forward-outline" mode="md"></ion-icon>
+                            </div>
+                            <div class="arch-flow-node" data-node="gateway">
+                                <div class="arch-node-badge-icon"><ion-icon name="git-network-outline" mode="md"></ion-icon></div>
+                                <div class="arch-node-meta">
+                                    <strong class="arch-node-title">API Gateway</strong>
+                                    <span class="arch-node-desc">Auth · Rate Limit · CDN</span>
+                                </div>
+                            </div>
+                            <div class="arch-flow-arrow" aria-hidden="true">
+                                <span class="arch-flow-pulse"></span>
+                                <ion-icon name="arrow-forward-outline" mode="md"></ion-icon>
+                            </div>
+                            <div class="arch-flow-node arch-node-highlight" data-node="core">
+                                <div class="arch-node-badge-icon"><ion-icon name="server-outline" mode="md"></ion-icon></div>
+                                <div class="arch-node-meta">
+                                    <strong class="arch-node-title">.NET 9 Core</strong>
+                                    <span class="arch-node-desc">Clean Arch · CQRS</span>
+                                </div>
+                            </div>
+                            <div class="arch-flow-arrow" aria-hidden="true">
+                                <span class="arch-flow-pulse"></span>
+                                <ion-icon name="arrow-forward-outline" mode="md"></ion-icon>
+                            </div>
+                            <div class="arch-flow-node" data-node="cache">
+                                <div class="arch-node-badge-icon"><ion-icon name="flash-outline" mode="md"></ion-icon></div>
+                                <div class="arch-node-meta">
+                                    <strong class="arch-node-title">Redis Cache</strong>
+                                    <span class="arch-node-desc">Distributed &lt; 5ms</span>
+                                </div>
+                            </div>
+                            <div class="arch-flow-arrow" aria-hidden="true">
+                                <span class="arch-flow-pulse"></span>
+                                <ion-icon name="arrow-forward-outline" mode="md"></ion-icon>
+                            </div>
+                            <div class="arch-flow-node" data-node="db">
+                                <div class="arch-node-badge-icon"><ion-icon name="layers-outline" mode="md"></ion-icon></div>
+                                <div class="arch-node-meta">
+                                    <strong class="arch-node-title">SQL Server</strong>
+                                    <span class="arch-node-desc">HA Cluster · Indexed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Services -->
