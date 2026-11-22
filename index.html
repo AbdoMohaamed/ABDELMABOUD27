@@ -8,7 +8,7 @@
     <title>Abdelmaboud Mohamed | Senior Full Stack .NET Developer</title>
 
 
-    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/style.css?v=20261122" rel="stylesheet" />
 
     <!-- SEO Meta Tags -->
     <meta name="author" content="Abdelmaboud Mohamed">
@@ -146,8 +146,10 @@
                 <header class="intro-layout">
                     <div class="intro-copy">
                         <div class="intro-identity">
-                            <img src="./assets/images/Abdo.jpg" width="64" height="64" alt="Abdelmaboud Mohamed" fetchpriority="high" decoding="sync">
-                            <div>
+                            <span class="intro-portrait">
+                                <img src="./assets/images/Abdo.jpg" width="1423" height="1601" alt="" class="intro-avatar-img" fetchpriority="high" decoding="async">
+                            </span>
+                            <div class="intro-identity-meta">
                                 <h1 class="intro-name">Abdelmaboud Mohamed</h1>
                                 <div class="availability-badge" title="Based in Riyadh, Saudi Arabia">
                                     <span class="status-indicator" aria-hidden="true"></span>
@@ -156,35 +158,62 @@
                             </div>
                         </div>
                         <h2 class="hero-heading">Senior full stack<br><em id="morphingText" class="morphing-text">.NET developer.</em></h2>
-                        <p class="hero-description">I build .NET web applications, APIs, and business platforms. My work spans public content portals, mobile backends, and enterprise systems for teams in Saudi Arabia and Egypt.</p>
+                        <p class="hero-description">I build .NET web apps, APIs, and enterprise systems for teams in Saudi Arabia and Egypt.</p>
                         <div class="hero-actions">
                             <button class="primary-action" data-page-action="portfolio">Explore my work <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></button>
                             <a class="secondary-action" href="https://drive.google.com/file/d/1QOYCwKpqWnF85dwzb5TD34j0w3a305QF/view" target="_blank" rel="noopener noreferrer">View CV <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></a>
                         </div>
                     </div>
                     <button type="button" class="intro-project" id="introProject" aria-label="Explore the Dar Al-Ifta Arabic portal">
-                        <span class="intro-preview"><img src="./assets/images/daralifta.jpg" alt="" decoding="async"></span>
+                        <span class="intro-preview">
+                            <img src="./assets/images/daralifta.jpg" width="1907" height="908" alt="" decoding="async">
+                        </span>
                         <span class="intro-caption"><span><small>Featured project</small><strong>Dar Al-Ifta Arabic Portal</strong></span><span class="intro-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span></span>
                     </button>
                 </header>
 
                 <!-- High-Impact Stats Grid -->
                 <div class="stats-grid" id="statsGrid">
-                    <div class="stat-card" data-tilt>
-                        <div class="stat-number" data-count="5" data-suffix="+">5+</div>
-                        <p class="stat-label">Years Experience</p>
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-icon-wrap" aria-hidden="true">
+                                <ion-icon name="code-slash-outline" aria-hidden="true"></ion-icon>
+                            </span>
+
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="5" data-suffix="+">5+</div>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
                     </div>
-                    <div class="stat-card" data-tilt>
-                        <div class="stat-number" data-count="20" data-suffix="+">20+</div>
-                        <p class="stat-label">Enterprise & High-Traffic Apps</p>
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-icon-wrap" aria-hidden="true">
+                                <ion-icon name="server-outline" aria-hidden="true"></ion-icon>
+                            </span>
+
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="20" data-suffix="+">20+</div>
+                            <p class="stat-label">Enterprise & High-Traffic Apps</p>
+                        </div>
                     </div>
-                    <div class="stat-card" data-tilt>
-                        <div class="stat-number" data-count="3" data-suffix="">3</div>
-                        <p class="stat-label">Markets · Saudi Arabia, Egypt &amp; Kuwait</p>
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-icon-wrap" aria-hidden="true">
+                                <ion-icon name="globe-outline" aria-hidden="true"></ion-icon>
+                            </span>
+
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" data-count="3" data-suffix="">3</div>
+                            <p class="stat-label">Markets · Saudi Arabia, Egypt &amp; Kuwait</p>
+                        </div>
                     </div>
                 </div>
 
                 <section class="selected-work" aria-labelledby="selected-heading">
+  <div class="selected-work-header">
   <h3 class="h3 section-heading" id="selected-heading">Selected work</h3>
   <fieldset class="work-picker">
     <legend>What are you looking to build?</legend>
@@ -193,6 +222,7 @@
     <label><input type="radio" name="work-interest" value="mobile"><span>Mobile app</span></label>
     <label><input type="radio" name="work-interest" value="content"><span>Content portal</span></label>
   </fieldset>
+  </div>
   <div class="featured-grid" id="featuredProjects"></div>
   <button class="text-action" data-page-action="portfolio">Explore all projects <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span></button>
 </section>
@@ -226,6 +256,7 @@
                                 <span class="arch-topology-badge-text">Architecture Pipeline</span>
                             </div>
                             <h4 class="arch-topology-title">High-Concurrency Enterprise Topology</h4>
+                            <span class="arch-topology-metric">⚡ 10k+ req/sec · &lt; 5ms SLA</span>
                         </div>
                         <div class="arch-topology-flow">
                             <div class="arch-flow-node" data-node="client">
@@ -410,11 +441,7 @@
 
             <section class="working-together" aria-labelledby="working-heading">
   <h3 class="h3 section-heading" id="working-heading">Start with a conversation</h3>
-  <div class="process-grid">
-    <div><span class="step-number">01</span><h4>Tell me what you need</h4><p>A product idea, a technical challenge, or a role on your team. A short introduction is enough.</p></div>
-    <div><span class="step-number">02</span><h4>Let’s explore the fit</h4><p>We can discuss your goals, existing systems, and the expertise your project needs.</p></div>
-    <div><span class="step-number">03</span><h4>Define the next step</h4><p>Align on scope, priorities, and expectations before moving forward.</p></div>
-  </div>
+  <p class="working-intro">Share your project or opportunity, and we’ll discuss the scope and next steps.</p>
   <div class="quick-faq">
     <details><summary>What should I include in my first message?</summary><p>Your goal, the help you need, and any timeline you have in mind. You don’t need a finished specification to start.</p></details>
     <details><summary>Can I get in touch about a full-time role?</summary><p>Yes. Choose “Hiring / team opportunity” in the contact form and share the role, team, and location or remote setup.</p></details>
@@ -752,9 +779,11 @@
                         <li class="project-item active" data-filter-item data-category="mobile development"
                             data-highlight="mobile" data-project-title="Zad Al-Muslim Mobile Platform (زاد المسلم)"
                             data-project-badge-en="Mobile Backend"
+                            data-highlight-summary-en="I built the .NET APIs that power location-based prayer times, Quran audio playback, and push notifications."
+                            data-highlight-summary-ar="طوّرت واجهات ‎.NET‎ التي تدعم مواقيت الصلاة حسب الموقع، وتشغيل تلاوات القرآن، وإرسال الإشعارات."
 
                             data-project-category="Mobile Development"
-                            data-project-img="./assets/images/zad_almuslim.png"
+                            data-project-img="./assets/images/zad_almuslim.png?v=20261122"
                             data-project-role="Lead Backend & High-Scale API Architect"
                             data-project-desc="High-concurrency backend architecture and distributed micro-APIs powering the iconic Zad Al-Muslim Islamic application . Engineered high-availability RESTful APIs, high-precision location-based prayer timing algorithms, audio CDN streaming for Quran recitations, and push notification dispatchers supporting app features."
                             data-project-tech="ASP.NET Core, C#, Web API, SQL Server, Redis Caching, Firebase FCM, Push Notifications, Clean Architecture, High Concurrency"
@@ -770,7 +799,7 @@
                                     <div class="project-item-icon-box">
                                         <ion-icon name="eye-outline"></ion-icon>
                                     </div>
-                                    <img src="./assets/images/zad_almuslim.png" alt="Zad Al-Muslim Platform">
+                                    <img src="./assets/images/zad_almuslim.png?v=20261122" alt="Zad Al-Muslim Platform">
                                 </figure>
                                 <h3 class="project-title">Zad Al-Muslim Platform (زاد المسلم)</h3>
                                 <p class="project-category">Mobile Development</p>
@@ -1711,8 +1740,8 @@
 <a href="https://www.instagram.com/abdo_mohamed275/" target="_blank" rel="noopener noreferrer">Instagram <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></nav>
     </footer>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/experience.js"></script>
+    <script src="./assets/js/contact.js?v=20261122"></script>
+    <script src="./assets/js/experience.js?v=home-preview"></script>
     <script src="./assets/js/icons.js"></script>
     <script src="./assets/js/i18n-fix.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

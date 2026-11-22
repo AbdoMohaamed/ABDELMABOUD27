@@ -497,50 +497,6 @@ if (select) {
 })();
 
 // ---------------------------------------------------------------------------
-// MORPHING HERO HEADLINE TEXT
-// ---------------------------------------------------------------------------
-(function initMorphingHeadline() {
-  const morphEl = document.getElementById("morphingText");
-  if (!morphEl || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  const englishWords = [
-    ".NET developer.",
-    "high-scale APIs.",
-    "enterprise ERPs.",
-    "cloud platforms."
-  ];
-  const arabicWords = [
-    "تطبيقات .NET المتكاملة",
-    "واجهات برمجية فائقة السرعة",
-    "أنظمة ERP للمؤسسات",
-    "معمارية سحابية نظيفة"
-  ];
-
-  let currentIndex = 0;
-
-  setInterval(() => {
-    const currentMorphEl = document.getElementById("morphingText");
-    if (!currentMorphEl) return;
-    currentMorphEl.classList.add("changing");
-
-    setTimeout(() => {
-      const targetEl = document.getElementById("morphingText");
-      if (!targetEl) return;
-      const isArabic = document.documentElement.getAttribute("dir") === "rtl";
-      const currentList = isArabic ? arabicWords : englishWords;
-      currentIndex = (currentIndex + 1) % currentList.length;
-      targetEl.textContent = currentList[currentIndex];
-      targetEl.classList.remove("changing");
-      targetEl.classList.add("entering");
-
-      setTimeout(() => {
-        targetEl.classList.remove("entering");
-      }, 50);
-    }, 320);
-  }, 3400);
-})();
-
-// ---------------------------------------------------------------------------
 // ENTERPRISE CLEAN ARCHITECTURE BLUEPRINT MODAL
 // ---------------------------------------------------------------------------
 function openArchitectureModal() {
@@ -856,7 +812,7 @@ function downloadVCard() {
       applyText(".intro-name", "عبد المعبود محمد");
       applyText(".availability-badge .status-text, .availability-badge span:last-child", "الرياض، السعودية · متاح للفرص");
       applyText(".hero-heading", 'مهندس برمجيات أول<br><em id="morphingText" class="morphing-text">تطبيقات .NET وحلول المؤسسات</em>', true);
-      applyText(".hero-description", 'أطور تطبيقات الويب وواجهات البرمجة وأنظمة الأعمال باستخدام .NET. تشمل أعمالي بوابات المحتوى وخدمات تطبيقات الموبايل وأنظمة المؤسسات في السعودية ومصر.', true);
+      applyText(".hero-description", "أطوّر تطبيقات الويب وواجهات البرمجة وأنظمة المؤسسات باستخدام ‎.NET‎ لفرق في السعودية ومصر.", true);
       applyText(".hero-actions .primary-action", 'استكشف أعمالي <span aria-hidden="true">↗</span>', true);
       applyText(".hero-actions .secondary-action", 'عرض السيرة الذاتية <span aria-hidden="true">↗</span>', true);
       applyText(".intro-caption small", "مشروع مميز");
@@ -951,17 +907,7 @@ function downloadVCard() {
 
       // Working Together & FAQ
       applyText("#working-heading", "ابدأ بمحادثة مباشرة");
-      const stepsAr = [
-        { title: "شاركني احتياجاتك", desc: "فكرة مشروع جديد، تحدٍّ برمجي في نظام قائم، أو فرصة وظيفية ضمن فريقك. نبذة سريعة تكفي تماماً للبدء." },
-        { title: "دراسة التوافق والحلول", desc: "نناقش معاً أهدافك، البنية التقنية المطلوبة، والحلول المعمارية الدقيقة المناسبة لنظامك." },
-        { title: "تحديد خطوات التنفيذ", desc: "الاتفاق على نطاق العمل، والأولويات، والجدول الزمني للبدء الفعلي في البناء والتسليم." }
-      ];
-      document.querySelectorAll(".process-grid > div").forEach((step, i) => {
-        if (stepsAr[i]) {
-          applyText(step.querySelector("h4"), stepsAr[i].title);
-          applyText(step.querySelector("p"), stepsAr[i].desc);
-        }
-      });
+      applyText(".working-intro", "شاركني فكرة مشروعك أو الفرصة المتاحة، ونتناقش في نطاق العمل والخطوات التالية.");
       const faqAr = [
         { q: "ما الذي ينبغي كتابته في الرسالة الأولى؟", a: "هدفك الأساسي، نوع الدعم أو النظام المطلوب، والجدول الزمني المتوقع. لست بحاجة لكتابة مواصفات مفصلة للبدء." },
         { q: "هل يمكنني التواصل بخصوص فرصة عمل بدوام كامل؟", a: "بكل سرور. اختر «فرصة وظيفية / انضمام لفريق» من نموذج التواصل وشاركني تفاصيل الدور وطبيعة العمل (حضوري بالرياض أو عن بُعد)." },
@@ -999,10 +945,7 @@ function downloadVCard() {
       restoreOriginal(".organizations-note");
       document.querySelectorAll('[data-org-en]').forEach(el => { el.textContent = el.dataset.orgEn; });
       restoreOriginal("#working-heading");
-      document.querySelectorAll(".process-grid > div").forEach(step => {
-        restoreOriginal(step.querySelector("h4"));
-        restoreOriginal(step.querySelector("p"));
-      });
+      restoreOriginal(".working-intro");
       document.querySelectorAll(".quick-faq details").forEach(faq => {
         restoreOriginal(faq.querySelector("summary"));
         restoreOriginal(faq.querySelector("p"));
@@ -1201,11 +1144,16 @@ function downloadVCard() {
         const titleEl = card.querySelector("h4");
         const descEl = card.querySelector("p");
         const actionEl = card.querySelector(".featured-action");
+        const badgeEl = card.querySelector(".featured-badge-text");
 
         if (roleEl) roleEl.textContent = matchingSource.getAttribute("data-project-role");
         if (titleEl) titleEl.textContent = matchingSource.getAttribute("data-project-title");
-        if (descEl) descEl.textContent = matchingSource.getAttribute("data-project-desc");
-        if (actionEl) actionEl.textContent = isAr ? "استكشف المشروع ↗" : "Explore project ↗";
+        if (descEl) descEl.textContent = (isAr ? matchingSource.dataset.highlightSummaryAr : matchingSource.dataset.highlightSummaryEn) || matchingSource.dataset.projectDesc;
+        if (actionEl) actionEl.innerHTML = isAr ? 'استكشف المشروع <span aria-hidden="true">↗</span>' : 'Explore project <span aria-hidden="true">↗</span>';
+        if (badgeEl) {
+          const badgeText = isAr ? matchingSource.getAttribute("data-project-badge-ar") : matchingSource.getAttribute("data-project-badge-en");
+          if (badgeText) badgeEl.textContent = badgeText;
+        }
       }
     });
 
@@ -1434,7 +1382,7 @@ function downloadVCard() {
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const tiltCardSelector = "[data-tilt], .project-item, .featured-card, .service-item, .skills-category";
+  const tiltCardSelector = "[data-tilt], .project-item, .featured-card, .service-item, .skills-category, .stat-card, .organization-card, .arch-topology-card";
 
   function setupTiltOnElements() {
     document.querySelectorAll(tiltCardSelector).forEach(card => {
@@ -1465,6 +1413,8 @@ function downloadVCard() {
           card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.018, 1.018, 1.018)`;
           card.style.setProperty("--sheen-x", `${(mouseX / bounds.width * 100).toFixed(1)}%`);
           card.style.setProperty("--sheen-y", `${(mouseY / bounds.height * 100).toFixed(1)}%`);
+          card.style.setProperty("--mouse-x", `${mouseX.toFixed(1)}px`);
+          card.style.setProperty("--mouse-y", `${mouseY.toFixed(1)}px`);
         });
       }, { passive: true });
 
@@ -1480,5 +1430,37 @@ function downloadVCard() {
   setupTiltOnElements();
   window.addEventListener("portfolio:pagechange", setupTiltOnElements);
   window.addEventListener("DOMContentLoaded", setupTiltOnElements);
+})();
+
+
+// ---------------------------------------------------------------------------
+// BRANDED TECH ACCENT CHIPS DECORATOR
+// ---------------------------------------------------------------------------
+(function initBrandedTechBadges() {
+  const brandRules = [
+    { pattern: /\.net|c#|asp\.net/i, color: "#c084fc", shadow: "rgba(192, 132, 252, 0.6)" },
+    { pattern: /sql|mysql/i, color: "#fbbf24", shadow: "rgba(251, 191, 36, 0.6)" },
+    { pattern: /redis/i, color: "#f87171", shadow: "rgba(248, 113, 113, 0.6)" },
+    { pattern: /azure|docker|typescript/i, color: "#38bdf8", shadow: "rgba(56, 189, 248, 0.6)" },
+    { pattern: /clean architecture|cqrs|repository/i, color: "#b9ed84", shadow: "rgba(185, 237, 132, 0.6)" }
+  ];
+
+  function decorateChips() {
+    document.querySelectorAll(".skill-tag, .project-tech span").forEach(tag => {
+      if (tag.querySelector(".tech-brand-dot")) return;
+      const text = tag.textContent.trim();
+      const matched = brandRules.find(r => r.pattern.test(text));
+      if (matched) {
+        const dot = document.createElement("span");
+        dot.className = "tech-brand-dot";
+        dot.style.cssText = `display:inline-block;width:5px;height:5px;border-radius:50%;background:${matched.color};box-shadow:0 0 6px ${matched.shadow};margin-inline-end:6px;vertical-align:middle;flex-shrink:0;`;
+        tag.prepend(dot);
+      }
+    });
+  }
+
+  decorateChips();
+  window.addEventListener("portfolio:pagechange", decorateChips);
+  window.addEventListener("DOMContentLoaded", decorateChips);
 })();
 

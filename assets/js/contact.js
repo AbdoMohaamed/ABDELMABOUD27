@@ -98,24 +98,72 @@ document.querySelectorAll('[data-highlight]').forEach(item => {
   button.type = 'button';
   button.className = 'featured-card';
   button.dataset.highlightCard = item.dataset.highlight;
+
+  // Media Wrapper (Image + Impact Badge)
+  const mediaWrap = document.createElement('div');
+  mediaWrap.className = 'featured-media';
+
   const img = document.createElement('img');
   img.src = item.dataset.projectImg;
   img.alt = item.dataset.projectTitle;
   img.loading = 'lazy';
   img.width = 480;
   img.height = 300;
+  if (item.dataset.highlight === 'mobile') {
+    const screens = document.createElement('span');
+    screens.className = 'featured-app-screens';
+    screens.setAttribute('aria-hidden', 'true');
+    for (const position of ['48.488%', '59.156%', '80.376%']) {
+      const screen = document.createElement('span');
+      screen.style.setProperty('--screen-position', position);
+      screens.appendChild(screen);
+    }
+    mediaWrap.appendChild(screens);
+  } else {
+    mediaWrap.appendChild(img);
+  }
+
+  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
+  const badgeText = (isAr ? item.dataset.projectBadgeAr : item.dataset.projectBadgeEn) || item.dataset.projectBadgeEn;
+  if (badgeText) {
+    const badge = document.createElement('div');
+    badge.className = 'featured-badge';
+    badge.innerHTML = `<span class="badge-dot"></span><span class="featured-badge-text">${badgeText}</span>`;
+    mediaWrap.appendChild(badge);
+  }
+
+  // Body Content Wrapper
+  const bodyWrap = document.createElement('div');
+  bodyWrap.className = 'featured-body';
+
   const role = document.createElement('span');
   role.className = 'featured-role';
   role.textContent = item.dataset.projectRole;
+
   const title = document.createElement('h4');
   title.textContent = item.dataset.projectTitle;
+
   const description = document.createElement('p');
-  description.textContent = item.dataset.projectDesc;
+  description.textContent = (isAr ? item.dataset.highlightSummaryAr : item.dataset.highlightSummaryEn) || item.dataset.projectDesc;
+
+  // Direct Tech Chips
+  const techRaw = item.dataset.projectTech || '';
+  const techWrap = document.createElement('div');
+  techWrap.className = 'featured-tech';
+  if (techRaw) {
+    techRaw.split(',').slice(0, 4).forEach(t => {
+      const chip = document.createElement('span');
+      chip.textContent = t.trim();
+      techWrap.appendChild(chip);
+    });
+  }
+
   const action = document.createElement('span');
   action.className = 'featured-action';
-  const isAr = document.documentElement.getAttribute('dir') === 'rtl';
-  action.textContent = isAr ? 'استكشف المشروع ↗' : 'Explore project ↗';
-  button.append(img, role, title, description, action);
+  action.innerHTML = isAr ? 'استكشف المشروع <span aria-hidden="true">↗</span>' : 'Explore project <span aria-hidden="true">↗</span>';
+
+  bodyWrap.append(role, title, description, techWrap, action);
+  button.append(mediaWrap, bodyWrap);
   button.addEventListener('click', () => openProjectModal(item));
   featuredHost.appendChild(button);
 });
