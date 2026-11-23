@@ -293,30 +293,11 @@ const openProjectModal = function (item) {
 
   const story = document.getElementById('projectStory');
   if (story) {
-    story.replaceChildren();
-
-    // Use project-specific content, without guessing infrastructure from a title.
-    const architectureHighlight = item.getAttribute('data-project-desc') || desc;
-
-    const systemAccessText = isInternal
+    story.textContent = isInternal
       ? (isAr ? "منصة مؤسسية داخلية — استعرض لقطات الشاشة والتفاصيل الفنية المرفقة." : "Internal enterprise platform — examine screenshots and details.")
       : /\/(?:Admin|Account|login)(?:\/|$)/i.test(url)
         ? (isAr ? "يتطلب بيانات اعتماد مصرح بها. توفر لقطات الشاشة استعراضاً شاملاً للنظام." : "Requires authorized credentials. Screenshots provide a full walkthrough.")
         : (isAr ? "منصة عامة ومباشرة — تخضع الصلاحيات لإدارة مالك النظام." : "Public live platform — availability managed by owner.");
-
-    const storyItems = [
-      [isAr ? 'الدور والمسؤولية' : 'Role & Scope', role],
-      [isAr ? 'أبرز ملامح المعمارية البرمجية' : 'Project overview', architectureHighlight],
-      [isAr ? 'التقنيات الأساسية' : 'Core Tech Stack', tech],
-      [isAr ? 'طريقة الوصول للنظام' : 'System Access', systemAccessText]
-    ];
-
-    storyItems.forEach(([label, value]) => {
-      const cell = document.createElement('div');
-      const heading = document.createElement('h4'); heading.textContent = label;
-      const text = document.createElement('p'); text.textContent = value;
-      cell.append(heading, text); story.append(cell);
-    });
   }
 
   const projConv = document.querySelector(".project-conversation");
@@ -324,7 +305,11 @@ const openProjectModal = function (item) {
     projConv.textContent = isAr ? "هل لديك مشروع مماثل؟ تواصل معي ↗" : "Have a similar project? Let’s talk ↗";
   }
 
+  const closeLabel = isAr ? "إغلاق تفاصيل المشروع" : "Close project details";
+  projectModalCloseBtn?.setAttribute("aria-label", closeLabel);
+  if (projectModalCloseBtn) projectModalCloseBtn.title = closeLabel;
   projectModalContainer.classList.add("active");
+  projectModalContainer.querySelector(".project-modal-content").scrollTop = 0;
   document.body.style.overflow = "hidden";
   projectModalCloseBtn?.focus();
 };
@@ -354,6 +339,18 @@ document.addEventListener("keydown", function (e) {
 // ---------------------------------------------------------------------------
 // 7. PRINT ATS RESUME
 // ---------------------------------------------------------------------------
+const printExpandedRoles = new Set();
+window.addEventListener("beforeprint", () => {
+  document.querySelectorAll(".resume-details:not([open])").forEach(details => {
+    printExpandedRoles.add(details);
+    details.open = true;
+  });
+});
+window.addEventListener("afterprint", () => {
+  printExpandedRoles.forEach(details => { details.open = false; });
+  printExpandedRoles.clear();
+});
+
 const printCvBtn = document.getElementById("printCvBtn");
 if (printCvBtn) {
   printCvBtn.addEventListener("click", function () {

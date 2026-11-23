@@ -38,7 +38,7 @@ function setupReveals() {
     });
   });
 
-  document.querySelectorAll('.selected-work, .service, .testimonials, .clients, .working-together, .conversation-banner, .skills-category, .timeline').forEach(node => {
+  document.querySelectorAll('.selected-work, .service, .testimonials, .clients, .working-together, .skills-category, .timeline').forEach(node => {
     // Hidden tabs are left intact and reconsidered when activated.
     if (!node.getClientRects().length || node.getBoundingClientRect().top < window.innerHeight) return;
     node.classList.add('reveal-pending');
@@ -770,6 +770,7 @@ function downloadVCard() {
     const isAr = lang === "ar";
     document.documentElement.setAttribute("dir", isAr ? "rtl" : "ltr");
     document.documentElement.setAttribute("lang", isAr ? "ar" : "en");
+    document.querySelector(".site-footer .profile-links")?.setAttribute("aria-label", isAr ? "الحسابات المهنية" : "Social profiles");
 
     if (langLabel) langLabel.textContent = isAr ? "English" : "عربي";
     langBtn.setAttribute("title", isAr ? "Switch to English" : "التبديل إلى اللغة العربية");
@@ -787,7 +788,6 @@ function downloadVCard() {
       applyText(".whatsapp-tooltip", "محادثة عبر واتساب");
       document.getElementById("backToTopBtn")?.setAttribute("title", "العودة للأعلى");
       document.querySelector(".floating-whatsapp-btn")?.setAttribute("title", "محادثة عبر واتساب");
-      applyText(".site-footer > span", "عبد المعبود محمد · الرياض، المملكة العربية السعودية");
     } else {
       restoreOriginal(".skip-link");
       restoreOriginal(".wordmark .brand-label", true);
@@ -800,7 +800,6 @@ function downloadVCard() {
       restoreOriginal(".whatsapp-tooltip");
       document.getElementById("backToTopBtn")?.setAttribute("title", "Back to top");
       document.querySelector(".floating-whatsapp-btn")?.setAttribute("title", "Chat on WhatsApp");
-      restoreOriginal(".site-footer > span");
     }
 
     // 2. HERO & STATS (ABOUT PAGE)
@@ -988,12 +987,21 @@ function downloadVCard() {
             desc: 'تطوير جداول البيانات المتقدمة من جانب الخادم (Server-Side DataTables)، وفلاتر البحث اللحظي، ووحدات التقارير الآلية مع إمكانية التصدير والطباعة، وتنفيذ عمليات البيانات غير المتزامنة عبر ASP.NET MVC و Ajax و jQuery.'
           }
         ];
+        const highlightsAr = [
+          ["طوّرت تطبيقات وواجهات برمجية بتقنية .NET لجهات حكومية ومؤسسات.", "ربطت بوابات الدفع والرسائل والبريد، وطوّرت المصادقة والتحكم في الصلاحيات."],
+          ["طوّرت واجهات زاد المسلم لمواقيت الصلاة والإشعارات والتخزين المؤقت باستخدام Redis.", "طوّرت التحقق برمز OTP واستعادة كلمة المرور، وربطت خدمات الرسائل والبريد."],
+          ["طوّرت وحدات لأنظمة ERP وربطتها بالفوترة والإيصالات الإلكترونية.", "طوّرت واجهات ASP.NET متجاوبة وواجهات REST لتطبيقات الجوال."]
+        ];
         expItems.forEach((item, i) => {
           if (expAr[i]) {
             applyText(item.querySelector(".timeline-item-title"), expAr[i].title);
             const spans = item.querySelectorAll(":scope > span");
             if (spans[0]) applyText(spans[0], expAr[i].role);
             if (spans[1]) applyText(spans[1], expAr[i].date);
+            item.querySelectorAll(".resume-highlights > li").forEach((bullet, index) => {
+              applyText(bullet, highlightsAr[i][index]);
+            });
+            applyText(item.querySelector(".resume-details > summary"), "المزيد عن هذه الوظيفة");
             applyText(item.querySelector(".timeline-text"), expAr[i].desc, true);
           }
         });
@@ -1035,7 +1043,9 @@ function downloadVCard() {
       const skillCatsAr = [
         "معمارية الباك إند (.NET Core)",
         "قواعد البيانات والتخزين",
-        "السحابة والذكاء الاصطناعي والتكاملات",
+        "السحابة والذكاء الاصطناعي",
+        "التكاملات",
+        "أدوات التطوير",
         "تطوير الواجهات وتجربة المستخدم"
       ];
       document.querySelectorAll(".skills-category-title").forEach((el, i) => {
@@ -1051,6 +1061,8 @@ function downloadVCard() {
         tl.querySelectorAll(".timeline-item").forEach(item => {
           restoreOriginal(item.querySelector(".timeline-item-title"));
           item.querySelectorAll(":scope > span").forEach(s => restoreOriginal(s));
+          item.querySelectorAll(".resume-highlights > li").forEach(bullet => restoreOriginal(bullet));
+          restoreOriginal(item.querySelector(".resume-details > summary"));
           restoreOriginal(item.querySelector(".timeline-text"), true);
         });
       });
@@ -1212,10 +1224,8 @@ function downloadVCard() {
       }
       applyText("#copyDraft", "نسخ نص الرسالة");
 
-      applyText(".conversation-banner .eyebrow", "هل لديك فكرة أو فرصة جديدة؟");
-      applyText(".conversation-banner h3", "جاهز لتحويل رؤيتك التقنية إلى نظام برمجي عالي الكفاءة؟");
-      applyText(".conversation-banner div > p:last-of-type", "شاركني تفاصيل مشروعك أو الفرصة المتاحة، وسأكون سعيداً بمناقشتها معك.");
-      applyText(".conversation-banner .primary-action", 'تواصل معي <span aria-hidden="true">↗</span>', true);
+      applyText("#footer-contact-title", "عندك مشروع أو فرصة عمل؟");
+      applyText(".conversation-banner .primary-action", 'خلّينا نتكلم <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>', true);
     } else {
       restoreOriginal(".contact .article-title");
       restoreOriginal(".contact-form .eyebrow");
@@ -1244,9 +1254,7 @@ function downloadVCard() {
       restoreOriginal("#delivery-note");
       restoreOriginal('[data-form-btn]', true);
       restoreOriginal("#copyDraft");
-      restoreOriginal(".conversation-banner .eyebrow");
-      restoreOriginal(".conversation-banner h3");
-      restoreOriginal(".conversation-banner div > p:last-of-type");
+      restoreOriginal("#footer-contact-title");
       restoreOriginal(".conversation-banner .primary-action", true);
     }
 

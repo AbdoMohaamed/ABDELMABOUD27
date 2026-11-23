@@ -200,18 +200,7 @@ projectConversation.addEventListener('click', () => {
 });
 pModalAction.after(projectConversation);
 
-// Keep keyboard focus inside an open project dialog and return to its opener.
-let modalOpener = null;
-const projectDialogObserver = new MutationObserver(() => {
-  if (projectModalContainer.classList.contains('active')) {
-    modalOpener = document.activeElement;
-    projectModalCloseBtn.focus();
-  } else {
-    // Only restore when focus was left inside the now-hidden dialog.
-    if (projectModalContainer.contains(document.activeElement)) modalOpener?.focus({ preventScroll: true });
-  }
-});
-projectDialogObserver.observe(projectModalContainer, { attributes: true, attributeFilter: ['class'] });
+// Keep keyboard focus inside the open project dialog.
 projectModalContainer.addEventListener('keydown', event => {
   if (event.key !== 'Tab') return;
   const focusable = [...projectModalContainer.querySelectorAll('a[href],button:not([disabled])')].filter(node => node.getClientRects().length);
