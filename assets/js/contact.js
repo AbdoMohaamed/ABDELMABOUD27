@@ -119,6 +119,11 @@ document.querySelectorAll('[data-highlight]').forEach(item => {
       screens.appendChild(screen);
     }
     mediaWrap.appendChild(screens);
+    const projectMedia = item.querySelector('.project-img');
+    if (projectMedia) {
+      projectMedia.appendChild(screens.cloneNode(true));
+      projectMedia.classList.add('has-app-screens');
+    }
   } else {
     mediaWrap.appendChild(img);
   }
