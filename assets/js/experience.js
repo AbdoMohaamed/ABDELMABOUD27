@@ -811,12 +811,11 @@ function downloadVCard() {
     if (isAr) {
       applyText(".intro-name", "عبد المعبود محمد");
       applyText(".availability-badge .status-text, .availability-badge span:last-child", "الرياض، السعودية · متاح للفرص");
-      applyText(".hero-heading", 'مهندس برمجيات أول<br><em id="morphingText" class="morphing-text">تطبيقات .NET وحلول المؤسسات</em>', true);
-      applyText(".hero-description", "أطوّر تطبيقات الويب وواجهات البرمجة وأنظمة المؤسسات باستخدام ‎.NET‎ لفرق في السعودية ومصر.", true);
-      applyText(".hero-actions .primary-action", 'استكشف أعمالي <span aria-hidden="true">↗</span>', true);
-      applyText(".hero-actions .secondary-action", 'عرض السيرة الذاتية <span aria-hidden="true">↗</span>', true);
-      applyText(".intro-caption small", "مشروع مميز");
-      applyText(".intro-caption strong", "بوابة دار الإفتاء المصرية");
+      applyText(".hero-heading", 'مطوّر برمجيات أول <em>فل ستاك بتقنية <bdi>.NET</bdi></em>', true);
+      applyText(".hero-description", "أطوّر تطبيقات الويب وواجهات البرمجة للبوابات الإلكترونية وتطبيقات الجوال وأنظمة الأعمال.");
+      document.querySelector(".hero-stack")?.setAttribute("aria-label", "التقنيات الأساسية");
+      applyText(".hero-actions .primary-action", 'استكشف أعمالي <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>', true);
+      applyText(".hero-actions .secondary-action", 'عرض السيرة الذاتية <span aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>', true);
 
       const statLabels = document.querySelectorAll(".stat-label");
       if (statLabels[0]) applyText(statLabels[0], "سنوات من الخبرة العملية");
@@ -840,20 +839,19 @@ function downloadVCard() {
       restoreOriginal(".intro-name");
       restoreOriginal(".availability-badge .status-text, .availability-badge span:last-child");
       restoreOriginal(".hero-heading", true);
-      restoreOriginal(".hero-description", true);
+      restoreOriginal(".hero-description");
+      document.querySelector(".hero-stack")?.setAttribute("aria-label", "Core technologies");
       restoreOriginal(".hero-actions .primary-action", true);
       restoreOriginal(".hero-actions .secondary-action", true);
-      restoreOriginal(".intro-caption small");
-      restoreOriginal(".intro-caption strong");
       document.querySelectorAll(".stat-label").forEach(el => restoreOriginal(el));
     }
 
     // 3. SELECTED WORK, BIO, SERVICES, TESTIMONIALS, CLIENTS & FAQ (ABOUT PAGE)
     if (isAr) {
       applyText("#selected-heading", "مشاريع مختارة");
-      applyText(".work-picker legend", "ما الذي تسعى لبنائه؟");
+      applyText(".work-picker legend", "تصفية المشاريع المختارة");
       const pickerSpans = document.querySelectorAll(".work-picker label span");
-      if (pickerSpans[0]) applyText(pickerSpans[0], "كافة المشاريع");
+      if (pickerSpans[0]) applyText(pickerSpans[0], "الكل");
       if (pickerSpans[1]) applyText(pickerSpans[1], "أنظمة المؤسسات وERP");
       if (pickerSpans[2]) applyText(pickerSpans[2], "تطبيقات الموبايل والـ APIs");
       if (pickerSpans[3]) applyText(pickerSpans[3], "المنصات والبوابات الرقمية");

@@ -222,8 +222,3 @@ window.addEventListener('DOMContentLoaded', syncConversationBanner);
 syncConversationBanner();
 
 window.addEventListener('portfolio:pagechange', syncConversationBanner);
-
-const introProject = document.getElementById('introProject');
-introProject.addEventListener('click', () => {
-  openProjectModal(document.querySelector('[data-highlight="content"]'));
-});
